@@ -26,7 +26,7 @@ Read this first. It is the single source of truth for what has been done, what t
 | `data/Group_8_Data.csv` | Group 8 dataset. **Decimal commas** (`6,7`), UTF-8 BOM, 806 rows, has an `ln(Price)` column |
 | `data/Wine_Dataset.xlsx` | Same 806 wines, original columns A–O |
 | `workbooks/Group_8_local_snapshot_2026-10-11.xlsx` | Local copy of the team workbook from 11 Oct (Parts A–C; B1/B2 at Part B rows 3–59 + K41:L46). **Outdated vs the online file**, see §4 |
-| `deliverables/b1-b2/` | B1/B2 outputs: tutorial video (20 min, 14 chapters), full report section (.docx, 6 pages), short report section VI + EN (.docx, ~1.4 pages), report text (.md) |
+| `deliverables/b1-b2/` | B1/B2 outputs: tutorial video (20 min, 14 chapters), full report section (.docx, 6 pages), short report section VI + EN (.docx, ~1.4 pages), report text (.md), **Q&A practice** (`QA_practice.md`, 50 questions with model answers) |
 | `tools/video/` | Python that generates the tutorial video (spreadsheet mock-up + charts + Piper TTS) |
 | `tools/report/` | Node scripts (docx-js) that build the report .docx files from `cells.json` |
 
