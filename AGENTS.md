@@ -105,7 +105,7 @@ https://ftueduvn-my.sharepoint.com/:x:/g/personal/k64_2515520031_ftu_edu_vn/IQCU
 
 ## 7. Open items
 
-- [ ] Tick "B 1,2" as done in the `Lưu ý` task table (status checkbox).
+- [x] Tick "B 1,2" as done in the `Lưu ý` task table (done 18 Oct 2026, cell D28 = TRUE).
 - [ ] If the team report cites cells, update the B1/B2 references to the current online layout (§4).
 - [ ] Optionally add the Mann–Whitney sentence (§5) to the report.
 
