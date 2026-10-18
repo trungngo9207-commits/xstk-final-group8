@@ -1,0 +1,971 @@
+Lecture 6: Sampling Distribution and
+Normal Distribution
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+
+
+
+
+                                                         1
+Agenda
+01
+THE SAMPLING DISTRIBUTION
+The room produces the object of the session by hand, before it is named
+
+
+02
+NORMAL DISTRIBUTION & STANDARD ERROR
+How far that number moves, and the two quantities that govern the distance
+
+
+03
+WHAT SAMPLE SIZE CANNOT REPAIR
+Sample size purchases width. It does not purchase aim
+
+
+04
+THE CENTRAL LIMIT THEOREM
+Why the sample mean is bell-shaped when the population is not
+
+
+05
+ASSESSING NORMALITY
+The z-score and the Q-Q plot: examining whether a distribution is normal
+Agenda
+01
+THE SAMPLING DISTRIBUTION
+The room produces the object of the session by hand, before it is named
+
+
+02
+NORMAL DISTRIBUTION & STANDARD ERROR
+How far that number moves, and the two quantities that govern the distance
+
+
+03
+WHAT SAMPLE SIZE CANNOT REPAIR
+Sample size purchases width. It does not purchase aim
+
+
+04
+THE CENTRAL LIMIT THEOREM
+Why the sample mean is bell-shaped when the population is not
+
+
+05
+ASSESSING NORMALITY
+The z-score and the Q-Q plot: examining whether a distribution is normal
+THE SAMPLING DISTRIBUTION
+
+
+The Expected Departure of a Sample Mean
+Record an answer before proceeding
+
+
+
+  (a) under 5% — the sample is a reasonable image of the population
+
+
+
+  (b) 5–15% — some drift, but the estimate stays usable
+
+
+
+  (c) 15–30% — the ten firms drawn matter a great deal
+
+
+
+  (d) over 30% — a single sample says little on its own
+
+
+
+
+                      Ten firms drawn at random. By how much will your sample mean depart from μ?
+THE SAMPLING DISTRIBUTION
+
+
+Practice 1 — Taking out the sample
+Excel · Buoi6-SamplingLab.xlsx · sheet DRAW
+
+
+
+         Open sheet DRAW. Press F9 exactly once. Read out the large figure when called upon.
+
+
+
+
+                                                                                             CONSTRAINT
+                                                         QUANTITY
+                            TIME                                                 Each time you press F9, it reset the
+                                              One draw per participant, n = 10
+                     6 minutes                                                     random seed and discards the
+                                                          firms
+                                                                                  sample you are about to report.
+
+
+
+
+                                                Record the value on the board
+THE SAMPLING DISTRIBUTION
+
+
+The Distribution the Room Has Just Produced
+
+
+
+                        ___                               ×___                                      10
+                                               largest divided by smallest
+        the true population mean μ                                                   estimates, all equally legitimate
+                                               Two people, the same correct
+    Not one of the figures on the board is                                          None of them is wrong. None of them is
+                                             procedure, results differing by that
+                 equal to it                                                                       the truth
+                                                           factor
+
+
+
+
+               This is a sampling distribution — and it appears in no row and no column of the dataset.
+THE SAMPLING DISTRIBUTION
+
+
+Parameter and Sample Statistic
+
+
+                            Parameter (tham số)      Statistic (thống kê mẫu)
+
+ Notation                   μ, σ, p (mu, sigma, p)   x̄, s, p̂
+
+ Describes                  the Population           the Sample
+
+ In practice                unknown                  computed
+
+ Today, in this room        known — we declared it   the 10 values on the board
+
+ Nature of the object       a fixed number           a random variable
+THE SAMPLING DISTRIBUTION
+
+
+The Sampling Distribution
+
+                Definition — The probability distribution of a statistic is called its sampling distribution
+
+
+  1
+  A sample is only a part of the population, the numerical value of a statistic cannot be expected to give us the exact
+  value of the parameter.
+
+
+
+  2
+  The observed value of a statistic depends on the particular sample that happens to be selected.
+
+
+
+  3
+  There will be some variability in the value of statistic over different occasions of sampling. Therefore, it is
+  considered to be a random variable
+Agenda
+01
+THE SAMPLING DISTRIBUTION
+The room produces the object of the session by hand, before it is named
+
+
+02
+NORMAL DISTRIBUTION & STANDARD ERROR
+How far that number moves, and the two quantities that govern the distance
+
+
+03
+WHAT SAMPLE SIZE CANNOT REPAIR
+Sample size purchases width. It does not purchase aim
+
+
+04
+THE CENTRAL LIMIT THEOREM
+Why the sample mean is bell-shaped when the population is not
+
+
+05
+ASSESSING NORMALITY
+The z-score and the Q-Q plot: examining whether a distribution is normal
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+Practice 2 — Building the Simulation
+Excel · sheet SIM10
+
+
+
+       Use the formula RANDBETWEEN given to take the sample of the firms and calculate the
+                                          statistics
+
+
+
+
+                                                                  QUANTITY                                   CONSTRAINT
+                        TIME
+                                                        800 rows — each row is one                   Try out with other default
+                      6 minutes
+                                                             sample of 10 firms                             parameters.
+
+
+
+
+                       Focus on Column A, plus three figures: the mean of the means, their standard deviation, and σ/√n.
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+The Simulated Result against the Formula
+
+ Quantity                                                                                       Value
+
+
+ Mean of the 800 sample means                                                                   ___
+
+ Population mean μ                                                                              ___
+
+ Standard deviation of those 800 means σ                                                        ___
+
+ σ/√n – The Standard Error                                                                      ___
+
+
+
+
+                        The width of the sampling distribution is settled before any sample is taken.
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+The Standard Error
+
+
+  DEFINITION
+                                                                   WHAT IT DEPENDS ON
+  SE(x̄) = σ / √n
+                                                                   Two inputs, and one non-input
+  The standard deviation of the sampling distribution. It
+                                                                   Larger σ gives a larger SE. Larger n gives a smaller SE.
+  does not indicate that anything was done incorrectly: it
+                                                                   The size of the population does not enter the formula at
+  is the unavoidable variation of a correctly obtained
+                                                                   all.
+  estimate.
+                                                                   • n = 100 from 500 firms, and n = 100 from 100,000 firms give the
+  • σ measures how firms differ from each other
+                                                                     same standard error
+  • SE measures how the estimate differs from run to run
+
+
+
+
+                                            Can you explain why the formula is σ / √n?
+                                                  Hint: Mathematics expression
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+Behaviour under Repeated Sampling
+
+                 Changes with every new set of samples                          Does not change for every samples
+
+
+ Every drawn value                                                 The centre, at μ
+
+ The minimum and the maximum                                       The width, at σ/√n
+
+
+ The edges of the histogram                                        The shape
+
+
+
+
+                                        The left side is what one data collection obtains.
+                            The right side is often fixed regardless of the differences in the left side.
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+The Normal Distribution
+The central distinction of this session
+
+
+
+
+  A normal distribution (also called a Gaussian
+  distribution or Bell curve) is a continuous probability
+  graph that is symmetric and shaped like a bell.
+  •   Symmetrical shape: The left side mirrors the right side.
+  •   Center peak: The mean (average), median (middle value), and
+      mode (most frequent value) are all equal and sit at the exact
+      center.
+
+
+
+
+                                       Are those all normal distributions? What are the differences?
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+The Normal Distribution: Two Parameters
+
+
+                                                          CONSEQUENCES
+  MECHANISM
+  One curve, shifted and rescaled                         One table of areas suffices
+  The normal distribution is determined entirely by 2     Any statement about any normal distribution reduces to
+  parameters: the mean μ, which locates its centre, and   a statement about a single reference curve.
+                                                          • Two variables in different units become comparable once expressed
+  the standard deviation σ, which determines its width.
+                                                            in units of their own standard deviation
+  •   This is the linear transformation aX + b
+                                                          • The sampling distribution built today belongs to this family
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+Standardization and the z-score
+
+
+
+  A COMMON RULER
+  z = (x − μ) / σ
+  The z-score (điểm z) expresses the distance between a
+  value and the mean in units of the standard deviation. It
+  is the linear transformation aX + b with a = 1/σ.
+  • Comparison across variables in different units: a firm at z = 1.5 on
+    ROA and z = 0.2 on revenue growth
+  • Evaluation of probabilities from one reference distribution, the
+    standard normal
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+The empirical z-score rule
+
+ Interval                              Proportion of the distribution
+
+
+ μ ± 1σ                                approximately 68%
+
+
+ μ ± 2σ                                approximately 95%
+
+
+ μ ± 3σ                                approximately 99.7%
+
+
+
+
+                                                                 Z-score Calculator
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+Interpretation of a z-score: a correction
+
+
+                                                           REQUIRES NORMALITY
+  TRUE WITHOUT ASSUMPTION
+                                                           A statement about area
+  A statement about position
+                                                           Under normality the proportion above z = 2 is
+  The firm lies two standard deviations above the mean.
+                                                           approximately 2.3%, not 2%. The resemblance between
+  This holds for any distribution whatever, and requires
+                                                           2 and 2.3 is a coincidence of digits and not a
+  nothing beyond the definitions of μ and σ.
+                                                           relationship.
+
+
+
+
+  A firm has z = 2 on ROA. Which is correct?
+  (a) 2% of firms are higher
+  (b) The firm lies two standard deviations above the mean
+  (c) Both is correct
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+The Empirical Rule Applied to the Sampling Distribution
+
+
+ Interval                                    Predicted                  Counted in the 800 means
+
+
+
+ μ ± 1 SE                                    68%                        ___%
+
+
+ μ ± 2 SE                                    95%                        ___%
+
+
+ μ ± 3 SE                                    99.7%                      ___%
+
+
+
+
+                      ± 1, 2, 3 SE is the width of the answer, and it is available before the study is run.
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+The Cost of Halving the Standard Error
+
+
+  n = 15 — a modest increase should be enough
+
+
+
+  n = 20 — double the sample, halve the error
+
+
+
+  n = 40 — four times the sample
+
+
+
+  n = 100 — ten times the sample
+
+
+
+
+                                       Remember the formula for Standard Error
+NORMAL DISTRIBUTION & STANDARD ERROR
+
+
+The Square-Root Law
+
+ To reduce the Standard Error to                                                 Multiply n by
+
+
+ one half                                                                        4
+
+
+ one third                                                                       9
+
+ one tenth                                                                       100
+
+
+
+
+                  Precision is a commodity whose price rises with the square of the precision bought.
+Agenda
+01
+THE SAMPLING DISTRIBUTION
+The room produces the object of the session by hand, before it is named
+
+
+02
+NORMAL DISTRIBUTION & STANDARD ERROR
+How far that number moves, and the two quantities that govern the distance
+
+
+03
+WHAT SAMPLE SIZE CANNOT REPAIR
+Sample size purchases width. It does not purchase aim
+
+
+04
+THE CENTRAL LIMIT THEOREM
+Why the sample mean is bell-shaped when the population is not
+
+
+05
+ASSESSING NORMALITY
+The z-score and the Q-Q plot: examining whether a distribution is normal
+WHAT SAMPLE SIZE CANNOT REPAIR
+
+
+A Sample Drawn from an Incomplete List
+Vote before the reveal
+
+
+
+                                                        ONE DIFFERENCE
+  THE DESIGN
+  Nothing is done incorrectly                           The list contains only profitable firms
+                                                        The firms that reported a loss were never on the list to
+  A random draw. n = 100. Eight hundred repetitions.
+                                                        begin with. Nothing in the sample reveals that they are
+  Every step of the procedure is performed exactly as
+                                                        missing.
+  before.
+                                                        • The case of surveying customers who stayed
+  • Same procedure, same formula, same sample size
+                                                        • The case of using data on funds still trading
+
+
+
+
+  Compared with the unbiased run:
+  (a) Same center, wider width
+  (b) Same center, narrower width
+  (c) Same width, different center
+  (d) Unchanged
+WHAT SAMPLE SIZE CANNOT REPAIR
+
+
+Systematic Departure and Random Variation
+
+
+
+
+  TWO QUANTITIES
+  Width and centre are separate
+  Random variation is the width of the sampling
+  distribution, and SE measures it. Bias is the distance
+  from the centre of that distribution to the truth. The
+  second is not a form of the first.
+  • Complete list: centre ≈ μ, width σ/√n
+  • Profitable firms only: centre ≈ μ + M , width unchanged
+  • μ now sits at the edge of the figure, or outside it
+WHAT SAMPLE SIZE CANNOT REPAIR
+
+
+Increasing the Sample Size on a Biased Design
+
+
+                                                             n = 100           n = 400
+
+
+
+ Width of the distribution                                   ___               ___
+
+
+ Distance of the centre from μ                               ___               ___
+
+
+
+
+                                 Sample size purchases width. It does not purchase aim.
+WHAT SAMPLE SIZE CANNOT REPAIR
+
+
+Three Mechanisms of Systematic Departure
+
+ Mechanism                         Who is excluded                              Illustration
+
+
+ Selection bias                    units the list never contained               a pay survey run through LinkedIn
+
+
+ Non-response bias                 units on the list that did not answer        5,000 sent, 300 returned
+
+ Survivorship bias                 units that ceased to exist                   returns of funds still trading
+
+
+
+
+                                 √n sits in a denominator. Bias sits nowhere in the formula at all.
+WHAT SAMPLE SIZE CANNOT REPAIR
+
+
+Practice 3 — Drawing from an Incomplete List
+Excel · a copy of the n = 100 sheet
+
+
+
+   Replace the source range with the profitable-firms list, leaving every other part of the sheet
+                               untouched. Then change n to 400.
+
+
+
+
+                                                                                                            CONSTRAINT
+                                                                  QUANTITY
+                         TIME                                                                      Both histograms keep the same
+                                                      One changed range, then one
+                     2 minutes                                                                      axis limits, and the true μ is
+                                                             changed cell
+                                                                                                           marked on each.
+
+
+
+
+                                      The distance from the centre to μ, at n = 100 and again at n = 400.
+Agenda
+01
+THE SAMPLING DISTRIBUTION
+The room produces the object of the session by hand, before it is named
+
+
+02
+NORMAL DISTRIBUTION & STANDARD ERROR
+How far that number moves, and the two quantities that govern the distance
+
+
+03
+WHAT SAMPLE SIZE CANNOT REPAIR
+Sample size purchases width. It does not purchase aim
+
+
+04
+THE CENTRAL LIMIT THEOREM
+Why the sample mean is bell-shaped when the population is not
+
+
+05
+ASSESSING NORMALITY
+The z-score and the Q-Q plot: examining whether a distribution is normal
+THE CENTRAL LIMIT THEOREM
+
+
+The Shape of a Mean Drawn from a Skewed Population
+
+  1                                                               2
+                                                                  It first looks bell-shaped at…
+  At n = 100, the sample mean will be…
+                                                                  (a) n = 5
+  (a) right-skewed as the population is
+                                                                  (b) n = 30
+  (b) symmetric and bell-shaped
+                                                                  (c) n = 100
+  (c) not predictable
+                                                                  (d) never, the population being skewed
+
+
+
+
+                            The population of revenue is strongly right-skewed, with a long upper tail.
+THE CENTRAL LIMIT THEOREM
+
+
+Practice 4 — Three Sample Sizes
+Excel · sheets SIM5, SIM30, SIM100
+
+
+
+      Run the machine at n = 5, then 30, then 100. Record the empirical standard error at each,
+                                            beside σ/√n.
+
+
+
+
+                                                                                                        CONSTRAINT
+                                                             QUANTITY
+                            TIME                                                             One common set of bins and one
+                                               Three sample sizes, 800 samples
+                     2 minutes                                                              fixed vertical scale across all three
+                                                            each
+                                                                                                        histograms.
+
+
+
+
+                                     Three widths, and the ratio between the first and the last.
+THE CENTRAL LIMIT THEOREM
+
+
+The Simulated Result at Three Sample Sizes
+
+ n                          Empirical SE   σ/√n        Skewness
+
+
+ 5                          ___            ___         pronounced right skew
+
+ 30                         ___            ___         residual skew, visible
+
+ 100                        ___            ___         approximately symmetric
+
+
+
+
+     All three centres sit at μ. The width follows σ/√n. Only the shape changes — and that is the theorem.
+THE CENTRAL LIMIT THEOREM
+
+
+What Repeated Sampling Shows
+
+
+
+
+                                     The ordering by width never reverses.
+      Across repeated sets of samples the three centres do not move, and the widths keep the ratio 1 : 1/√6 : 1/√20.
+
+      What is demonstrated is a property of the population and the sample size, not of the particular samples drawn.
+THE CENTRAL LIMIT THEOREM
+
+
+What a Single Sample Discloses about Its Own Distribution
+
+  IN PRACTICE                                                  THE ESTIMATOR
+  One sample is one real study                                 s/√n in place of σ/√n
+  It gives x̄ and s. It does not give σ, it does not give μ,   The true standard error needs σ, which is unavailable.
+  and it does not give the histogram of the sampling           The estimated standard error needs the sample alone
+  distribution.                                                — and for the row examined, the two agree closely.
+  • Everything else seen today is a luxury of the classroom    • For one such sample: s/√100 = ___ against σ/√100 = ___
+
+
+
+
+        A single sample discloses the width of the distribution it was drawn from. Session 8 begins here.
+THE CENTRAL LIMIT THEOREM
+
+
+The Central Limit Theorem
+
+
+                 x̄ approaches N(μ, σ²/n) as n grows — whatever the shape of the population.
+                            Required: an independent random sample, and a finite population variance.
+THE CENTRAL LIMIT THEOREM
+
+
+The Scope of the Theorem
+
+
+ The theorem states                    The theorem does not state
+
+ x̄ approaches a normal distribution   anything at all, where the sample is not random
+
+ Its centre is at μ                    that your sample will lies near μ
+
+ Its width is σ/√n                     anything about one sample
+
+ It holds for every population shape   that n = 30 is always enough
+Agenda
+01
+THE SAMPLING DISTRIBUTION
+The room produces the object of the session by hand, before it is named
+
+
+02
+NORMAL DISTRIBUTION & STANDARD ERROR
+How far that number moves, and the two quantities that govern the distance
+
+
+03
+WHAT SAMPLE SIZE CANNOT REPAIR
+Sample size purchases width. It does not purchase aim
+
+
+04
+THE CENTRAL LIMIT THEOREM
+Why the sample mean is bell-shaped when the population is not
+
+
+05
+ASSESSING NORMALITY
+The z-score and the Q-Q plot: examining whether a distribution is normal
+ASSESSING NORMALITY
+
+
+Comparing Two Distributional Shapes
+
+
+  THE DIFFICULTY
+                                                                      THE RESTATEMENT
+  A fitted curve on a histogram decides
+                                                                      Are these points collinear?
+  nothing
+                                                                      A Q-Q plot replaces the question do these two shapes
+  The comparison required is between two curved
+                                                                      agree with the question are these points on a straight
+  outlines, and visual comparison of curvature is
+                                                                      line.
+  unreliable.
+                                                                      • The second question the human eye answers accurately while the
+  • Similarity of two curves does not appear in that ranking at all     first does not
+  • Human eyes are not as good in identifying curves
+ASSESSING NORMALITY
+
+
+Standardizing a Sample Mean
+
+                                             z = (x̄ − μ) / (σ/√n)
+                                 The denominator is the Standard Error, not σ.
+ The quantity states how many standard errors the estimate lies from the parameter — and under the central limit
+                                   theorem it is standard normal for large n.
+ASSESSING NORMALITY
+
+
+Q-Q plot
+
+ DEFINITION
+ A Q-Q plot (quantile-quantile plot) is a graphical tool
+ used to compare two probability distributions—most
+ commonly a set of sample data against a theoretical
+ normal distribution.
+ • X-Axis (Theoretical Quantiles): The expected values if your data
+   followed the chosen reference distribution (like a standard normal
+   distribution, N(0,1))
+ • Y-Axis (Sample Quantiles): Your actual sorted data values.
+ • Reference Line: A diagonal 45-degree line. If the data points fall
+   neatly along this line, the two distributions match
+ASSESSING NORMALITY
+
+
+Practice 5 — A Q-Q Plot by Hand, Then by Machine
+Excel · sheet QQ · NORM.S.INV for the theoretical quantile
+
+
+
+    Build the ten-row table with NORM.S.INV and plot it as a scatter chart. Then repeat for the
+                                  800 sample means at each n.
+
+
+
+
+                                                                                                                CONSTRAINT
+                                                                         QUANTITY
+                        TIME                                                                          The horizontal axis carries the
+                                                             One plot of ten points, then three
+                      4 minutes                                                                       theoretical quantile. Plot the
+                                                                     of eight hundred
+                                                                                                     points only — add no fitted line.
+
+
+
+
+                                         Four Q-Q plots, and one sentence naming the pattern visible in each.
+ASSESSING NORMALITY
+
+
+Construction of a Q-Q Plot
+Ten observations, column by column
+
+
+ i                                   value, ascending   p = (i − 0.5)/n            theoretical quantile z
+
+
+ 1                                   ___                0.05                       −1.64
+
+ 2                                   ___                0.15                       −1.04
+
+ 3                                   ___                0.25                       −0.67
+
+ ⋯                                   ⋯                  ⋯                          ⋯
+
+ 9                                   ___                0.85                       +1.04
+
+ 10                                  ___                0.95                       +1.64
+
+
+
+
+     The plot is the ten pairs (Value and z). z-score inverts the cumulative normal: from a probability back to
+                                                        a value.
+ASSESSING NORMALITY
+
+
+Why a Q-Q Plot Is Straight under Normality
+
+                                                          CONSEQUENCES
+  THE ARGUMENT
+  x = σz + μ                                              The line is not fitted
+                                                          It is the consequence of the assumption under
+  If the data are normal, the observed quantile at any
+                                                          examination. Departure from it says where the
+  position is the standard normal quantile there,
+                                                          assumption fails, not merely whether it fails.
+  transformed by that expression. The transformation is
+                                                          • The ends of the plot carry the tails
+  linear, so it plots as a line.
+                                                          • A histogram has too few bars there to support a judgement
+
+
+
+
+                           The points are collinear because standardisation is linear.
+ASSESSING NORMALITY
+
+
+Q-Q Plot Patterns
+
+
+
+ Pattern                                Interpretation
+
+
+ Points collinear                       consistent with normality
+
+
+ Right end departs above the line       right-skewed — the largest values exceed what normality allows
+
+
+ Left end departs below the line        left-skewed
+
+
+ Both ends depart outward, an S shape   heavy-tailed — extremes in both directions are too frequent
+ASSESSING NORMALITY
+
+
+Q-Q Plots of the Three Sampling Distributions
+                                                                                                                                  n = 30
+                                                                                           n=5
+  THE SAME DATA, A BETTER ENCODING
+
+
+
+
+                                                                                                               sample mean
+  The eight hundred means, replotted
+
+
+
+
+                                                             sample mean
+  The three columns of sample means built earlier,
+  plotted against the standard normal quantiles instead of
+  drawn as histograms.
+                                                                                                                             theoretical quantile z
+  • n = 5 — the right end departs markedly above the line
+                                                                                      theoretical quantile z
+  • n = 30 — reduced, and still visible
+  • n = 100 — approximately collinear                                                    n = 100
+
+
+
+
+                                                                       sample mean
+                                                                                     theoretical quantile z
+ASSESSING NORMALITY
+
+
+The Sample Size Required for Approximate Normality
+
+ Population                                                            n required
+
+
+ already symmetric (ROA)                                               n = 5 to 10
+
+
+ mildly skewed                                                         n ≈ 30
+
+
+ strongly right-skewed (revenue, assets, income)                       n = 100 or more
+
+
+ very heavy-tailed                                                     convergence may be too slow to be of use
+
+
+
+
+                              The rule is not a number. The rule is: draw the population first.
+ASSESSING NORMALITY
+
+
+The Log-Normal Distribution
+
+
+
+
+  MECHANISM
+                                                                       CONSEQUENCES
+  Growth is multiplicative
+  Revenue is bounded below by zero and unbounded                       log(revenue) is the normal one
+  above, so a symmetric shape is not available to it. And              The upper tail displaces the mean above the bulk of the
+  each year's revenue is the previous year's multiplied by             observations, so the mean is not the typical value. A
+  a growth factor.                                                     logarithm also lowers the sample size at which row
+  • Accumulated multiplication is accumulated addition of logarithms   three of the previous table applies.
+  • And by the theorem of minute 96, an accumulated sum tends to a     • Session 13 builds a regression model on this statement
+    bell
+SUMMARY
+
+
+Three Things to Take Away
+
+
+
+
+ SAMPLING DISTRIBUTION               SAMPLE SIZE                          CENTRAL LIMIT THEOREM
+ An estimate is a random variable    Precision depends on the number      Regardless of the shape of the
+ with a distribution of its own —    in the sample, not the fraction of   population, the distribution of 𝑋 is
+ narrower than the data by √n, and   the population. Halving the error    approximately N(𝜇, 𝜎⁄√n),
+ never observed.                     costs four times the sample.         provided that n is large.
+

@@ -1,0 +1,773 @@
+Lecture 1: Introduction to Statistics and
+Probability
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+AGENDA
+01
+READING A NUMBER
+Hai con số chính thống trái nhau, ba câu đố, và vì sao trực giác hỏng có hệ thống.
+
+
+
+
+02
+THE MEANING OF PROBABILITY
+Cùng một dấu phần trăm, bốn loại nghĩa khác nhau. Bảy con số bạn đã gặp trong 24 giờ.
+
+
+
+
+03
+FROM DATA TO DECISION
+Một dòng dữ liệu được nâng dần lên thành một quyết định.
+
+
+
+
+04
+WHERE DATA COMES FROM
+Sơ cấp và thứ cấp, các nguồn dữ liệu Việt Nam, và chất lượng dữ liệu.
+
+
+
+
+05
+OPENING THE FILE
+Excel và Python, bộ dữ liệu xuyên suốt môn học, và sản phẩm nộp sau buổi.
+READING A NUMBER
+
+
+Vietnam, 2025 — which one is wrong?
+Two official numbers. Same agency, same country, same year
+
+
+
+
+                                                             Source: VIETNAM CHAMBER OF
+                                                             COMMERCE AND INDUSTRY
+
+
+
+
+                                                             Source: Government News
+READING A NUMBER
+
+
+Vietnam, 2025 — which one is wrong?
+Two official numbers. Same agency, same country, same year.
+
+
+
+
+                   Indicator                                  Value                                        Per month
+
+
+ A                 GDP per capita                             125.5 million VND / year (≈ USD 5,026)       ≈ 10.5 million VND
+
+ B                 Average income per capita                  from the Household Living Standards Survey   5.9 million VND
+
+
+                   The gap                                                                                 nearly 2×
+
+
+
+
+                                Vote now: A is wrong · B is wrong · both are wrong · I don't know
+READING A NUMBER
+
+
+Puzzle 1 — Bill Gates enters a bar
+There are 9 men sitting in a bar, each earns $1000 a month. Suddenly, Bill Gates moves in, earning $100,000,000 a month. What is the average income in that room now —
+and are the 9 men any richer?
+
+
+
+
+  HOW IT WAS MADE                                                                     WHAT IT CANNOT SAY
+  Sum the 10 incomes, divide by 10                                                    Nothing about how the 9 men live
+  Roughly 10 millions USD per person per month. The                                   One extreme value dragged the average away from
+  arithmetic is completely correct                                                    every single person in the room.
+
+
+
+
+                                    A number can be arithmetically right and descriptively false.
+READING A NUMBER
+
+
+Puzzle 2 — Which restaurant do you want to go?
+Restaurant A: 4.9 ★ from 54 ratings. Restaurant B: 4.4 ★ from 1,163 ratings.
+
+
+
+
+  HOW IT WAS MADE                                                              WHAT IT CANNOT SAY
+  4.9 is the mean of 54 numbers                                                4.9 cannot tell you the food is good
+  4.4 is the mean of 1,163. Both are means, computed                           54 people could all be friends of the owner. Maybe it is
+  the same way. They are not equally trustworthy, and                          not as trustworthy if the number of reviews is small —
+  nothing on the screen tells you that.                                        it has a name: sample size (cỡ mẫu).
+READING A NUMBER
+
+
+Puzzle 2, second answer — who writes a review at all?
+Have you ever rated a restaurant that was simply 'fine’ or ‘OK’? Did you write the review?
+
+
+
+
+  HOW IT WAS MADE                                                                        WHAT IT CANNOT SAY
+  Only customers who chose to write are                                                  The ratings are not the opinions that exist
+  counted
+  People write when they are delighted, or when they are                                 This is why rating distributions on every platform are J-
+  angry. Nobody sits down to record that a meal was                                      shaped, not bell-shaped.
+  acceptable.
+READING A NUMBER
+
+
+Puzzle 3 — where do you add the extra armour?
+WWII. Engineers record bullet holes on bombers that return to base. Holes cluster on wings and fuselage; cockpit and engines are almost clean. Your budget covers one
+area.
+READING A NUMBER
+
+
+Puzzle 3 — where do you add the extra armour?
+WWII. Engineers record bullet holes on bombers that return to base. Holes cluster on wings and fuselage; cockpit and engines are almost clean. Your budget covers one
+area.
+
+
+
+
+  HOW IT WAS MADE                                                                      WHAT IT CANNOT SAY
+  The data came from aircraft that came back                                           Not where aircraft get hit — where
+  An aircraft hit in the engine did not come back, so                                  survivors get hit
+  nobody recorded its holes. The clean areas are clean                                 Abraham Wald's answer: armour the cockpit and the
+  precisely because those hits are fatal.                                              engines, the areas with no holes at all.
+
+
+
+
+                              The question to ask of every dataset: who is missing from the data?
+READING A NUMBER
+
+
+Puzzle 4 — Should we trust him to take the penalty?
+Elite footballers convert around 70-75% of penalties
+READING A NUMBER
+
+
+Now apply it to our own dataset
+One dataset for all 14 sessions: Vietnamese listed firms, HOSE and HNX, one row per firm per year.
+
+
+
+
+  HOW IT WAS MADE                                                              WHAT IT CANNOT SAY
+  A firm is here because it is listed                                          Who is missing
+  Listing requires size, audited accounts, and a willingness                   Firms delisted after losses · bankrupt firms · small and
+  to disclose. Nothing else gets in.                                           household firms · firms that never wanted to disclose.
+
+
+
+
+                                          The data you can see is not the data that exists.
+READING A NUMBER
+
+
+Back to GDP vs Average income
+Neither one is wrong. They just measure two different things.
+
+
+
+
+                    A — GDP per capita                               B — Average income per capita
+
+
+ What is counted Total value added of the whole economy              Money households actually receive
+
+                    Corporate profit, taxes, depreciation, foreign
+ Includes                                                            Wages, business income, transfers
+                    investors' share
+ How it is
+                    National accounts, compiled from reports         A sample of households is interviewed
+ produced
+ Whose money
+                    Nobody's in particular                           A household's
+ is it
+
+ Verdict            Correct                                          Also correct — just a different question
+READING A NUMBER
+
+
+Three things follow from the examples
+
+  DEFINITION
+  Neither number means anything without its definition. A number without a definition is not information — it is
+  only a string of digits
+
+
+  SAMPLING ERROR
+  A number produced by a survey carries sampling error. Phase 2 of this course, Sessions 4 to 6, exists entirely
+  because of that
+
+
+
+  ASKING THE RIGHT QUESTION
+  The answers are derived from the question you are actually asking, not from the number
+
+
+
+
+                   Your thesis says 'income of Vietnamese people'. Which number do you use?
+READING A NUMBER
+
+
+Numbers in a small group
+
+
+  DESCRIPTIVE
+  Describing what you have in your hands
+  The group is closed and you know every member of it.
+  No uncertainty is involved at all.
+
+
+
+
+  INFERENTIAL
+  Talking about what you do not have
+  You hold a sample and want to say something about a
+  bigger population. Uncertainty is unavoidable — and it
+  can be measured.
+READING A NUMBER
+
+
+Descriptive or Inferential?
+
+  1                                                       2
+  The average mark in this class is 7.2                   VJCC students perform above average
+  DESCRIPTIVE — we hold every mark in the class.          INFERENTIAL — a claim about students we did not
+                                                          measure.
+
+
+
+  3                                                       4
+  60% of firms in our dataset made a profit               60% of Vietnamese firms are profitable
+  DESCRIPTIVE — the dataset is the whole group being      INFERENTIAL — and, as we saw, not supportable here
+  described.
+
+
+
+
+                           Statements 3 and 4 differ by four words: 'in our dataset'.
+READING A NUMBER
+
+
+“Thống kê” in English meanings
+Vietnamese uses 'thống kê' for both; English separates them by the article.
+
+
+
+
+  A STATISTIC
+  'The average mark in this class is 7.2' — one number computed from a group of data.
+
+
+
+
+  STATISTICS
+  'The Department of Statistics' — the name of the discipline.
+THE MEANING OF PROBABILITY
+
+
+'20% of this class received an A last semester.’
+What can you infer from this information about the situation of the class in the last semester? This semester?
+
+
+
+
+  HOW 20% WAS CALCULATED: Count the A                         There is no uncertainty here at all
+  grades, divide by the number of students                    This is pure description of a closed group. There is no
+  8 out of 40. The counting is finished. Every one of those   probability anywhere in this sentence
+  40 students has a final mark and we know all of them.
+THE MEANING OF PROBABILITY
+
+
+So you have a 20% chance of an A this semester?
+
+
+                                       Yes or no? Vote before the reveal.
+
+
+
+
+  A rate for a group is not a probability for an individual.
+   You are not a student drawn at random from last semester's class.
+   Your mark depends on how you study, on this year's exam, and on
+                            how it is graded
+THE MEANING OF PROBABILITY
+
+
+A 70% penalty conversion rate
+Someone counted the penalties he took and the ones he scored. 70% is the ratio of those two counts — and that is all it is.
+
+
+
+
+  1                                                                                      2
+  Not the next kick                                                                      Not from 10 kicks
+  The next kick goes in or it does not. No kick goes in 70%.                             7 out of 10 and 140 out of 200 are both '70%' and are
+  The number only exists across many repetitions.                                        not remotely the same evidence.
+
+
+
+
+  3                                                                                      4
+  Not in every situation
+                                                                                         Not a debt owed to him
+  Which goalkeepers? Which foot? Minute 90 of a final,
+                                                                                         He has just missed two in a row — he is not 'due'. The
+  or a training session? The rate averages over conditions
+                                                                                         ball does not remember anything.
+  that differ.
+THE MEANING OF PROBABILITY
+
+
+How can we calculate the rate?
+
+
+
+ The sentence                            What it actually is                            Uncertainty?
+
+ 20% of this class received an A         Description of a closed group                  None
+
+ This player converts 70% of penalties   Long-run frequency, silent on the next event   Yes, next event
+
+ 63% of Vietnamese support policy X      Inference from a sample to a population        Yes, measurable
+
+ 40% chance of rain this afternoon       Output of a model — nothing was counted        Yes, hard to check
+ CALCULATION OF THE STATISTICS
+
+
+ Number 1 — '60% chance of rain this afternoon'
+
+WHAT DOES IT MEAN?
+Not 60% of the city, not 60% of the
+afternoon
+It means: across all past days when the
+atmosphere looked like today, it rained on about
+60% of them.
+• It cannot be judged by today — if it stays dry the forecast was not
+  'wrong'
+• The only test: take the 100 days they said 60%, and check whether it
+  rained on about 60
+CALCULATION OF THE STATISTICS
+
+
+Number 2 — 'Your driver will arrive in 5 minutes'
+Did the app count that, or guess it?
+
+
+
+
+  HOW IT WAS MADE
+  Guessed, properly — it is a model output
+  Fed by traffic, distance, driver behaviour and time of
+  day. Nothing was counted. There is no '5' anywhere in
+  the data.
+
+
+
+
+  WHAT IT CANNOT SAY
+  The honest answer may be 3 to 12 minutes
+  The app shows a single number because a single
+  number is reassuring and a range is not.
+  CALCULATION OF THE STATISTICS
+
+
+  Number 3 — Vietnam's unemployment rate, 2025
+  Look at the situation what you see around you? Make a guess
+
+
+
+
+                                     2.22%                                                    9.04%
+                             Working-age population                               Young people, aged 15–24
+     To be counted as unemployed you must be actively looking for   Same country, same year, four times the rate. The group you
+                               work.                                                slice produces the number.
+
+
+
+
+                  Someone who has stopped looking is not unemployed — they have left the labour force.
+
+Source: Vietnamnet                                                     Source: Vietnamnplus
+CALCULATION OF THE STATISTICS
+
+
+Number 4 — 'You are in the top 0.5% of this artist's listeners'
+Top 0.5% compared with whom?
+
+
+
+
+  HOW IT WAS MADE
+  Everyone was ranked by listening time
+  You fell in the highest 0.5% of that ranking. This is a
+  percentile (phân vị) — a position, not a quantity.
+
+
+
+
+  WHAT IT CANNOT SAY
+  It cannot tell you how much you listened
+  You could be top 0.5% on four hours or on four
+  hundred. Change the comparison group — worldwide,
+  or Vietnam only — and your number moves without
+  you doing anything.
+CALCULATION OF THE STATISTICS
+
+
+Number 5 — who decided 'điểm chuẩn 27.9'?
+Which committee met and voted on that number? Nobody did.
+
+
+
+
+ 1                                      2                              3                             4
+ Applicants are ranked                  Places are filled              26.5 appears                  Next year it moves
+ By score, from the top                 From the top of that ranking   It is the score of the last   More applicants, fewer
+ down. No threshold exists              until the places run out.      person admitted — an          places, or an easier exam all
+ yet.                                                                  output, not a standard.       move it.
+
+
+
+
+                            So '27.9 this year versus 26.7 last year' does not mean this year was harder.
+CALCULATION OF THE STATISTICS
+
+
+Number 6 — '95% of our graduates were employed within a year'
+Who answered that survey?
+
+
+
+
+                                                           WHAT IT CANNOT SAY
+  HOW IT WAS MADE
+                                                           Someone still unemployed is less likely to
+  Computed over the people who replied
+                                                           reply
+  A survey was sent to graduates. The 95% is a statistic
+  about respondents, not about the graduating class.       Same family of problem as the restaurant ratings on and
+                                                           the returning bomber. Non-response bias
+CALCULATION OF THE STATISTICS
+
+
+Number 7 — what counts as one video view?
+
+  PLATFORM A
+  A view is counted from the first frame. Scrolling past your video at speed still registers.
+
+
+
+
+  PLATFORM B
+  A view requires three seconds of watching. Same audience, visibly smaller number.
+
+
+
+  PLATFORM C
+  A view requires most of the video. '1 million' here and '1 million' above are not the same event, and cannot be
+  compared.
+
+
+
+                                The number is not lying. The definition is doing the work.
+CALCULATION OF THE STATISTICS
+
+
+Three questions. Every number. Forever.
+
+
+
+
+  1                             2                           3
+  What does it count, under     Is it describing a closed   Who is missing from the
+  whose definition?             group, or predicting        data that produced it?
+                                something that has not
+                                happened?
+FROM DATA TO DECISION
+
+
+What is this chart showing?
+Can you guess what is the unit? Billion VND? Million USD? Number of employees?
+FROM DATA TO DECISION
+
+
+Comparison, then judgement
+
+
+  COMPARISON                                                      JUDGEMENT
+  'Flat for five years while the sector grew'                     'So delay the new plant'
+  We compared the number with itself over time and                A human weighed the evidence against goals, risk
+  with peers. Nothing new was measured — only                     appetite, and things not in the data at all. The number
+  compared.                                                       did not produce this sentence.
+
+
+
+
+                        Data supports the decision. It does not make it, and it does not carry the blame.
+FROM DATA TO DECISION
+
+
+You just climbed a ladder
+DIKW — we derived it first and named it second. That order is deliberate.
+
+
+
+
+  DATA                                       INFORMATION                    KNOWLEDGE                      WISDOM
+  VNM · Q1-2024 · a                          'Net revenue was               'Flat while the sector         'So delay the new
+  number                                     2,400 billion VND'             grew'                          plant'
+  To climb, add: labels, units,              To climb, add: comparison      To climb, add: judgement,      A person owns this rung,
+  entity, period.                            over time and against peers.   goals, risk, accountability.   and answers for it.
+
+
+
+
+            Is DIKW a law? And where does an AI model sit on this ladder? No agreed answer for either.
+FROM DATA TO DECISION
+
+
+You just climbed a ladder
+DIKW — we derived it first and named it second. That order is deliberate.
+WHERE DATA COMES FROM
+
+
+Primary and Secondary data
+
+                                                         SECONDARY · THỨ CẤP
+  PRIMARY · SƠ CẤP
+                                                         Someone else measured, for their own
+  You designed the measurement yourself
+                                                         purpose
+  You know the definitions because you wrote them.
+  Expensive, slow, and yours.                            Under their own definitions. Cheap, fast, and you must
+                                                         reconstruct what they did before you may use it.
+
+
+
+
+     Almost all of your data will be secondary. So the skill is not measuring — it is reading how someone
+                                                else measured.
+WHERE DATA COMES FROM
+
+
+Activity 1 — trace the source
+
+     Your group is given one economic indicator. Find it, and report where it really came from.
+
+
+
+
+                                                        SỐ LƯỢNG                                 RÀNG BUỘC
+                  THỜI LƯỢNG                Báo cáo đủ 5 mục: giá trị · nguồn         Phải trích được định nghĩa của chỉ
+   18 phút — 8 phút tra cứu theo           chính xác · ai sản xuất · sơ cấp hay      số, bằng đúng câu chữ của cơ quan
+  nhóm, 10 phút báo cáo trước lớp.           thứ cấp với nhóm bạn · tin đến            sản xuất. Một con số không có
+                                                   mức nào và vì sao.                   định nghĩa được không điểm.
+
+
+
+
+                               Một dòng viết lên bảng cho nhóm mình, giữ nguyên đến hết buổi.
+WHERE DATA COMES FROM
+
+
+Activity 1 — group assignments
+15 minutes · groups of 4–5 ·
+
+
+
+Report all 5: (1) value · (2) URL/source · (3) producing organisation · (4)
+primary/secondary for you · (5) trust level.
+
+ Group           Find this                                              Likely producer
+
+                                                                        National statistics
+ 1               CPI for the most recent month
+                                                                        office
+ 2               The refinancing rate currently in force                State Bank of Vietnam
+                 VN-Index at the last close, and the number of listed
+ 3                                                                      HOSE
+                 tickers on HOSE
+ 4               GDP per capita: Vietnam, Thailand, Indonesia           World Bank, WDI
+WHERE DATA COMES FROM
+
+
+What all four numbers have in common
+
+
+
+
+                                  Finding the definition is finding the data.
+    Every one of these numbers has an organisation accountable for it and a written definition you can read. And for
+    your group, all four are secondary — none of you measured anything, so you can only report who did, and how.
+WHERE DATA COMES FROM
+
+
+The producer itself is metadata
+
+
+
+
+  HOW IT WAS MADE                                       WHAT IT CANNOT SAY
+  Statistical agencies are government bodies            A wrong agency name cannot be verified
+  Their names and mandates change when the              Check the producer's current legal name at the moment
+  government reorganises. Vietnam's statistics agency   you cite it, not from memory. Current name, decree
+  was restructured in 2025 — the name you learned at    number and date are on today's reference sheet.
+  school may no longer be correct.
+WHERE DATA COMES FROM
+
+
+Measurement error is a property of the method
+A survey asks: 'what was your income last month?'
+
+
+
+
+  STREET VENDOR
+  Estimates. Income varies day to day and nothing was written down, so the answer is a recollection, not a record.
+
+
+
+  HIGH EARNER
+  May under-report, for reasons that have nothing to do with the survey. The error here runs in one predictable
+  direction.
+
+
+  SALARIED EMPLOYEE
+  Answers precisely. Three respondents, three error sizes — and the resulting average cannot be more accurate than
+  the question that produced it.
+
+
+
+             The fix is not to distrust the data. It is to know which direction the error runs, and say so.
+OPENING THE FILE
+
+
+Excel or Python?
+
+
+
+
+ Task                                            Excel                                         Python
+
+ How many firms and how many years are in        15 seconds. Everyone can do it, and you see
+                                                                                             3 lines. Also fast.
+ this file?                                      every cell.
+                                                 Open 40 times, paste 40 times. One mistake
+ Now do the same for 40 files, one per sector.                                              Change one line.
+                                                 and nobody notices.
+ Session 13: VIF, robust standard errors,
+                                                 Not available.                                Available.
+ logistic regression.
+                                                                                               Python to REPEAT it,
+ So                                              Excel to SEE the data.
+                                                                                               and to go further.
+OPENING THE FILE
+
+
+Programming Time!
+
+  YOU WILL BE ASKED TO
+  Run a prepared notebook and read the                    YOU WILL NOT BE ASKED TO
+
+  output                                                  Write code from a blank file
+  Say in plain economic language what it means and what   No memorising formulas. No deriving proofs. Every
+  it does not mean. Build tables and figures that meet    notebook is provided and already runs.
+  publication standards.
+
+
+
+
+                     The only requirement is that you understand what you are running.
+OPENING THE FILE
+
+
+Before we open the file — how many companies?
+Write your answer down first. Then we count, live.
+
+
+
+
+                   [N_ROWS]                                   [N_FIRMS]                               [N_YEARS]
+                   rows in the file                           unique tickers                          unique years
+    df.shape — this is the number almost             df['ma_ck'].nunique() — the actual   df['nam'].nunique() — and firms × years
+           everyone answers with.                          number of companies.                  is roughly the row count.
+OPENING THE FILE
+
+
+So what is one row?
+
+
+
+
+  HOW IT WAS MADE                                             WHAT IT CANNOT SAY
+  One row = one firm, in one year                             Row count cannot tell you firm count
+  The unit of observation is firm × year. This structure is   You have to look at vertically. And 'the average of this
+  called panel data. The same ticker appears once for         column' is now an ambiguous instruction.
+  every year it was listed.
+OPENING THE FILE
+
+
+You select the whole ROA column and press AVERAGE
+What did you just compute — the average ROA of a firm, or of a firm-year? Are those the same number?
+
+
+
+
+  HOW IT WAS MADE                                                                    WHAT IT CANNOT SAY
+  Every row got one vote                                                             It is not the average firm
+  A firm listed for 10 years is counted 10 times. A firm                             Excel will still return a number. It will still have four
+  listed for 2 years is counted twice. Your 'average firm' is                        decimal places. It will still be the wrong answer to the
+  silently weighted toward firms listed longest.                                     question you asked.
+
+
+
+
+                                   Raw data is not information until you know what one row is.
+OPENING THE FILE
+
+
+Activity 2 — can our dataset answer this?
+
+     Five statements. For each one decide YES or NO — can this dataset support it? — and give
+                                           the reason.
+
+
+ Statement                                              Verdict Why
+
+
+ The average ROA of Vietnamese firms is 7%              NO     Listed firms only
+
+ Listed real-estate firms carry more debt than listed
+                                                        YES    Description, inside the dataset's own scope
+ consumer-goods firms
+
+ Borrowing more reduces ROA                             NO     A causal claim. Observational data is not enough
+
+ In 2020, listed firms had lower ROA than in 2019       YES    Description over time
+
+ 80% of Vietnamese firms are profitable                 NO     Wrong population, and the sample is not random
+SUMMARY
+
+
+
+
+DEFINITION                         CLOSED OR PREDICTED                   WHO IS MISSING
+What does this number count, and   Is it describing a group I hold, or   Who is absent from the data that
+under whose definition? Phases 1   predicting one I do not? That split   produced it? This one never stops
+and 4 keep returning to this.      is Phase 2 and Phase 3.               being the right question.
+

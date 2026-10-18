@@ -1,0 +1,360 @@
+Course Review
+
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+THE BIG IDEA
+
+
+The whole course builds one equation
+
+
+
+                          Y = β₀ + β₁X₁ + … + ε
+
+  Y and X                             ε                                      β
+  The data sessions prepare the raw   The probability sessions explain why   Tests and regressions are steps of
+  material for the equation.          every β comes with error.              this same equation.
+14 sessio ns in fo ur b lo cks
+■ Data foundations      ■ Probability and Sampling              ■ Model core        ■ Research Process
+
+
+
+ Lecture 1           Lecture 2              Lecture 3               Lecture 4              Lecture 5                Lecture 6       Lecture 7
+ Introduction        Data and Descriptive   Data graphics           Probability, Bayes     Probability models       Sampling, CLT   Correlation, simple
+                     statistics                                                                                                     regression
+
+
+
+
+ Lecture 8           Lecture 9              Lecture 10              Lecture 11             Lecture 12
+ Research process,   Hypothesis testing     Two samples, rank       ANOVA → multiple       Special case:
+ estimation                                 tests                   regression             Categorical data, χ²,
+                                                                                           logarithm, time-series
+One question, six steps
+Step 4 is the core. Real analysis never runs in one direction.
+
+
+
+
+  1                      2                       3                         4                        5             6
+  Question and           Describe                Visualize                 Model                    Infer         Conclude
+  data
+
+
+
+
+                                The loop: a conclusion opens a new question, or sends you back to fix the model
+FOUNDATIONS · DATA
+
+
+Know the type of every variable
+  CATEGORICAL · NOMINAL                                                 CATEGORICAL · ORDINAL
+
+
+  Counts and shares · bar chart · χ² test · enters a model as dummies   Order matters, distances do not · median and ranks · rank-based tests
+
+
+
+
+  NUMERICAL · DISCRETE                                                  NUMERICAL · CONTINUOUS
+
+
+  Countable values · mean and SD · bar chart or histogram               Mean, SD, skewness · histogram and scatter · Y or X in a regression
+
+
+
+
+  The type of Y and of each X decides which type of the model applies.
+FOUNDATIONS · DATA
+
+
+Describing one variable: center, spread, shape
+
+  Center                                        Spread                                        Shape
+  Mean uses every value; the median is the      Variance, SD, IQR. The variance of Y is       Skewness and outliers. A right tail (mean
+  middle one. A long tail pulls the mean, not   SST/(n − 1): the total every model tries to   above median) suggests modelling ln(Y).
+  the median.                                   split.
+FOUNDATIONS · DATA
+
+
+Choose the chart by the question
+Question                                           Chart                            In the wine data
+
+How is one variable distributed?                   Histogram, boxplot               Price and ln(Price)
+
+How do groups compare?                             Side-by-side boxplots            Price by region
+
+How do two variables move together?                Scatter plot                     Price against Score
+
+How are categories shared?                         Bar chart                        Wines by variety
+
+How does a value change over time?                 Line chart                       Not in a cross-section
+
+
+  Look before you model: the histogram decides log or not; the scatter decides straight or curved.
+FOUNDATIONS · PROBABILITY
+
+
+Probability rules and the conditional trap
+COMPLEMENT
+P(not A) = 1 − P(A)
+                                       P(A | B) ≠ P(B | A)
+ADDITION
+                                       A p-value is P(data this extreme | H₀), not the probability that H₀
+P(A or B) = P(A) + P(B) − P(A and B)
+                                       is true.
+CONDITIONAL
+                                       Hypothetical screening test: 1% prevalence, 90% sensitivity, 90%
+P(A | B) = P(A and B) / P(B)
+                                       specificity. Only about 8% of positive results are true positives.
+INDEPENDENCE
+P(A and B) = P(A) × P(B)
+                                       Regression predicts E[Y | X]: a mean conditional on X.
+BAYES
+P(A | B) = P(B | A) × P(A) / P(B)
+FOUNDATIONS · PROBABILITY
+
+
+Random variables and their distributions
+  DISCRETE                                              CONTINUOUS
+
+  Binomial(n, p)                                        Normal(μ, σ) · z = (x − μ) / σ
+  Number of successes in n independent trials, each
+  with probability p.
+  Example: how many of 20 shop visitors buy a bottle.
+
+
+  E[X] = np
+                                                        About 68% of values lie within 1σ of μ, 95% within 2σ, and 99.7% within 3σ.
+  Var(X) = np(1 − p)
+FOUNDATIONS · PROBABILITY
+
+
+Sampling distributions and the CLT
+  Each sample gives a different x̄                                         Every SE in the course starts here
+  The distribution of x̄ over all possible samples is the sampling         The Std Error column of the regression output applies the same
+  distribution. Its standard deviation is the standard error, SE = σ/√n.   idea to coefficients.
+
+
+  CLT: for large n, x̄ is approximately normal, whatever the shape of
+  the population.
+FOUNDATIONS · INFERENCE
+
+
+Estimation: estimate ± margin of error
+
+   estimate ± Test Statistics × SE
+
+  CONFIDENCE INTERVAL            READING A 95% INTERVAL
+
+  Mean ± Statistics × SE         Correct: 95% of intervals built this way contain the true mean μ.
+
+
+                                 Not: 95% of data lie between 2 values of the confidence interval
+FOUNDATIONS · INFERENCE · S9
+
+
+H yp o thesis testing : sig nal o ver no ise
+ 1                                           2                                       3                                        4
+ H ypotOeses                                 Signal ÷ noise                          p-value                                  Gecision
+ H₀: μ = 25                                  t = (29.58 − 25) / 1.20 = 3.81          Chance of a t this extreme if H₀         p < 0.05: reject H₀. The mean
+ H₁: μ ≠ 25                                                                          were true: 0.00015                       price is above $25.
+
+
+
+ TYPE I ERROR                                            TYPE II ERROR                                          SIGNIFICANT ≠ IMtORTANT
+ Rejecting a true H₀. Its probability is α, fixed in     Missing a real effect. A larger n makes it less        Read the size of an effect in real units before
+ fixed in advance.                                       likely.                                                its p-value.
+The model ladder
+Each step adds exactly one thing. The separate tests are one equation with a longer right-hand side.
+
+Y                X                          Equation                            Familiar names                   What's new
+
+Continuous       No X                       Y = β₀ + ε                          Mean, CI, one-sample t           A mean has error
+
+Continuous       One dummy X                Y = β₀ + β₁D + ε                    Two-sample t                     Comparison
+
+Continuous       One X, 3+ groups           Y = β₀ + Σ βⱼDⱼ + ε                 One-way ANOVA                    SST split, F
+
+Continuous       One continuous X           Y = β₀ + β₁X + ε                    Correlation, simple regression   Slope
+
+
+Continuous       Several continuous X       Y = β₀ + β₁X₁ + β₂X₂ + … + ε        Multiple regression              Control
+
+Categorical      Categorical X              P(Y = 1 | X)                        Crosstab, Pearson's χ²           Counts, not means
+CONTINUOUS Y            CONTINUOUS Y · NO X · L2 · L6 · L8 · L9
+
+ No X
+                        Even one number has error
+ One dummy X
+
+
+ One X, 3+ groups
+                           Y = β₀ + ε
+ One continuous X
+
+
+ Several continuous X     COEFFICIENT MEANS                            FAMILIAR NAMES
+
+CATEGORICAL Y             β₀ = ȳ, the sample mean                      Descriptive statistics, CI for μ, one-sample
+                                                                       t
+ Categorical X
+
+
+                          What's new: even a mean changes from sample to sample, so it has a standard error and a
+                          confidence interval.
+CONTINUOUS Y            CONTINUOUS Y · ONE CATEGORICAL X · L10 · L12
+
+ No X
+                        Comparing groups is regression on dummies
+ One dummy X
+
+
+ One X, 3+ groups
+                          ONE DUMMY X (2 GROUPS)                         ONE X WITH 3+ GROUPS
+ One continuous X
+                          Y = β₀ + β₁D + ε                               Y = β₀ + Σ βⱼDⱼ + ε
+ Several continuous X     β₁ = difference in means between the two       βⱼ = difference from the reference group
+CATEGORICAL Y             groups
+                          Two-sample t · Welch · Mann–Whitney            One-way ANOVA · Tukey · Kruskal–Wallis
+ Categorical X
+
+
+                          What's new: comparison. With 3+ groups we also split SST = SSR + SSE and use the F statistic.
+CONTINUOUS Y            CONTINUOUS Y · CONTINUOUS X · L7 · L12
+
+ No X
+                        From a slope to holding others fixed
+ One dummy X
+
+                          ONE CONTINUOUS X                              SEVERAL CONTINUOUS X
+ One X, 3+ groups
+                          Y = β₀ + β₁X + ε                              Y = β₀ + β₁X₁ + β₂X₂ + … + ε
+ One continuous X
+                          β₁ = change in Y when X rises by one unit
+ Several continuous X                                                   βⱼ = effect of Xⱼ holding the other X
+                          Pearson correlation · simple regression       constant
+CATEGORICAL Y
+                                                                        Multiple regression · F for groups of variables
+ Categorical X
+
+
+
+                          What's new: a slope instead of a group difference, then control. Leave out a confounder and
+                          the coefficient is biased.
+CONTINUOUS Y            CATEGORICAL Y · CATEGORICAL X · L4 · L11
+
+ No X
+                        When Y is a count: tearson's χ²
+ One dummy X
+
+
+ One X, 3+ groups
+                           χ² = Σ (O − E)² / E
+ One continuous X
+
+
+ Several continuous X     THE QUESTION                                   FROM THE CROSSTAB
+
+CATEGORICAL Y             Are the two categorical variables              Compare observed counts O with counts
+                          independent?                                   E expected under independence
+ Categorical X
+
+
+
+
+                          What's new: counts instead of means. Same role as F: a large signal relative to random noise
+                          rejects H₀.
+The regression output holds the course
+REGRESSION STATISTICS                               ANOVA
+
+C ell              Sym b o l     S essio n                             df           SS    MS            F                   S ig nificance F
+
+M ultip le R       |r|           L7                 Reg ressio n       k            SSR   MSR           M S R/M S E         p
+
+R S q uare         S S R/S S T   L7 · L11           Resid ual          n−k−1        SSE   MSE
+
+A d justed R²      R̄²           L11                To tal             n−1          SST
+
+Stand ard Erro r   se            L7                 S essio n          L11          L11   L11           L11                 L9
+
+O b servatio ns    n             L6
+
+
+COEFFICIENTS
+
+                   F oef.              Std Erro r            t Stat          P- value     Lo wer 95%                  U p p er 95%
+
+Intercep t         b₀                  S E(b ₀)              b ₀/S E         p            b ₀ − t·S E                 b ₀ + t·S E
+
+X₁                 b₁                  S E(b ₁)              b ₁/S E         p            b ₁ − t·S E                 b ₁ + t·S E
+
+S essio n          L7 · L11            L6                    L9              L9           L8                          L8
+Fo ur keys to read ing the o utp ut
+
+ STD ERROR ← L6                                               LOWER / UttER 95% ← L8
+
+ Standard error                                               Confidence interval
+ Same idea as σ/√n: a coefficient computed from a sample      Still estimate ± t·SE, with the coefficient as the estimate.
+ sample moves when the sample changes.                        estimate.
+
+
+
+
+ T STAT, P-VALUE ← L9                                         ANOVA .LOCK ← L11
+
+ Testing H₀: β = 0                                            SST = SSR + SSE
+ The numerator is the signal, the denominator is the noise.   With only dummies as X, this is exactly the one-way
+                                                              ANOVA table.
+LINKS UP
+
+
+What each block feeds into the next
+     L2 → no-X model                                                  L3 → step 4 (model)
+
+  The sample mean is β₀ of the model with no X. The                Histograms before and after logs decide whether Y enters
+  variance of Y is the SST that every later model tries to split   as is or in logs. A scatter shows whether the relationship is
+  up.                                                              straight.
+
+
+
+     L4 → steps 4 and 5                                                L5–6 → step 5 (infer)
+
+  Regression is a conditional mean E[Y | X]. A p-value is a        The CLT is why b₁ is close to normal for large n, even if Y is
+  probability conditional on H₀. Flipping the condition is the     skewed. SE shrinks with √n, so large n makes tiny effects
+  same mistake in both.                                            “significant”.
+LINKS UP
+
+
+What each block feeds into the next
+     L7 → several-X model                                              L10 → dummy X, 3+ groups
+
+  Confounders and Simpson's paradox are the problem.               The decision tree for choosing a test is really choosing a
+  Multiple regression in L12 is a partial fix: put the             model: by type of X, number of X, and whether
+  confounder into the equation.                                    assumptions hold.
+
+
+
+     L12 → categorical Y                                               L9 → step 6 (conclude)
+
+  χ² is the counterpart of F when Y is a count: it also weighs a   “Significant” is not “important”. Read a coefficient in real
+  signal (O − E) against random variation.                         units before talking about its p-value.
+L12 · .EYOND THE CORE
+
+
+Three ways past the basic eq uatio n
+
+
+  L12                                          L12                                         L12
+
+  Change the form                              Change the type of Y                        Drop independence
+  Y or X enters the equation in logs           Binary Y: model P(Y = 1 | X) with           Time series: today's observation
+  logs instead of raw units.                   with logistic regression.                   depends on yesterday's.
+
+
+
+
+  All three keep the frame Y = f(X) + ε. This is the door to the courses that come next.
+

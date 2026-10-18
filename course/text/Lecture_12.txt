@@ -1,0 +1,360 @@
+Lecture 12: Special Cases of the
+Dependent Variable
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+
+
+
+
+                                                         1
+Four cases of the same equation
+
+01
+THE COMMON FRAME
+What stays fixed and what changes when the type of Y changes.
+
+
+02
+SKEWED Y: LOG MODELS
+ln(Y) on the left; coefficients read as percentage changes.
+
+
+03
+BINARY Y: PROBABILITY MODELS
+Y = 0/1; the linear probability model and logistic regression.
+
+
+04
+Y OVER TIME
+Observations ordered in time; the independence assumption breaks.
+Four cases of the same equation
+
+01
+THE COMMON FRAME
+What stays fixed and what changes when the type of Y changes.
+
+
+02
+SKEWED Y: LOG MODELS
+ln(Y) on the left; coefficients read as percentage changes.
+
+
+03
+BINARY Y: PROBABILITY MODELS
+Y = 0/1; the linear probability model and logistic regression.
+
+
+04
+Y OVER TIME
+Observations ordered in time; the independence assumption breaks.
+THE COMMON FRAME
+
+
+The invariant right-hand side
+
+
+
+     The right-hand side β₀ + β₁X₁ + … + βₖXₖ stays the same. What changes is how Y enters the
+                         left-hand side, and therefore how each β is read.
+
+                   The interpretation "holding the other X constant" carries over to every case in this block.
+THE COMMON FRAME
+
+
+Map of the cases
+
+ Type of Y                  Left-hand side       β is read as                       Estimated by
+
+
+ Continuous, symmetric      Y                    Change in Y, in its units          OLS
+
+
+ Continuous, right-skewed   ln(Y)                Percentage change in Y             OLS
+
+
+ Binary (0/1)               P(Y = 1)             Change in probability              OLS (LPM)
+
+
+ Binary (0/1)               ln(odds)             Odds ratio, via e^β                Logistic regression
+
+
+ Observed over time         Yₜ                   As above; errors not independent   OLS with time terms
+
+
+                            Chosen by the type
+ All cases                                       Read by the left-hand side         Same right-hand side
+                            of Y
+Four cases of the same equation
+
+01
+THE COMMON FRAME
+What stays fixed and what changes when the type of Y changes.
+
+
+02
+SKEWED Y: LOG MODELS
+ln(Y) on the left; coefficients read as percentage changes.
+
+
+03
+BINARY Y: PROBABILITY MODELS
+Y = 0/1; the linear probability model and logistic regression.
+
+
+04
+Y OVER TIME
+Observations ordered in time; the independence assumption breaks.
+SKEWED Y: LOG MODELS
+
+
+Log-linear model
+ln(Y) = β₀ + β₁X₁ + … + βₖXₖ + ε
+
+
+
+                                                              CONSEQUENCE
+  MECHANISM
+                                                              Coefficients become percentages
+  Logarithms turn ratios into differences                     A one-unit increase in X changes Y by about 100·β
+  ln(1.10 × Y) − ln(Y) = ln(1.10) ≈ 0.10. A constant          percent. For a dummy, the exact effect is (e^β − 1) × 100
+  difference in ln(Y) is a constant percentage change in Y.   percent.
+  Taking logs also pulls in the long right tail.              • Small β (below about 0.1): 100·β is a good approximation
+                                                              • Large β or dummies: use (e^β − 1)
+
+
+
+
+         Why might a 1-point higher score add a fixed percentage rather than a fixed number of dollars?
+SKEWED Y: LOG MODELS
+
+
+Why use log-linear model
+ln(Y) = β₀ + β₁X₁ + … + βₖXₖ + ε
+
+
+
+
+ Log-transformed dependent variable models
+ A log-linear model is often used when the relationship
+ between the variables is multiplicative rather than
+ additive
+ • Growth or Changes are Percentage-Based
+    (Exponential)
+ • Highly Skewed Data (Non-Normality)
+ • Heteroskedasticity – Không đồng nhất phương sai
+    (Unstable Variance)
+ • Modeling "Elasticity" in Economics (Log-Log Variant)
+SKEWED Y: LOG MODELS
+
+
+Four functional forms
+
+
+ Model                 Equation               Reading of β₁
+
+
+ Linear                Y = β₀ + β₁X           X + 1 unit → Y changes by β₁ units
+
+
+ Log-linear            ln(Y) = β₀ + β₁X       X + 1 unit → Y changes by about 100·β₁ %
+
+
+ Linear-log            Y = β₀ + β₁ln(X)       X + 1 % → Y changes by about β₁/100 units
+
+
+ Log-log               ln(Y) = β₀ + β₁ln(X)   X + 1 % → Y changes by about β₁ % (elasticity)
+
+
+ Rule                  A log on one side      That side is read in percent
+SKEWED Y: LOG MODELS
+
+
+Interpreting Log-linear model
+
+
+
+                       The Quick Approximation Method              The Exact Method
+                             %Δ𝑌 ≈ 𝛽1 × 100%                    %Δ𝑌 = 𝑒 𝛽1 − 1 × 100%
+
+
+
+     Model Type               Dependent (Y)   Independent (X)    Change in X          Expected Change in Y
+                                     𝑌                  𝑋
+     Level–Level                                                 1 unit increase      𝛽1 units change
+
+                                   ln 𝑌                 𝑋
+     Log–Level                                                   1 unit increase        𝑒 𝛽1 − 1 × 100% change
+
+                                     𝑌             ln 𝑋
+     Level–Log                                                   1% increase            𝛽1 /100 units change
+
+                                   ln 𝑌            ln 𝑋
+     Log–Log                                                     1% increase          𝛽1 %change
+Four cases of the same equation
+
+01
+THE COMMON FRAME
+What stays fixed and what changes when the type of Y changes.
+
+
+02
+SKEWED Y: LOG MODELS
+ln(Y) on the left; coefficients read as percentage changes.
+
+
+03
+BINARY Y: PROBABILITY MODELS
+Y = 0/1; the linear probability model and logistic regression.
+
+
+04
+Y OVER TIME
+Observations ordered in time; the independence assumption breaks.
+BINARY Y: PROBABILITY MODELS
+
+
+Linear probability model (LPM)
+OLS with a 0/1 dependent variable: P(Y=1) = β₀ + β₁X₁ + β₂X₂ + ...
+
+
+
+                                                                     CONSEQUENCE
+  MECHANISM
+                                                                     β is a change in probability
+  The mean of a 0/1 variable is a probability                        A one-unit increase in X changes P(Y = 1) by β,
+  When Y takes only the values 0 and 1, E[Y | X] = P(Y = 1           measured in percentage points.
+  | X). OLS on Y therefore estimates a probability as a              • Easy to estimate and read in Excel
+  straight line in X.                                                • Fitted probabilities can fall below 0 or above 1
+                                                                     • The effect of X is forced to be the same at every level
+BINARY Y: PROBABILITY MODELS
+
+
+Logistic regression
+ln( p / (1 − p) ) = β₀ + β₁X₁ + … + βₖXₖ, with p = P(Y = 1 | X)
+
+
+
+
+                                                                               CONSEQUENCE
+  MECHANISM
+                                                                               β is read through the odds ratio
+  The model is linear in the log-odds                                          A one-unit increase in X multiplies the odds of Y = 1 by
+  The odds p/(1 − p) can take any positive value, and their                    e^β.
+  logarithm any real value. The right-hand side is fitted to                   • Fitted probabilities always lie between 0 and 1
+  ln(odds), not to p itself.                                                   • Estimated by maximum likelihood, not by the Excel ToolPak
+                                                                               • Output reports z-statistics and a pseudo-R² instead of t and R²
+
+
+
+                                              • 𝛽 > 0: higher 𝑋 increase log-odds (the probability
+                                              of the event happening 𝑌 = 1).
+                                              • 𝛽 < 0: higher 𝑋 decrease log-odds (the probability
+                                              of the event happening 𝑌 = 1).
+                                              • 𝛽 = 0: 𝑋 has no effect on the outcome.
+                                              • Odds Ratio (OR) = 𝑒 𝛽 : For every 1 unit increase in X,
+                                              the odds of Y happening increase by (OR – 1)
+BINARY Y: PROBABILITY MODELS
+
+
+Linear Probability Model vs Logistic regression
+    BINARY Y: PROBABILITY MODELS
+
+
+    Test for Goodness of Fit
+    Does the proportion follow the expected value?
+
+
+
+                                                               Observed        Probability       Expected         Component of
+                                                     Cells
+                                                               Frequency (O)   under H0​ (p0​)   Frequency (E)    χ2
+                                                                                                                        𝑛1 − 𝐸1 2
+Reality vs Theory                                                    𝑛1              𝑝10           𝐸1 = 𝑛 ⋅ 𝑝10
+                                                     Group 1                                                               𝐸1
+O is the real data you actually collected.
+E is the theoretical data you expect to see if
+                                                                                                                        𝑛2 − 𝐸2 2
+there is absolutely NO connection between                            𝑛2              𝑝20           𝐸2 = 𝑛 ⋅ 𝑝20
+                                                     Group 2                                                               𝐸2
+the two variables
+
+                                                     ...       ...             ...               ...              ...
+                                                                                                                        𝑛𝑘 − 𝐸𝑘 2
+                                                                     𝑛𝑘              𝑝𝑘0           𝐸𝑘 = 𝑛 ⋅ 𝑝𝑘0
+                                                     Group 𝑘                                                               𝐸𝑘
+
+
+                                                                                                                  𝜒2
+                                                                     𝑛                                  𝑛
+                                                     Total                     1                                     𝑂−𝐸 2
+                                                                                                                  =෍
+                                                                                                                      𝐸
+BINARY Y: PROBABILITY MODELS
+
+
+The Pearson Chi-squared Test, Step by Step
+
+
+
+
+ STEP 1                                                                 STEP 4               STEP 5
+                               STEP 2             STEP 3
+ Hypotheses                                                             Compute              Conclude
+                               Test statistic     Rejection region
+   𝐻0 : 𝑝1 = 𝑝10 , 𝑝2                                                   𝜒2 =                 Compare 𝜒 2 with
+                                        𝑘         Calculated using                             2
+   = 𝑝20 , … , 𝑝𝑘 = 𝑝𝑘0         2
+                                    𝑛𝑖 − 𝑛𝑝𝑖0 2   𝛼 and 𝑑. 𝑓. = 𝑘 − 1   σ𝑘𝑖=1
+                                                                              𝑛𝑖 −𝑛𝑝𝑖0 2
+                                                                                         =   𝜒𝛼,𝑘−1   to decide
+                               𝜒 =෍                                              𝑛𝑝𝑖0
+  𝐻₁ : At least one 𝑝𝑖                 𝑛𝑝𝑖0                2                                 whether to reject 𝐻0 .
+                                    𝑖=1                   𝜒𝛼,𝑘−1               𝑂−𝐸 2
+ ≠ 𝑝𝑖0 with 𝑖 = 1, … , 𝑘                                                σcells                                2
+                                                                                             Reject if 𝜒 2 ≥ 𝜒𝛼,𝑘−1
+                                                                                  𝐸
+Four cases of the same equation
+
+01
+THE COMMON FRAME
+What stays fixed and what changes when the type of Y changes.
+
+
+02
+SKEWED Y: LOG MODELS
+ln(Y) on the left; coefficients read as percentage changes.
+
+
+03
+BINARY Y: PROBABILITY MODELS
+Y = 0/1; the linear probability model and logistic regression.
+
+
+04
+Y OVER TIME
+Observations ordered in time; the independence assumption breaks.
+Y OVER TIME
+
+
+Time-series regression
+Yₜ = β₀ + β₁X₁ₜ + … + εₜ, with t = 1, 2, …, T
+
+
+
+                                                                 CONSEQUENCE
+  MECHANISM
+                                                                 Standard errors are no longer reliable
+  Neighbouring observations share shocks                         The usual SE assumes independent errors; with
+  When the same unit is observed period after period, a          correlated errors it is typically too small, so t-statistics
+  shock in period t usually persists into t + 1. The errors εₜ   are too large and p-values too small.
+  and εₜ₊₁ are then correlated.                                  • Add the lagged value Yₜ₋₁ as a regressor
+                                                                 • Add a time trend and seasonal dummies
+
+
+
+
+   Independence is the assumption behind every standard error in this course; time series is where it fails
+                                                  first.
+

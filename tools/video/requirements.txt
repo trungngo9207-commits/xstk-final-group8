@@ -1,0 +1,10 @@
+pandas
+openpyxl
+numpy
+scipy
+statsmodels
+matplotlib
+pillow
+fonttools
+imageio-ffmpeg
+piper-tts

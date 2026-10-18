@@ -1,0 +1,757 @@
+Lecture 11: From Two To Multiples
+Treatment
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+
+
+
+
+                                                         1
+Outline
+01
+ANALYSIS OF VARIANCE
+From two treatments to several: one F-test for all groups, then pairwise comparisons
+
+
+02
+ANOVA AS A REGRESSION
+Coding a category as dummy variables — and getting the same F from the Regression tool
+
+
+03
+ONE CONTINUOUS PREDICTOR
+Floor area enters; the ANOVA block of a regression output; F = t²
+
+
+04
+MULTIPLE REGRESSION
+Both kinds of variable together: partial coefficients, t versus F, adjusted R²
+Outline
+01
+ANALYSIS OF VARIANCE
+From two treatments to several: one F-test for all groups, then pairwise comparisons
+
+
+02
+ANOVA AS A REGRESSION
+Coding a category as dummy variables — and getting the same F from the Regression tool
+
+
+03
+ONE CONTINUOUS PREDICTOR
+Floor area enters; the ANOVA block of a regression output; F = t²
+
+
+04
+MULTIPLE REGRESSION
+Both kinds of variable together: partial coefficients, t versus F, adjusted R²
+ANALYSIS OF VARIANCE
+
+
+From Two Treatments to Several
+The chain now tests three layouts. Why not simply run a t-test for every pair?
+
+
+
+
+                       14%                                                       26%                                     76%
+              3 GROUPS · 3 PAIRS
+                                                                        4 GROUPS · 6 PAIRS                      8 GROUPS · 28 PAIRS
+  Chance of at least one false alarm when
+                                                             1 − 0.95⁶. One false alarm in four sets of   1 − 0.95²⁸. A 'significant' pair is now
+  every group is identical, each test at α =
+                                                                          comparisons.                            almost guaranteed.
+              0.05: 1 − 0.95³.
+
+
+
+
+               α = 0.05 holds for one test. Across many tests, the chance of some false alarm grows fast.
+ANALYSIS OF VARIANCE
+
+
+One Question for All k Groups
+
+
+
+
+     H₀ : μ₁ = μ₂ = … = μₖ versus H₁ : not all μᵢ are equal. One test, so the false-alarm rate is α —
+                                                   exactly.
+       The alternative is not that every mean differs from every other. It is only that at least one differs. Analysis of
+     variance (ANOVA) answers this single question; a significant result says that the treatments are not all alike, and
+                                        says nothing yet about which of them differ.
+ANALYSIS OF VARIANCE
+
+
+Example: Three Store Layouts
+Each layout is used in four stores · weekly sales, million VND
+
+
+
+ Layout                      Weekly sales of the four stores              Mean x̄ᵢ         Sample variance sᵢ²
+
+
+ A                           48 · 52 · 50 · 46                            49               6.67
+
+
+ B                           55 · 57 · 53 · 59                            56               6.67
+
+
+ C                           50 · 54 · 52 · 48                            51               6.67
+
+
+ All 12 stores               grand mean x̄ = 52
+
+
+
+
+     The three means differ. Is the difference larger than the spread inside each layout would produce by
+                                                    chance?
+ANALYSIS OF VARIANCE
+
+
+Two Sources of Variation
+
+  MECHANISM                                                            CONSEQUENCE
+  Between groups and within groups                                     F = between ÷ within
+  Between groups: how far the group means sit from the                 If H₀ is true, both quantities estimate the same σ², and
+  grand mean. Within groups: how far observations sit                  their ratio should be near 1. A ratio well above 1 means
+  from their own group mean — noise that no treatment                  the group means are further apart than within-group
+  explains.                                                            noise can explain.
+  • Between: signal plus noise                                         • F near 1: no evidence against H₀
+  • Within: noise only                                                 • F large: reject H₀
+
+
+
+
+                       Think about the other statistics like z-statistic, t-statistic. Does the concept still hold?
+MATCHED PAIR COMPARISONS
+
+
+F-Statistic
+
+
+  F-test
+  An F-test is a statistical test that compares variances. It
+  is used to determine if the variances of two samples, or
+  if the ratios of variances among multiple samples, are
+  significantly different.
+  Null Hypothesis (H₀): σ₁² = σ₂² (The population
+  variances are equal).
+  Alternative Hypothesis (H₁):
+  • σ₁² ≠ σ₂² (Two-tailed)
+  • σ₁² > σ₂² (Right-tailed)
+  • σ₁² < σ₂² (Left-tailed)
+
+
+
+          Foundational mathematical engine behind ANOVA (Analysis of Variance) and Multiple linear regression
+ANALYSIS OF VARIANCE
+
+
+Same Means, Different Conclusions
+
+
+
+
+           WHY THE WITHIN-GROUP SPREAD MATTERS
+           The group means alone decide nothing
+           Two datasets with identical group means 49, 56 and 51. In the first, stores within each layout are tightly
+           clustered; in the second, they are widely scattered.
+           • Tight clusters: between-group gap stands out, F large
+           • Wide scatter: the same gap is lost in noise, F small
+ANALYSIS OF VARIANCE
+
+
+The Decomposition of Variation
+𝑆𝑆𝐵(Sum of Squares Between - Tổng bình phương giữa các nhóm):
+                            𝑆𝑆𝐵 = ෍ 𝑛𝑖 𝑥ҧ𝑖 − 𝑥ҧ 2   df: 𝑘 − 1
+
+𝑆𝑆𝑊(Sum of Squares Within - Tổng bình phương nội bộ nhóm):
+                            𝑆𝑆𝑊 = ෍ 𝑛𝑖 − 1 𝑠𝑖2      df: 𝑁 − 𝑘
+
+𝑆𝑆𝑇(Sum of Squares Total - Tổng bình phương): 𝑆𝑆𝑇 = 𝑆𝑆𝐵 + 𝑆𝑆𝑊
+                       𝑆𝑆
+Eta-squared: 𝜂2 =       between = 𝑆𝑆𝐵
+                        𝑆𝑆        𝑆𝑆𝑇
+                          total
+ANALYSIS OF VARIANCE
+
+
+The Decomposition of Variation
+
+
+
+                       𝑀𝑆𝐵(Mean Squares Between Groups- Trung bình bình phương giữa các nhóm):
+                                                           𝑆𝑆𝐵
+                                                  𝑀𝑆𝐵 =
+                                                          𝑘−1
+                        𝑀𝑆𝑊(Mean Squares Within Groups- Trung bình bình phương nội bộ nhóm):
+                                                           𝑆𝑆𝑊
+                                                  𝑀𝑆𝑊 =
+                                                           𝑁−𝑘
+
+                                               𝑬𝒙𝒑𝒍𝒂𝒊𝒏𝒆𝒅 𝑽𝒂𝒓𝒊𝒂𝒏𝒄𝒆   𝑀𝑆𝐵
+                                         𝑭=                       =
+                                              𝑼𝒏𝒆𝒙𝒑𝒍𝒂𝒊𝒏𝒆𝒅 𝑽𝒂𝒓𝒊𝒂𝒏𝒄𝒆 𝑀𝑆𝑊
+
+       Under H₀ and normal populations with equal σ, F has an F distribution with (k − 1, N − k) degrees of freedom.
+ANALYSIS OF VARIANCE
+
+
+Computing the Sums of Squares
+
+
+
+
+                                                                             STEP 4
+  STEP 1                    STEP 2                 STEP 3
+                                                                             SST                   STEP 5
+  Grand mean                SSB                    SSW
+                                                                             104 + 60 = 164, the   Mean squares
+  x̄ = (49 + 56 + 51)/3 =   4(49 − 52)² + 4(56 −   Deviations in A: −1, 3,
+                                                                             total squared         MSB = 104/2 = 52.
+  52, since all groups      52)² + 4(51 − 52)² =   1, −3, so 20. Same for
+                                                                             deviation of all 12   MSW = 60/9 = 6.67
+  have n = 4                4(9 + 16 + 1) = 104    B and C. SSW = 60
+                                                                             stores from 52
+ANALYSIS OF VARIANCE
+
+
+The ANOVA Table
+The standard layout in every statistical package, including Excel's ANOVA: Single Factor
+
+
+
+
+ Source                                                                        Sum of Squares   Degree of Freedom Mean square   F
+
+
+ Between layouts                                                               104              2                MSB = 52
+                                                                                                                                F = 52 / 6.67 = 7.8
+ Within layouts (error)                                                        60               9                MSW = 6.67
+
+
+ Total                                                                         164              11
+
+
+ F = 7.8 with (2, 9) df: is it far enough above 1?
+ANALYSIS OF VARIANCE
+
+
+The ANOVA Test, Step by Step
+
+
+                                                                                                         STEP 5
+  STEP 1                        STEP 2
+                                                          STEP 3                                         Conclude
+                                Test statistic                                       STEP 4
+  Hypotheses                                              Rejection region
+                                                                                     Compute             7.8 ≥ 4.26: H₀ is
+  H₀ : 𝜇𝐴 = 𝜇𝐵 = 𝜇𝐶             F = MSB/MSW, with
+                                                          Right tail only: R : F ≥                       rejected. p = 0.011.
+  versus H₁ : not all           (k − 1, N − k) = (2, 9)                              F = 52/6.67 = 7.8
+                                                          F₀.₀₅(2, 9) = 4.26                             The layouts are not
+  three are equal               df
+                                                                                                         all alike
+
+
+
+
+                       The F-test of ANOVA is always one-tailed: only a large F is evidence against H₀.
+ANALYSIS OF VARIANCE
+
+
+ANOVA Is the Pooled t-Test for k Groups
+
+
+
+
+                       MSW = SSW/(N − k) is the pooled variance s_p², extended to k groups.
+                           With k = 2, the ANOVA F equals the square of the pooled t:
+   ANOVA therefore carries the same assumptions as the pooled t-test: independent random samples, approximately
+       normal populations, and a common σ. Here the three sample variances are equal, so the assumption is
+     comfortable. When group variances differ strongly, the same warning as in the branch example applies, and a
+                     version of ANOVA that does not pool — Welch's ANOVA — is used instead.
+ANALYSIS OF VARIANCE
+
+
+Which Layouts Differ? Bonferroni Comparisons
+Three pairs, so each is tested at α/3 = 0.0167 · SE = √(MSW(1/4 + 1/4)) = 1.83, df = 9
+
+
+
+ Pair                                                Difference · t                      p-value   At α/3 = 0.0167
+
+
+ B−A                                                 7 · 3.83                            0.004     different
+
+
+ B−C                                                 5 · 2.74                            0.023     not different — though p < 0.05
+
+
+ C−A                                                 2 · 1.10                            0.30      not different
+
+
+ Only B versus A survives the correction
+
+
+
+
+    Bonferroni: with m comparisons, test each at α/m. The overall false-alarm rate then stays at or below
+                                                    α.
+ANALYSIS OF VARIANCE
+
+
+ANOVA and Bonferroni: Two Questions, Used in Sequence
+
+
+  ANOVA                                                     BONFERRONI
+  Is there any difference at all?                           Which pairs differ?
+  One test of all k means together, with the false-alarm    Pairwise tests with the threshold lowered to α/m. It
+  rate held exactly at α. A rejection says the treatments   names the differing pairs, at the price of missing real
+  are not all alike, without naming which.                  but small differences more often as m grows.
+  • Run first, on all groups at once                        • Run after ANOVA rejects
+
+
+
+
+          Later we will find the F-test of a regression on industry dummies is this same one-way ANOVA.
+Outline
+01
+ANALYSIS OF VARIANCE
+From two treatments to several: one F-test for all groups, then pairwise comparisons
+
+
+02
+ANOVA AS A REGRESSION
+Coding a category as dummy variables — and getting the same F from the Regression tool
+
+
+03
+ONE CONTINUOUS PREDICTOR
+Floor area enters; the ANOVA block of a regression output; F = t²
+
+
+04
+MULTIPLE REGRESSION
+Both kinds of variable together: partial coefficients, t versus F, adjusted R²
+ANOVA AS A REGRESSION
+
+
+Writing a Category as Numbers
+
+
+
+
+       D_B = 1 if the store uses layout B, 0 otherwise. D_C = 1 if it uses layout C, 0 otherwise. A
+                    store with D_B = D_C = 0 uses layout A — the reference group.
+   A regression needs numbers, and a category is not a number. A dummy variable is a yes-or-no question coded as 1
+       or 0. Three layouts need only two questions: a store that answers no to B and no to C must be an A store.
+ANOVA AS A REGRESSION
+
+
+The Twelve Stores, Coded
+Two new columns; the sales figures are unchanged from Session 10
+
+
+
+
+ Layout                                   D_B                      D_C   Weekly sales of the four stores
+
+
+ A                                        0                        0     48 · 52 · 50 · 46
+
+
+ B                                        1                        0     55 · 57 · 53 · 59
+
+
+ C                                        0                        1     50 · 54 · 52 · 48
+
+
+ Model: Sales = b₀ + b₁·D_B + b₂·D_C + e
+ANOVA AS A REGRESSION
+
+
+Reading the Coefficients
+
+
+
+ Coefficient                               Estimate   Equals      Reading
+
+
+ b₀ (intercept)                            49         mean of A   predicted sales of a layout-A store
+
+
+ b₁ (D_B)                                  7          56 − 49     B stores sell 7 more than A stores, on average
+
+
+ b₂ (D_C)                                  2          51 − 49     C stores sell 2 more than A stores, on average
+
+
+ Every dummy coefficient is a gap to the
+ reference group
+ANOVA AS A REGRESSION
+
+
+Two Outputs, One F
+The same twelve stores, run through two different Excel tools
+
+
+
+                                      ANOVA: Single Factor (Lecture 10)         Regression on D_B and D_C
+
+
+ Explained SS · df                    Between groups: 104 · 2                   Regression: 104 · 2
+
+
+ Unexplained SS · df                  Within groups: 60 · 9                     Residual: 60 · 9
+
+
+ F · p-value                          7.8 · P-value 0.011                       7.8 · Significance F 0.011
+
+
+ Share explained                      η² = 104/164 = 0.634                      R Square = 0.634
+
+
+
+
+                                          One-way ANOVA is a regression on dummy variables.
+ANOVA AS A REGRESSION
+
+
+Why the Two Must Agree
+
+
+
+
+  MECHANISM
+                                                                CONSEQUENCE
+  Knowing only the group, the best guess is its                 Every ANOVA quantity reappears
+  mean                                                          Residual SS is SSW, regression SS is SSB, R² is η², and F is
+  OLS Regression minimizes the sum of squared residuals.        the same ratio.
+  A model with only dummies can output one value per            The assumptions are similar:
+  group, and the value that minimizes squared deviations        • independent stores
+  within a group is its mean.
+                                                                • roughly normal errors
+  • Fitted value = own group mean (𝑦ƶ 𝑖 = 𝑦ത𝑖 )
+  • Residual = distance from own group mean (𝑒𝑖 = 𝑦𝑖 − 𝑦ƶ 𝑖 )
+                                                                • one common σ for all groups
+ANOVA AS A REGRESSION
+
+
+The Dummy Variable Trap
+
+
+   With k categories, use k − 1 dummies. Adding a third dummy D_A makes D_A + D_B + D_C =
+                   1 for every store — an exact copy of the intercept column.
+
+     The model then has infinitely many equally good answers: any amount can be moved out of the intercept and
+   added to all three dummies without changing a single prediction. The software cannot choose, and may not say so
+                                                       clearly.
+
+
+
+
+                        k categories → k − 1 dummies. The category left out is the reference group.
+ANOVA AS A REGRESSION
+
+
+Changing the Reference Group
+
+
+
+  REFERENCE = A
+  b₀ = 49, D_B = +7, D_C = +2. The coefficients answer: how do B and C compare with A?
+
+
+
+  REFERENCE = C
+  b₀ = 51, D_A = −2, D_B = +5. The coefficients answer: how do A and B compare with C?
+  B versus C now has its own standard error and t.
+
+
+  WHAT DOES NOT CHANGE
+  Fitted values, residuals, SSR = 104, R² = 0.634, F = 7.8. The model is the same; only the question each coefficient
+  answers is different.
+Outline
+01
+ANALYSIS OF VARIANCE
+From two treatments to several: one F-test for all groups, then pairwise comparisons
+
+
+02
+ANOVA AS A REGRESSION
+Coding a category as dummy variables — and getting the same F from the Regression tool
+
+
+03
+ONE CONTINUOUS PREDICTOR
+Floor area enters; the ANOVA block of a regression output; F = t²
+
+
+04
+MULTIPLE REGRESSION
+Both kinds of variable together: partial coefficients, t versus F, adjusted R²
+ONE CONTINUOUS PREDICTOR
+
+
+Store Size Enters the Picture
+
+  A SECOND VARIABLE
+  Floor area of the same twelve stores, in m²
+  Listed in the same order as the sales figures. Larger
+  stores sell more: the correlation between weekly sales
+  and floor area is r = 0.91.
+  • A: 160 · 175 · 190 · 135 (mean 165)
+  • B: 205 · 200 · 185 · 250 (mean 210)
+  • C: 170 · 220 · 175 · 155 (mean 180)
+
+
+
+
+             The B stores are also the largest. What does that do to the previous gaps between groups?
+ONE CONTINUOUS PREDICTOR
+
+
+The ANOVA Block of a Regression Output
+Weekly sales on floor area · the top block of Excel's Regression output
+
+
+
+
+                                                                              df   SS      MS
+
+
+ Regression                                                                   1    136.5   136.5
+
+
+ Residual                                                                     10   27.5    2.75
+
+
+ Total                                                                        11   164.0
+
+
+ F = 136.5 / 2.75 = 49.6 · Significance F < 0.001 · R² = 136.5 / 164 = 0.83
+  ONE CONTINUOUS PREDICTOR
+
+
+  With One Predictor, F = t²
+
+
+
+
+                                Slope of floor area: b = 0.114, SE = 0.016, t = 7.04.
+                                                And 7.04² = 49.6 = F
+
+With a single X, ‘does the model explain anything?’ and ‘is the slope zero?’ are the same question, so the two tests must agree
+    F equal the squared pooled t for two groups in Lecture 10. From two predictors onward, the two questions separate.
+ONE CONTINUOUS PREDICTOR
+
+
+Two Kinds of X, One Machine
+
+
+  CATEGORICAL X                                                   CONTINUOUS X
+  Fitted value = the group mean                                   Fitted value = a point on the line
+  The model predicts one value per group. Explained               The model predicts a value for every floor area.
+  variation is the spread of the three group means around         Explained variation is the spread of the line's
+  52.                                                             predictions around 52.
+  • SSR = SSB = 104 of 164                                        • SSR = 136.5 of 164
+
+
+
+
+                           Both split SST into SSR + SSE, and both test the split with F = MSR / MSE.
+Outline
+01
+ANALYSIS OF VARIANCE
+From two treatments to several: one F-test for all groups, then pairwise comparisons
+
+
+02
+ANOVA AS A REGRESSION
+Coding a category as dummy variables — and getting the same F from the Regression tool
+
+
+03
+ONE CONTINUOUS PREDICTOR
+Floor area enters; the ANOVA block of a regression output; F = t²
+
+
+04
+MULTIPLE REGRESSION
+Both kinds of variable together: partial coefficients, t versus F, adjusted R²
+MULTIPLE REGRESSION
+
+
+Three Models, One Coefficient
+Weekly sales of the twelve stores, million VND
+
+
+
+
+                                                                                     Floor area (per
+ Model                                                               Layout B vs A                     R² · adj. R²
+                                                                                     m²)
+
+
+ (1) Layout only                                                     7.00            —                 0.634 · 0.553
+
+
+ (2) Floor area only                                                 —               0.114             0.832 · 0.816
+
+
+ (3) Layout + floor area                                             3.17            0.085             0.914 · 0.882
+
+
+ Holding floor area fixed cut the layout B premium from 7.0 to 3.2
+MULTIPLE REGRESSION
+
+
+Where did the gap go?
+
+
+
+
+                                   7.00 = 3.17 + 0.085 × 45
+   The raw gap between B and A = the gap between stores of equal size + the area coefficient ×
+                              how much larger the B stores are.
+
+    B stores average 210 m², A stores 165 m²: 45 m² more. At 0.085 million per m², size alone accounts for 3.83 of the
+              7.00. Model (1) credited all of it to the layout. This is omitted variable bias, computed exactly.
+MULTIPLE REGRESSION
+
+
+Ceteris Paribus, Made Concrete
+
+
+
+
+                                                             CONSEQUENCE
+  MECHANISM
+                                                             The interpretation sentence changes
+  A partial coefficient compares like with like
+                                                             ‘Among stores of the same floor area, layout B stores
+  In model (3), the B coefficient is the gap between B and
+                                                             sell on average 3.2 million VND more per week than
+  A stores of the same floor area. The area coefficient is
+                                                             layout A stores.’ The clause on floor area is the whole
+  the gap per m² between stores using the same layout.
+                                                             content.
+  • Partial regression coefficient
+                                                             • Still no causal verb — only correlation
+MULTIPLE REGRESSION
+
+
+Randomized, Yet Unbalanced
+
+
+
+
+        Lecture 10 assigned the layouts at random. Random assignment balances store size on
+                            average — not in every sample of four stores.
+    Here the four B stores happened to be the largest. A control variable repairs imbalance in what was measured.
+  Randomisation at scale protects against what was not measured. The two complement each other; neither replaces
+                                                      the other.
+MULTIPLE REGRESSION
+
+
+Model (3): The Coefficient Block
+Sales = b₀ + b₁·D_B + b₂·D_C + b₃·Area + e · reference group: layout A
+
+
+
+
+ Variable                                                                Coefficient   SE · t         p-value
+
+
+ Intercept                                                               34.97         2.83 · 12.4    < 0.001
+
+
+ D_B (layout B)                                                          3.17          1.20 · 2.64    0.030
+
+
+ D_C (layout C)                                                          0.72          0.97 · 0.75    0.477
+
+
+ Floor area (m²)                                                         0.085         0.017 · 5.11   0.001
+
+
+ F(3, 8) = 28.4, p < 0.001 · R² = 0.914 · adj. R² = 0.882 · n = 12
+MULTIPLE REGRESSION
+
+
+Three Questions, Three Tests
+
+ Question                                                                        Test                          Result
+
+
+ Does the model explain anything at all?                                         overall F(3, 8)               28.4 · p < 0.001
+
+
+ Do B stores differ from A stores of the same size?                              t for D_B                     2.64 · p = 0.030
+
+
+                                                                                 partial F(2, 8) for D_B and
+ Does layout matter at all, once size is held fixed?                                                           3.82 · p = 0.069
+                                                                                 D_C together
+
+
+ The partial F is Session 10's ANOVA, run after floor area has taken its share
+
+
+
+
+                         How can B differ from A, while layout as a whole is not significant at 5%?
+MULTIPLE REGRESSION
+
+
+Adjusted R²: A Price for Each Variable
+
+
+
+
+  R² never falls when a variable is added — even a column of random numbers. Adjusted R² = 1
+              − (1 − R²)(n − 1)/(n − k − 1) charges a price for each of the k predictors.
+  Model (3): 1 − (1 − 0.914) × 11/8 = 0.882. Adjusted R² compares models of different size on the same data. It is not a
+     test, and a high value does not make a model right: model (1) had R² = 0.63 and a biased layout coefficient.
+MULTIPLE REGRESSION
+
+
+One Machine, Four Uses
+The same SST = 164, split four ways
+
+
+
+
+                                                                                                  STEP 4
+  STEP 1                              STEP 2
+                                                                   STEP 3                         Several X of both
+  One categorical X:                  The same X as k − 1
+                                                                   One continuous X               kinds
+  ANOVA                               dummies
+                                                                   A line as predictions. SSR =   SSR = 149.9; partial
+  Group means as predictions.         Regression gives SSR = 104   136.5; F = t² = 49.6           coefficients, t per variable, F
+  SSB = 104; F = 7.8                  and the same F; R² = η²
+                                                                                                  per group
+PRACTICE ON VN-LISTED
+
+
+Three Things to Take Away
+
+
+
+
+  1. ONE DECOMPOSITION               2. DUMMIES ARE GAPS
+                                                                        3. CONTROLS CHANGE THE QUESTION
+  Every model splits the same SST    A dummy coefficient is a gap to
+                                                                        A control changes what a
+  into explained and unexplained.    the reference group, and one-way
+                                                                        coefficient compares: B versus A
+  ANOVA and regression differ only   ANOVA is a regression on k − 1
+                                                                        became B versus A at equal size
+  in what does the explaining.       dummies.
+

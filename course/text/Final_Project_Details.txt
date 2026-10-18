@@ -1,0 +1,179 @@
+Final Project: Wine Prices and Regional Price Premia
+Instructions and deliverables
+This take-home project is the final assessment. Work in the assigned groups and submit two files before
+the presentation date. Then, you will present your work and answer questions from the lecturer.
+
+Deliverable                                           What it must contain
+Excel workbook                                        One sheet per part (A, B, C). Every statistic, test
+                                                      and regression you report must be computed in
+                                                      this workbook, using formulas or the Data
+                                                      Analysis ToolPak.
+
+Short report (Word or PDF, at most [8] pages)         Answers in question order (A1, A2, …). For each
+                                                      answer: the key number or table copied from
+                                                      Excel, then 2–4 sentences of interpretation.
+Name both files after the group name, e.g. Group_1.xlsx and Group_1.docx, and list every member on the
+first page of the report, with their respective contribution (in detail tasks and percentage of total
+contribution).
+Rules for every hypothesis test:
+    1.   State H₀ and H₁.
+    2.   Name the test statistic and the Excel output or formula it comes from.
+    3.   Give the p-value (or the critical value) at α = 0.05.
+    4.   State the decision and what it means in the wine context.
+You may discuss the project only with your group members and the instructor. Remember to show the
+formula in the Excel file, raw Excel output pasted without interpretation earns no credit.
+
+The case
+An association of Napa Valley wineries has hired you to answer one question: do buyers pay more for a
+bottle labelled “Napa Valley”, and if so, how many dollars more?
+In the US, certified wine regions called AVAs (American Viticultural Areas) may print their name on the
+label. The association also wants to know whether its main competitor, Sonoma, earns a price premium,
+and whether that premium is larger or smaller than Napa’s.
+You will answer with a hedonic price model: the price of a wine is explained by its characteristics (quality
+score, age, production volume, region, grape variety). In such a model, each coefficient is the implicit
+price of one characteristic, holding the others constant.
+The final project follows the following steps, from a single mean to a full regression, before you answer
+the final association’s question.
+                                    Price = 𝛽0 + 𝛽1 𝑋1 + 𝛽2 𝑋2 + ⋯ + 𝜀
+The dataset
+The file data contains 806 California wines of the 2001 vintage, taken from Wine Spectator tasting
+records. Each row is one wine.
+Variable                            Type                                 Meaning
+
+Price                               Continuous                           Retail price per bottle, in US$
+
+Cases                               Continuous                           Number of cases produced, in
+                                                                         thousands (30 = 30,000 cases)
+
+Score                               Continuous                           Wine Spectator quality score
+                                                                         from a blind tasting (out of 100)
+
+Age                                 Continuous                           Years of ageing before the wine
+                                                                         was sold
+
+Region Dummy: Napa valley,          Dummy (0/1)                          Region where the wine was
+bay area, sonoma,                                                        produced
+sierra/foothills, mendocino /
+lake
+Variety Dummy: Nonvarietal,         Dummy (0/1)                          Grape variety; Nonvarietal = a
+Pinot noir, Cabernet, Merlot,                                            blend of several grapes
+Shyrah
+
+Two dummies are deliberately missing. A wine with 0 in all five region dummies is a Generic California
+wine (no AVA). A wine with 0 in all five variety dummies is implicitly understood as a Zinfandel.
+
+Part A · Data and description (20 points)
+Part A covers steps 1–3 of the analysis process: the question, describing the data, and visualizing it
+A1 (3 points). Besides measuring the Napa premium price compared to other regions, name two other
+people or organizations who could use this model, and what each would use it for.
+A2 (3 points). For Cases, Score and Age, and for each set of dummies (region, variety), state the sign you
+expect on the coefficient and explain why in one sentence.
+A3 (4 points). Build one table of summary statistics for Price, Cases, Score and Age: mean, median,
+standard deviation, variance, minimum, maximum and skewness. Compare the mean and the median of
+Price. What does the gap tell you about its distribution?
+A4 (4 points). Draw three scatter plots: Price against Cases, Price against Score, and Price against Age.
+For each, say whether the relationship looks positive or negative, whether it looks like a straight line, and
+whether any points stand far from the rest.
+A5 (3 points). Draw a histogram of Price and a histogram of ln(Price). Which one looks closer to a
+normal distribution? Which version of Y would you rather put on the left of a regression, and why?
+A6 (3 points). Normality of Y is often given as a condition for valid t-tests on regression coefficients.
+With 806 observations, should you worry a lot if Price is not normal?
+Part B · The Modeling (45 points)
+B1 · Continuous Y, no X (5 points). Compute the mean of Price and its 95% confidence interval. Test
+H₀: μ = 25 against H₁: μ ≠ 25. Then explain in one sentence why this mean is the estimate of β₀ in the
+model Price = β₀ + ε.
+B2 · Continuous Y, one dummy X (8 points).
+    1. Compare the mean Price of Napa wines with all other wines using the Excel t-test for two
+       samples with unequal variances (Welch). State the hypotheses and the decision.
+    2. Regress Price on the Napa valley dummy alone. Show that the slope equals the difference
+       between the two group means.
+    3. The t statistic of the slope is not the same as the Welch t. Which two-sample t-test does the
+       regression reproduce exactly, and why?
+    4. Given your histogram in A5, which rank-based test from class would be a safer check here? You
+       do not need to run it.
+B3 · Continuous Y, one X with 3+ groups (8 points).
+    1. Create a Region column with six groups (the five AVAs plus Generic California). Run a one-way
+       ANOVA of ln(Price) across the six regions and state the decision.
+    2. Regress ln(Price) on the five region dummies. Show that SSR, SSE and F match the ANOVA
+       table from step 1.
+    3. Why must one region dummy be left out of the regression? Interpret the Napa valley coefficient.
+    4. If Sonoma were the left-out region instead of Generic California, what would the Napa valley
+       coefficient measure, and what value would it take? Answer from your step 2 output, without re-
+       running.
+B4 · Continuous Y, one continuous X (6 points).
+    1. Compute the correlation between Price and Score, and between ln(Price) and Score. Which is
+       stronger, and why might that be?
+    2. Regress ln(Price) on Score. Interpret the slope in percent per Score point.
+B5 · Continuous Y, several X (12 points).
+    1. Linear model: regress Price on all 13 explanatory variables. Comment on which variables are
+       significant, on R², and on the overall F-test.
+    2. Log-linear model: regress ln(Price) on the same 13 variables. Report R² and the F-test. Interpret
+       the coefficients of Cases, Score and Age, one region coefficient and one variety coefficient.
+    3. For each model, plot residuals (y axis) against predicted values. Compare the two plots: what did
+       the log transformation fix?
+    4. The Napa valley coefficient in the log model differs from the one in B3. Explain why, using the
+       idea of controlling for other variables. Which variable do you think matters most for this change?
+    5. Name one variable not in the dataset that could bias the Napa coefficient if left out, and say in
+       which direction.
+B6 · Categorical Y, categorical X (6 points).
+    1. Build a crosstab of Region (Napa valley, Sonoma, Other) against Variety (Cabernet, Merlot,
+       Pinot noir, Other). Add row percentages.
+    2. Run Pearson’s χ² test of independence. Compute the expected counts in Excel, check that all are
+       at least 5, and report χ², degrees of freedom and the p-value (CHISQ.TEST or CHISQ.DIST.RT).
+    3. What does the result mean for the simple Napa-versus-others comparison in B2? Link your
+       answer to B5.4.
+
+Part C · Conclusions for the Napa association (25 points)
+
+Choose the model from Part B you trust most, and use it to answer the client. Remember that
+there is no single correct model. Credit goes to a well-argued choice and to reading every
+coefficient in the way that matches the model you chose.
+
+C1 · Choose your model (4 points). Choose either the linear model (B5.1) or the log-linear
+model (B5.2) as the basis for your answers. Justify the choice with at least two pieces of
+evidence from Parts A and B, for example the distribution of Price, the fit of the two models, the
+residual plots or the significance of the region dummies. State the reference region and the
+reference variety of your model.
+
+C2 · Napa premium (5 points). Using your chosen model, state the price premium of the Napa
+Valley name compared with Generic California, other things equal, as a dollar amount per bottle,
+and say whether it is statistically significant. If your model gives the premium in another unit
+first, show how you converted it to dollars, which price level you used, and why that price level
+is a sensible choice.
+
+C3 · Napa versus Sonoma (5 points). Compute the Sonoma premium in the same way. Then re-
+estimate your chosen model with Sonoma as the left-out region (drop the sonoma dummy, add a
+Generic California dummy). Is Napa’s premium significantly larger than Sonoma’s? Report the
+relevant coefficient, its p-value and your decision.
+
+C4 · Significant is not important (4 points). Using your chosen model, compute the price
+change from producing 10 more units of Cases (10,000 cases), from one more Score point, and
+from one more year of Age, in the unit your model gives. Is the Cases effect large enough to
+matter for a winery’s pricing? Compare its size with its p-value, and contrast it with a coefficient
+that is not significant in your model.
+
+C5 · Premium or quality? (4 points). Does a price premium for Napa prove that Napa wines
+are of higher quality? Look at which variables your model holds constant, and state precisely
+what the Napa coefficient measures.
+
+C6 · Message to the client (3 points). Write one paragraph of at most 150 words for the
+association’s board, with no statistical jargon: is there a Napa premium, how many dollars per
+bottle, how does it compare with Sonoma, and what are the limits of this analysis?
+
+Grading
+The project is worth 100 points.
+Part             Content                                      Points
+
+A                Data and description                         15
+
+B                Building the model                           35
+
+C                Conclusions for the client                   20
+
+Report quality   Clear structure, every number traceable to   5
+                 the Excel workbook, complete test steps,
+                 sentences rather than raw output
+
+Individual Q&A   Answering questions                          25
+Total                                                         100
+

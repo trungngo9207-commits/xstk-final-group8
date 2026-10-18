@@ -1,0 +1,110 @@
+Lecture 0: Course Introduction
+
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+Course Overview & Vision
+
+
+
+
+ PILLAR A                                         PILLAR B                                      PILLAR C
+
+ Thinking                                         Interpretation                                Execution
+
+ Framing economic problems, understanding         Reading complex visualizations, statistical   Working directly with empirical datasets
+ statistical compression, sampling                significance vs practical significance, and   using Excel & Python to conduct regression,
+ distributions, and choosing fitting analytical   evaluating quantitative claims critically.    estimation, and executive reporting.
+ models.
+Pillar A: Framing the Problem
+
+
+
+
+ CLO1 — Data-to-Knowledge Chain: Locate statistics in the Data → Information → Knowledge chain; explain why a statistic is a compression of
+ information and identify what details are lost.
+
+ CLO2 — Sampling & Central Limit Theorem: Distinguish a population parameter from a sample statistic; master sampling distributions and the Central
+ Limit Theorem (CLT) as the cornerstone of valid statistical inference.
+
+ CLO3 — Method & Data Identification: Given a business problem with data, correctly identify the question type (description, comparison, association,
+ or forecasting), the data structure, and the appropriate family of methods.
+Pillar B: Reading & Judging Results
+
+
+
+
+ CLO4 — Chart Selection & Visual Pitfalls: Select suitable charts by data type and question; detect non-linearity, outliers, and hidden groups, while
+ recognizing misleading graphics.
+
+ CLO5 — Statistical Significance & Inference: Interpret confidence intervals, p-values, and regression coefficients accurately (including what they do
+ NOT imply); separate statistical from practical significance.
+
+ CLO6 — Critical Evaluation of Quantitative Claims: Evaluate claims for correlation vs. causation traps, omitted variables, violated assumptions,
+ selective reporting, and over-generalisation.
+Pillar C: Working with Data
+
+
+ CLO7 — Data Preparation:
+ Prepare an analysis-ready dataset and describe it thoroughly in a standard empirical summary table.
+
+
+
+ CLO8 — Applied Analytics in Excel & Python:
+  Execute data visualization, interval estimation, hypothesis testing, and multiple regression; effectively communicate findings to a non-
+ statistical business audience.
+Required Learning Materials
+
+
+Source /
+             Resource Specification                        Core Focus Area
+Framework
+
+Primary      Wooldridge (2025) Introductory Econometrics: Main reference for regression analysis and
+Textbook     A Modern Approach, 8th Edition               empirical modeling.
+
+Additional   Charles Wheelan. Naked Statistics             Core intuition for real-world statistical reasoning.
+
+                                                           Classic guide on spotting misleading graphics,
+Additional   Darrell Huff. How to Lie with Statistics
+                                                           bias, and manipulation
+Empirical Data Sources
+
+
+
+
+ GSO Vietnam                   World Bank WDI                 HOSE / HNX                      Kaggle & OWID
+
+ Tổng cục Thống kê             World Development Indicators   Financial Markets               Open Datasets
+ gso.gov.vn                    data.worldbank.org             Stock Exchanges                 Our World in Data
+ Macroeconomic & demographic   Global economic indicators &   Capital market trading data &   Global trends, social data &
+ national data.                social statistics.             corporate reporting.            machine learning sets.
+Course Schedule & Phases
+
+Phase                         Sessions                 Role
+
+                                          From raw data to information:
+1 — Data Foundations            1–3
+                                           identify it, describe it, see it
+
+                                         Why generalising from a sample
+2 — Probability Foundations     4–6      is legitimate. Culminates in the
+                                                        CLT
+
+                                         From describing a relationship to
+3 — Statistical Inference      7–11         a conclusion that has been
+                                                      tested
+
+                                           Multiple regression and time
+4 — Modelling and Synthesis    12–14
+                                                       series
+Course Instructors
+
+ Trần Nguyên Lân, MSc.
+ Faculty of Business & Interdisciplinary Business
+
+    0948 941 956
+    trannguyenlan@ftu.edu.vn
+Course Evaluation Criteria
+

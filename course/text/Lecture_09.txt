@@ -1,0 +1,623 @@
+Lecture 9: Hypothesis Testing
+
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+
+
+
+
+                                                         1
+Outline
+01
+INTRODUCTION
+What a hypothesis test is for, and the five concepts the rest of the session depends on
+
+
+02
+TESTS FOR μ WHEN n IS LARGE
+The full machinery: hypotheses, rejection region, the two errors, the p-value, and the five steps
+
+
+03
+TESTS FOR μ WHEN n IS SMALL
+When the central limit theorem no longer applies, and the t distribution takes over
+
+
+04
+TESTS FOR A POPULATION PROPORTION
+The same procedure applied to a percentage rather than a mean
+Outline
+01
+INTRODUCTION
+What a hypothesis test is for, and the five concepts the rest of the session depends on
+
+
+02
+TESTS FOR μ WHEN n IS LARGE
+The full machinery: hypotheses, rejection region, the two errors, the p-value, and the five steps
+
+
+03
+TESTS FOR μ WHEN n IS SMALL
+When the central limit theorem no longer applies, and the t distribution takes over
+
+
+04
+TESTS FOR A POPULATION PROPORTION
+The same procedure applied to a percentage rather than a mean
+INTRODUCTION
+
+
+Three Claims a Test Can Examine
+Hypothesis testing uses sample data to examine a claim about a population
+
+
+
+
+  01                                                      02                                03
+                                                                                            A signal in noise
+  A production standard                                   A behavioral claim
+                                                                                            A radio telescope records a varying
+  Does an average box of cereal                           Do FTU students spend more than
+                                                                                            amplitude. Is there a source, or is
+  contain 368 grams?                                      3 hours a day on the internet?
+                                                                                            the variation only random noise?
+INTRODUCTION
+
+
+Key Statistical Concepts
+Testing a hypothesis determines whether a claim about a population parameter is strongly supported by the sample
+
+
+
+  01                                                                                 02
+  Null and alternative hypothesis                                                    Type I and Type II errors
+  H₀ (giả thuyết không) and H₁ (giả thuyết thay thế): two                            The two ways a decision can be wrong. They are not symmetric, and
+  competing statements, one of which will be chosen.                                 they cannot both be made small at once.
+
+
+
+  03                                                                                 04
+  Level of significance                                                              Rejection region
+  α: the probability of wrongly rejecting H₀, fixed by the                           The set of values of the test statistic for which H₀ is
+  analyst before the data are examined.                                              rejected, bounded by a critical value.
+
+
+                                            05
+                                            P-value
+                                            How extreme the observed result is, computed on the
+                                            assumption that H₀ is true.
+Outline
+01
+INTRODUCTION
+What a hypothesis test is for, and the five concepts the rest of the session depends on
+
+
+02
+TESTS FOR μ WHEN n IS LARGE
+The full machinery: hypotheses, rejection region, the two errors, the p-value, and the five steps
+
+
+03
+TESTS FOR μ WHEN n IS SMALL
+When the central limit theorem no longer applies, and the t distribution takes over
+
+
+04
+TESTS FOR A POPULATION PROPORTION
+The same procedure applied to a percentage rather than a mean
+TESTS FOR μ WHEN n IS LARGE
+
+
+The ATM Problem
+
+
+
+
+     Transaction times at the bank have mean 270 seconds and standard deviation 24 seconds.
+             An ATM is installed to reduce them. A sample of 38 transactions is taken.
+      How can the sample mean be used to test the claim that the true population mean transaction time is now less
+         than 270 seconds? The number 270 is known, the new mean is not, and the only evidence available is 38
+        observations. Every element of the machinery built in this part exists to turn that evidence into a decision.
+TESTS FOR μ WHEN n IS LARGE
+
+
+Formulation of H₀ and H₁
+
+
+      When the goal is to establish an assertion, the NEGATION of that assertion is taken as H₀,
+                                and the assertion itself is taken as H₁.
+    H₀ represents the default position: no difference exists between the groups or quantities compared. H₁ proposes
+   that a difference does exist. For the ATM problem, H₀: μ = 270 against H₁: μ < 270. The original question — is there
+      strong evidence for the claim? — is thereby translated into a question that can be answered: is there strong
+                                                evidence for rejecting H₀?
+
+
+
+
+         H₀ always carries an equality, because only a definite number makes a distribution computable.
+TESTS FOR μ WHEN n IS LARGE
+
+
+The Decision Rule
+Once H₀ and H₁ are formulated, the sample data must select one of exactly two actions
+
+
+
+
+  ACTION 1                                                                              ACTION 2
+  Reject H₀                                                                             Retain H₀
+  The evidence against the default position is strong                                   The evidence is not strong enough. The conclusion is
+  enough. The conclusion is that H₁ is substantiated by                                 that H₁ fails to be substantiated — which is not the
+  the data.                                                                             same as concluding that H₀ is true.
+  • A positive finding, supported by evidence                                           • An absence of evidence, not evidence of absence
+TESTS FOR μ WHEN n IS LARGE
+
+
+Test Statistic, Rejection Region, Critical Value
+
+
+  01                                        02                                    03
+                                                                                  Critical value
+  Test statistic                            Rejection region
+                                                                                  The boundary c of the rejection
+  The random variable whose value           The set of outcomes for which H₀ is
+                                                                                  region. It is fixed before the data
+  determines the action. For the ATM        rejected. Here R : x̄ ≤ c, where R
+                                                                                  are seen, and it is what α
+  problem it is the sample mean x̄.         stands for rejection of H₀.
+                                                                                  determines.
+
+
+
+
+                 A test is a rule stated in advance, not a judgement formed after looking at the number.
+TESTS FOR μ WHEN n IS LARGE
+
+
+Locating the Critical Value
+α fixes c, and c fixes the rejection region
+
+
+
+
+  THE ATM PROBLEM
+  Choose c so that P( x̄ ≤ c ) = α when H₀ holds
+  Under H₀ the sample mean is approximately N(270,
+  24/√38). Standardising gives Z = (x̄ − 270)/(24/√38), and
+  P(Z ≤ −1.645) = 0.05.
+  • 24/√38 = 3.89 seconds — the standard error
+  • c = 270 − 1.645 × 3.89 = 263.60 seconds
+  • R : x̄ ≤ 263.60, equivalently R : Z ≤ −1.645
+TESTS FOR μ WHEN n IS LARGE
+
+
+The Courtroom Analogy
+H₀: the defendant is innocent. H₁: the defendant is guilty.
+
+
+
+
+ Verdict                                                      Truth: innocent   Truth: guilty
+
+
+ Innocent                                                     correct           Type II error
+
+
+ Guilty                                                       Type I error      correct
+
+
+ The court never rules "innocent" — it rules "not proven"
+TESTS FOR μ WHEN n IS LARGE
+
+
+The Two Errors Named
+
+ Error                 You have …                                 The result is …
+
+
+
+ Type I                rejected H₀ when H₀ is true                an innocent person convicted
+
+
+ Type II               failed to reject H₀ when H₀ is false       a guilty person released
+
+
+
+
+      Type I is the error of acting on something that is not there. Type II is the error of missing something
+                                                      that is.
+TESTS FOR μ WHEN n IS LARGE
+
+
+A Worked Case: Testing a New Drug
+H₀: the drug has no effect, and behaves like a placebo. H₁: the drug has an effect.
+
+
+
+
+  IF H₀ IS REJECTED
+  The conclusion is that the drug works. If H₀ was in fact true, this is a Type I error: a useless drug is adopted, and
+  patients are treated with it.
+
+
+
+  IF H₀ IS RETAINED
+  The conclusion is that the drug does not work. If H₁ was in fact true, this is a Type II error: a genuinely effective
+  drug is abandoned.
+TESTS FOR μ WHEN n IS LARGE
+
+
+A Mnemonic: The Smoke Detector
+
+
+
+
+  TYPE I                                                 TYPE II
+  False positive — a false alarm                         False negative — a missed event
+  The detector sounds when there is no fire. Something   The detector stays silent while the house burns.
+  was declared present when it was absent.               Something real was present and went undeclared.
+  • Báo động giả                                         • Bỏ sót thật
+TESTS FOR μ WHEN n IS LARGE
+
+
+α and β
+
+
+
+
+     α = P( reject H₀ | H₀ is true ) — the level of significance. β = P( fail to reject H₀ | H₁ is true ).
+   For the ATM problem these read as α = P( x̄ ≤ c when μ = 270 ) and β = P( x̄ > c when μ < 270 ). False rejection of H₀
+    is ordinarily treated as the more serious of the two, which is why the threshold is placed where it is: a decision to
+   reject H₀ must rest on strong evidence. α is chosen by the analyst; β is not chosen, and follows from α, from n, and
+                                              from the true size of the effect.
+TESTS FOR μ WHEN n IS LARGE
+
+
+Consequences of Each Error
+
+  TYPE I — FALSE POSITIVE
+  Something is believed significant when it is              TYPE II — FALSE NEGATIVE
+  not                                                       Something real is missed
+  A medical test diagnoses cancer in a healthy patient,     A security system fails to detect an intruder. A capable
+  leading to treatment that is unnecessary and itself       student is graded low through a marking error, and
+  harmful. An investor acts on a false signal and takes a   their progress is held back.
+  loss.                                                     • Not controlled directly: it depends on n and on the effect size
+  • Controlled directly, by the choice of α
+
+
+
+
+   Lowering α reduces false positives and increases false negatives. The two move in opposite directions.
+TESTS FOR μ WHEN n IS LARGE
+
+
+The Trade-Off Between the Two Errors
+
+
+
+
+  No choice of the cutoff c minimises both α and β. Moving c to make α smaller makes β larger,
+                                        and the reverse.
+   The cutoff is a single number on a single axis, and the two error probabilities are measured on opposite sides of it.
+    Practice therefore fixes α at a conventionally small value — 0.10, 0.05 or 0.01 — and accepts whatever β follows.
+  The only way to reduce both at once is to increase n, which narrows both distributions and is the reason sample size
+                                                     is worth paying for.
+TESTS FOR μ WHEN n IS LARGE
+
+
+Example: Testing the ATM Claim
+n = 38 · sample mean 261 seconds · sample standard deviation 22 seconds
+
+
+
+
+  H₀: Μ = 270 VS H₁: Μ < 270
+  At α = 0.025 the rejection region is R : Z ≤
+  −1.96
+  Z = (x̄ − 270)/(s/√38) = (261 − 270)/(22/√38) = −9/3.57 =
+  −2.52, which lies inside R.
+  • −2.52 < −1.96, so H₀ is rejected
+  • The claim of a reduction in mean transaction time is strongly supported
+  TESTS FOR μ WHEN n IS LARGE
+
+
+  The p-value
+
+The p-value is the probability of obtaining a
+  test statistic AS EXTREME AS OR MORE
+ EXTREME THAN the one observed, GIVEN
+              THAT H₀ IS TRUE.
+ It measures how well the sample evidence agrees with
+      the null hypothesis. A small p-value means the
+   observed result would be unlikely if H₀ held, and the
+   evidence for rejecting H₀ is therefore strong. It does
+    not report the probability that H₀ is true or false: it
+reports only how likely a result like this one would be in
+                 a world where H₀ holds.
+
+
+
+      p is a statement about the data under an assumption, never a statement about the assumption itself.
+TESTS FOR μ WHEN n IS LARGE
+
+
+The p-value
+TESTS FOR μ WHEN n IS LARGE
+
+
+What a p-value Reports
+
+
+  01                                                      02
+                                                          Small p means strong evidence
+  It measures agreement with H₀
+                                                          The smaller the p-value, the less likely a result like this
+  It states how compatible the sample evidence is with
+                                                          would be if H₀ held, and the stronger the case for
+  the null hypothesis, on a scale from 0 to 1.
+                                                          rejecting H₀.
+
+
+
+
+  03                                                      04
+                                                          It is not the size of the effect
+  It is not P(H₀ is true)
+                                                          A very small p-value can accompany a difference too
+  The probability is computed inside the assumed world.
+                                                          small to matter. Sample size moves p; it does not move
+  It says nothing about how likely that world is.
+                                                          the difference.
+TESTS FOR μ WHEN n IS LARGE
+
+
+Deciding with a p-value
+The p-value is computed from the distribution of the test statistic, then compared with α
+
+
+
+
+ Compariso
+                  Decision                What it means
+ n
+
+
+ p≤α              reject H₀               a result like this is unlikely if H₀ holds; the evidence against H₀ is sufficient
+
+
+ p>α              do not reject H₀        the evidence is insufficient — which is not a demonstration that H₀ is true
+
+
+
+
+          α is fixed before the data are examined. Comparing p with an α chosen afterwards is not a test.
+TESTS FOR μ WHEN n IS LARGE
+
+
+A Worked p-value: A Headache Drug
+H₀: the new drug relieves pain no better than the old one. H₁: the new drug is better.
+
+
+
+
+   The trial returns p = 0.03. At α = 0.05, since 0.03 < 0.05, H₀ is rejected: there is evidence that
+                                  the new drug relieves pain better.
+  Read the number carefully. p = 0.03 states that IF the two drugs were equally effective, a difference at least as large
+    as the one observed would appear in about 3 trials out of 100. Because that is unlikely, the assumption of equal
+           effectiveness is doubted. The figure 0.03 is not the probability that the drugs are equally effective.
+TESTS FOR μ WHEN n IS LARGE
+
+
+How Strong Is the Rejection in the ATM Test?
+The smallest α at which H₀ would still be rejected
+
+
+
+
+  FROM Z = −2.52
+  P( Z ≤ −2.52 ) = 0.0059
+  This significance probability is the p-value of the
+  observed z. Compared with α = 0.025 it is far smaller, so
+  H₀ is not merely rejected: it is rejected decisively, and
+  the result is highly significant.
+  • H₁: μ < μ₀ is a left-sided alternative — R : Z ≤ −z(α)
+  • H₁: μ > μ₀ is a right-sided alternative — R : Z ≥ z(α)
+  • H₁: μ ≠ μ₀ is two-sided — both tails, each of size α/2
+TESTS FOR μ WHEN n IS LARGE
+
+
+The Five Steps for Testing a Hypothesis
+
+                                                                                                        STEP 5
+  STEP 1                      STEP 2
+                                                       STEP 3                   STEP 4                  Draw and
+  Formulate the               State the test
+                                                       Determine the            Compute the             interpret the
+  hypotheses                  criterion
+                                                       rejection region         test statistic          conclusion
+  State H₀ and H₁. The        Name the test
+                                                       With α specified, look   Substitute the sample   State whether H₀ is
+  assertion to be             statistic and the form
+                                                       up the critical value    figures into the        rejected at the
+  established goes in         of the rejection
+                                                       and write the region     statistic named in      specified α, in the
+  H₁; its negation goes       region — left, right,
+                                                       out.                     step 2.                 language of the
+  in H₀.                      or two-sided.
+                                                                                                        problem.
+
+
+
+
+             Steps 1 to 3 are completed before the data are looked at. Only steps 4 and 5 use the sample.
+TESTS FOR μ WHEN n IS LARGE
+
+
+Example: A Weight-Loss Programme
+
+
+         A diet programme states that participants lose over 22 pounds in 5 weeks. From 56
+       participants, the sample mean is 23.5 pounds and the sample standard deviation is 10.2
+                                              pounds.
+    Is the statement substantiated by these findings? Test at a level of significance of 0.05, then compute the p-value
+      and interpret the result. The figures to carry through the five steps: n = 56, μ₀ = 22, x̄ = 23.5, s = 10.2, α = 0.05.
+
+
+
+
+               The sample mean is 23.5, above the claimed 22. Is that enough to substantiate the claim?
+Outline
+01
+INTRODUCTION
+What a hypothesis test is for, and the five concepts the rest of the session depends on
+
+
+02
+TESTS FOR μ WHEN n IS LARGE
+The full machinery: hypotheses, rejection region, the two errors, the p-value, and the five steps
+
+
+03
+TESTS FOR μ WHEN n IS SMALL
+When the central limit theorem no longer applies, and the t distribution takes over
+
+
+04
+TESTS FOR A POPULATION PROPORTION
+The same procedure applied to a percentage rather than a mean
+TESTS FOR μ WHEN n IS LARGE
+
+
+The Weight-Loss Test, Step by Step
+
+                              STEP 2                                                 STEP 4                  STEP 5
+  STEP 1                      Test statistic               STEP 3                    Compute                 Conclude
+  Hypotheses                  Z = ( x̄ − 22 ) / ( s/√n )   Rejection region          Z = (23.5 − 22) /       H₀ is not rejected at α
+  H₀ : μ = 22 versus H₁ :     — a right-sided              z(0.05) = 1.645, so R :   (10.2/√56) = 1.5 /      = 0.05. The claim that
+  μ > 22                      alternative, so R : Z ≥      Z ≥ 1.645                 1.36 = 1.10, which is   μ > 22 is not
+                              c                                                      not in R                substantiated.
+
+
+
+
+   p = P(Z ≥ 1.10) = 0.1357 — the smallest α at which H₀ could be rejected. It is not negligible, so the data
+                                     give no strong basis for rejection.
+TESTS FOR μ WHEN n IS SMALL
+
+
+Large Samples and Small Samples
+
+                                                                   SMALL n
+  LARGE n
+  The central limit theorem does the work                          The theorem no longer applies
+                                                                   Below about n = 30 the approximation fails, and the
+  For a large sample the distribution of x̄ is approximately
+                                                                   appropriate method depends on what can be assumed
+  normal whatever the population looks like. Nothing has
+                                                                   about the population distribution.
+  to be assumed about the population itself.
+                                                                   • If the population is normal: test statistic T, with n − 1 degrees of
+  • Test statistic: Z, read from the standard normal table
+                                                                     freedom
+
+
+
+
+                              The five steps do not change. Only the statistic and the table change.
+TESTS FOR μ WHEN n IS SMALL
+
+
+Example: Bacteria Count at a Lake Beach
+
+
+
+
+      A city health department wishes to determine whether the mean bacteria count per unit
+      volume of water is within the safety level of 200. Ten unit-volume samples are collected.
+    The counts are 175, 190, 215, 198, 184, 207, 210, 193, 196 and 180. Do the data strongly indicate that there is no
+   cause for concern? Ten observations is far below the threshold at which the central limit theorem can be relied on,
+                             so this is a small-sample problem and the t distribution applies.
+TESTS FOR μ WHEN n IS SMALL
+
+
+The Bacteria Count Test
+H₀ : μ = 200 versus H₁ : μ < 200 · α = 0.01 · left-sided
+
+
+
+
+  T = ( X̄ − 200 ) / ( S/√10 )
+  With df = 9, the rejection region is R : T ≤
+  −2.821
+  From the ten measurements, x̄ = 194.8 and s = 13.14, so
+  T = (194.8 − 200)/(13.14/√10) = −5.2/4.156 = −1.25. This
+  does not fall in R.
+  • H₀ is not rejected at α = 0.01
+  • There is no strong evidence that the true mean is within the safety level
+Outline
+01
+INTRODUCTION
+What a hypothesis test is for, and the five concepts the rest of the session depends on
+
+
+02
+TESTS FOR μ WHEN n IS LARGE
+The full machinery: hypotheses, rejection region, the two errors, the p-value, and the five steps
+
+
+03
+TESTS FOR μ WHEN n IS SMALL
+When the central limit theorem no longer applies, and the t distribution takes over
+
+
+04
+TESTS FOR A POPULATION PROPORTION
+The same procedure applied to a percentage rather than a mean
+TESTS FOR A POPULATION PROPORTION
+
+
+Testing a Population Proportion
+H₀ : p = p₀ versus H₁ : p ≠ p₀, with n large
+
+
+
+
+             Z = ( p̂ − p₀ ) / √( p₀q₀ / n ) where p̂ = X/n is the sample proportion and q₀ = 1 − p₀.
+     For a large sample the sample proportion is approximately normally distributed. Under the null hypothesis the
+   proportion has the specified value p₀, so the standardised statistic above has the N(0,1) distribution. Because the
+   alternative is two-sided, the rejection region of a level-α test is R : |Z| ≥ z(α/2). The five steps are unchanged; only
+                                                     the statistic differs.
+TESTS FOR A POPULATION PROPORTION
+
+
+Example: Families Below the Poverty Level
+A census five years ago recorded 20%. A sample of 400 families now finds 70 below the level.
+
+
+
+
+  H₀ : P = 0.20 VS H₁ : P ≠ 0.20
+  At α = 0.05 the rejection region is R : |Z| ≥
+  1.96
+  p̂ = 70/400 = 0.175. The standard error is √(0.2 × 0.8 /
+  400) = 0.020, so Z = (0.175 − 0.200)/0.020 = −1.25.
+  • |−1.25| = 1.25 < 1.96, so H₀ is not rejected at α = 0.05
+  • The data do not indicate that the percentage has changed
+Three Things to Take Away
+
+
+
+
+1. ONE PROCEDURE                        2. FIXED IN ADVANCE
+                                                                              3. TWO WAYS TO BE WRONG
+Five steps, unchanged across            Hypotheses, the form of the
+                                                                              α is chosen and β follows.
+means, proportions and variances.       region and α are settled before the
+                                                                              Tightening one loosens the other,
+Only the test statistic and the table   data are seen. Only computation
+                                                                              and only a larger n reduces both.
+change.                                 comes afterwards.
+

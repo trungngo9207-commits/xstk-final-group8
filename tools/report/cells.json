@@ -1,0 +1,534 @@
+{
+"Part B!A3": {
+"f": "B1 · Continuous Y, no X: mean of Price, 95% CI, test H0: μ = 25",
+"v": "B1 · Continuous Y, no X: mean of Price, 95% CI, test H0: μ = 25"
+},
+"Part B!A4": {
+"f": "n",
+"v": "n"
+},
+"Part B!B4": {
+"f": "=COUNT(Data!$B$2:$B$807)",
+"v": 806
+},
+"Part B!A5": {
+"f": "Mean (x̄)",
+"v": "Mean (x̄)"
+},
+"Part B!B5": {
+"f": "=AVERAGE(Data!$B$2:$B$807)",
+"v": 29.5806451612903
+},
+"Part B!A6": {
+"f": "Standard deviation (s)",
+"v": "Standard deviation (s)"
+},
+"Part B!B6": {
+"f": "=STDEV.S(Data!$B$2:$B$807)",
+"v": 34.1543492872493
+},
+"Part B!A7": {
+"f": "Standard error s/√n",
+"v": "Standard error s/√n"
+},
+"Part B!B7": {
+"f": "=B6/SQRT(B4)",
+"v": 1.20303564301171
+},
+"Part B!A8": {
+"f": "t critical (α=0.05, df=n−1)",
+"v": "t critical (α=0.05, df=n−1)"
+},
+"Part B!B8": {
+"f": "=T.INV.2T(0.05,B4-1)",
+"v": 1.96291526576599
+},
+"Part B!A9": {
+"f": "95% CI lower",
+"v": "95% CI lower"
+},
+"Part B!B9": {
+"f": "=B5-B8*B7",
+"v": 27.219188132362
+},
+"Part B!A10": {
+"f": "95% CI upper",
+"v": "95% CI upper"
+},
+"Part B!B10": {
+"f": "=B5+B8*B7",
+"v": 31.9421021902186
+},
+"Part B!A11": {
+"f": "μ0 (H0 value)",
+"v": "μ0 (H0 value)"
+},
+"Part B!B11": {
+"f": 25,
+"v": 25
+},
+"Part B!A12": {
+"f": "t statistic = (x̄−μ0)/SE",
+"v": "t statistic = (x̄−μ0)/SE"
+},
+"Part B!B12": {
+"f": "=(B5-B11)/B7",
+"v": 3.80757227593275
+},
+"Part B!A13": {
+"f": "p-value (two-sided) =T.DIST.2T",
+"v": "p-value (two-sided) =T.DIST.2T"
+},
+"Part B!B13": {
+"f": "=T.DIST.2T(ABS(B12),B4-1)",
+"v": 0.00015099993374529
+},
+"Part B!A14": {
+"f": "Decision at α = 0.05",
+"v": "Decision at α = 0.05"
+},
+"Part B!B14": {
+"f": "=IF(B13<0.05,\"Reject H0\",\"Do not reject H0\")",
+"v": "Reject H0"
+},
+"Part B!A15": {
+"f": "CONFIDENCE.T half-width (check)",
+"v": "CONFIDENCE.T half-width (check)"
+},
+"Part B!B15": {
+"f": "=CONFIDENCE.T(0.05,B6,B4)",
+"v": 2.36145702892829
+},
+"Part B!A17": {
+"f": "H0: μ = 25 vs H1: μ ≠ 25. One-sample t = 3.81, p = 0.00015 < 0.05 → reject H0: the average bottle costs more than $25 (95% CI $27.22–$31.94). In Price = β0 + ε, OLS picks β0 to minimise Σ(Price − β0)², and that minimum is reached at β0 = x̄.",
+"v": "H0: μ = 25 vs H1: μ ≠ 25. One-sample t = 3.81, p = 0.00015 < 0.05 → reject H0: the average bottle costs more than $25 (95% CI $27.22–$31.94). In Price = β0 + ε, OLS picks β0 to minimise Σ(Price − β0)², and that minimum is reached at β0 = x̄."
+},
+"Part B!A19": {
+"f": "B2 · Continuous Y, one dummy X: Napa valley vs all other wines",
+"v": "B2 · Continuous Y, one dummy X: Napa valley vs all other wines"
+},
+"Part B!B20": {
+"f": "Napa (=1)",
+"v": "Napa (=1)"
+},
+"Part B!C20": {
+"f": "Other (=0)",
+"v": "Other (=0)"
+},
+"Part B!A21": {
+"f": "n",
+"v": "n"
+},
+"Part B!B21": {
+"f": "=COUNT(Data!$U$2:$U$807)",
+"v": 287
+},
+"Part B!C21": {
+"f": "=COUNT(Data!$V$2:$V$807)",
+"v": 519
+},
+"Part B!A22": {
+"f": "Mean Price",
+"v": "Mean Price"
+},
+"Part B!B22": {
+"f": "=AVERAGE(Data!$U$2:$U$807)",
+"v": 43.0592334494774
+},
+"Part B!C22": {
+"f": "=AVERAGE(Data!$V$2:$V$807)",
+"v": 22.1271676300578
+},
+"Part B!A23": {
+"f": "Variance",
+"v": "Variance"
+},
+"Part B!B23": {
+"f": "=VAR.S(Data!$U$2:$U$807)",
+"v": 2689.98598962014
+},
+"Part B!C23": {
+"f": "=VAR.S(Data!$V$2:$V$807)",
+"v": 171.311982502734
+},
+"Part B!A25": {
+"f": "Welch t-test (unequal variances)",
+"v": "Welch t-test (unequal variances)"
+},
+"Part B!A26": {
+"f": "Difference in means (Napa − Other)",
+"v": "Difference in means (Napa − Other)"
+},
+"Part B!B26": {
+"f": "=B22-C22",
+"v": 20.9320658194195
+},
+"Part B!A27": {
+"f": "SE (Welch) = √(s1²/n1 + s2²/n2)",
+"v": "SE (Welch) = √(s1²/n1 + s2²/n2)"
+},
+"Part B!B27": {
+"f": "=SQRT(B23/B21+C23/C21)",
+"v": 3.11494050892454
+},
+"Part B!A28": {
+"f": "Welch t",
+"v": "Welch t"
+},
+"Part B!B28": {
+"f": "=B26/B27",
+"v": 6.71989264624721
+},
+"Part B!A29": {
+"f": "Welch df (Satterthwaite)",
+"v": "Welch df (Satterthwaite)"
+},
+"Part B!B29": {
+"f": "=(B23/B21+C23/C21)^2/((B23/B21)^2/(B21-1)+(C23/C21)^2/(C21-1))",
+"v": 306.289091536261
+},
+"Part B!A30": {
+"f": "p-value two-sided =T.DIST.2T(t, df)",
+"v": "p-value two-sided =T.DIST.2T(t, df)"
+},
+"Part B!B30": {
+"f": "=T.DIST.2T(ABS(B28),B29)",
+"v": 8.88614915806018e-11
+},
+"Part B!A31": {
+"f": "p-value check =T.TEST(…,2,3)",
+"v": "p-value check =T.TEST(…,2,3)"
+},
+"Part B!B31": {
+"f": "=T.TEST(Data!$U$2:$U$807,Data!$V$2:$V$807,2,3)",
+"v": 8.87400532286069e-11
+},
+"Part B!A32": {
+"f": "Decision at α = 0.05",
+"v": "Decision at α = 0.05"
+},
+"Part B!B32": {
+"f": "=IF(B30<0.05,\"Reject H0: means differ\",\"Do not reject H0\")",
+"v": "Reject H0: means differ"
+},
+"Part B!A34": {
+"f": "Pooled (equal-variance) t-test — for B2.3",
+"v": "Pooled (equal-variance) t-test — for B2.3"
+},
+"Part B!A35": {
+"f": "Pooled variance sp²",
+"v": "Pooled variance sp²"
+},
+"Part B!B35": {
+"f": "=((B21-1)*B23+(C21-1)*C23)/(B21+C21-2)",
+"v": 1067.25820891514
+},
+"Part B!A36": {
+"f": "SE pooled = sp·√(1/n1+1/n2)",
+"v": "SE pooled = sp·√(1/n1+1/n2)"
+},
+"Part B!B36": {
+"f": "=SQRT(B35*(1/B21+1/C21))",
+"v": 2.40313210535115
+},
+"Part B!A37": {
+"f": "Pooled t",
+"v": "Pooled t"
+},
+"Part B!B37": {
+"f": "=B26/B36",
+"v": 8.71032673268744
+},
+"Part B!A38": {
+"f": "df = n1+n2−2",
+"v": "df = n1+n2−2"
+},
+"Part B!B38": {
+"f": "=B21+C21-2",
+"v": 804
+},
+"Part B!A39": {
+"f": "p-value check =T.TEST(…,2,2)",
+"v": "p-value check =T.TEST(…,2,2)"
+},
+"Part B!B39": {
+"f": "=T.TEST(Data!$U$2:$U$807,Data!$V$2:$V$807,2,2)",
+"v": 1.70824278070043e-17
+},
+"Part B!A41": {
+"f": "Regression statistics — Price on Napa dummy",
+"v": "Regression statistics — Price on Napa dummy"
+},
+"Part B!A42": {
+"f": "R Square",
+"v": "R Square"
+},
+"Part B!B42": {
+"f": "=$K$44",
+"v": 0.0862284311816251
+},
+"Part B!A43": {
+"f": "Adjusted R Square",
+"v": "Adjusted R Square"
+},
+"Part B!B43": {
+"f": "=1-(1-B42)*(B46-1)/B47",
+"v": 0.0850918993796121
+},
+"Part B!A44": {
+"f": "Standard Error",
+"v": "Standard Error"
+},
+"Part B!B44": {
+"f": "=$L$44",
+"v": 32.6689180860821
+},
+"Part B!A45": {
+"f": "F",
+"v": "F"
+},
+"Part B!B45": {
+"f": "=$K$45",
+"v": 75.8697917901694
+},
+"Part B!A46": {
+"f": "Observations (n)",
+"v": "Observations (n)"
+},
+"Part B!B46": {
+"f": "=B47+1+1",
+"v": 806
+},
+"Part B!A47": {
+"f": "Residual df",
+"v": "Residual df"
+},
+"Part B!B47": {
+"f": "=$L$45",
+"v": 804
+},
+"Part B!A48": {
+"f": "SS Regression (SSR)",
+"v": "SS Regression (SSR)"
+},
+"Part B!B48": {
+"f": "=$K$46",
+"v": 80972.6580967411
+},
+"Part B!A49": {
+"f": "SS Residual (SSE)",
+"v": "SS Residual (SSE)"
+},
+"Part B!B49": {
+"f": "=$L$46",
+"v": 858075.599967775
+},
+"Part B!A50": {
+"f": "Significance F (p)",
+"v": "Significance F (p)"
+},
+"Part B!B50": {
+"f": "=F.DIST.RT(B45,1,B47)",
+"v": 1.70824278070043e-17
+},
+"Part B!A52": {
+"f": "Variable",
+"v": "Variable"
+},
+"Part B!B52": {
+"f": "Coefficient",
+"v": "Coefficient"
+},
+"Part B!C52": {
+"f": "Std. Error",
+"v": "Std. Error"
+},
+"Part B!D52": {
+"f": "t Stat",
+"v": "t Stat"
+},
+"Part B!E52": {
+"f": "P-value",
+"v": "P-value"
+},
+"Part B!F52": {
+"f": "Lower 95%",
+"v": "Lower 95%"
+},
+"Part B!G52": {
+"f": "Upper 95%",
+"v": "Upper 95%"
+},
+"Part B!H52": {
+"f": "Sig. at 5%?",
+"v": "Sig. at 5%?"
+},
+"Part B!A53": {
+"f": "Intercept",
+"v": "Intercept"
+},
+"Part B!B53": {
+"f": "=$L$42",
+"v": 22.1271676300578
+},
+"Part B!C53": {
+"f": "=$L$43",
+"v": 1.43400634527713
+},
+"Part B!D53": {
+"f": "=B53/C53",
+"v": 15.4303136125814
+},
+"Part B!E53": {
+"f": "=T.DIST.2T(ABS(D53),$B$47)",
+"v": 3.03541237081707e-47
+},
+"Part B!F53": {
+"f": "=B53-T.INV.2T(0.05,$B$47)*C53",
+"v": 19.3123294120368
+},
+"Part B!G53": {
+"f": "=B53+T.INV.2T(0.05,$B$47)*C53",
+"v": 24.9420058480789
+},
+"Part B!H53": {
+"f": "=IF(E53<0.05,\"Yes\",\"No\")",
+"v": "Yes"
+},
+"Part B!A54": {
+"f": "Napa valley",
+"v": "Napa valley"
+},
+"Part B!B54": {
+"f": "=$K$42",
+"v": 20.9320658194195
+},
+"Part B!C54": {
+"f": "=$K$43",
+"v": 2.40313210535115
+},
+"Part B!D54": {
+"f": "=B54/C54",
+"v": 8.71032673268744
+},
+"Part B!E54": {
+"f": "=T.DIST.2T(ABS(D54),$B$47)",
+"v": 1.70824278070043e-17
+},
+"Part B!F54": {
+"f": "=B54-T.INV.2T(0.05,$B$47)*C54",
+"v": 16.2149122898175
+},
+"Part B!G54": {
+"f": "=B54+T.INV.2T(0.05,$B$47)*C54",
+"v": 25.6492193490216
+},
+"Part B!H54": {
+"f": "=IF(E54<0.05,\"Yes\",\"No\")",
+"v": "Yes"
+},
+"Part B!A56": {
+"f": "Check: slope − (mean Napa − mean Other)",
+"v": "Check: slope − (mean Napa − mean Other)"
+},
+"Part B!B56": {
+"f": "=B54-B26",
+"v": 0
+},
+"Part B!A57": {
+"f": "Check: intercept − mean Other",
+"v": "Check: intercept − mean Other"
+},
+"Part B!B57": {
+"f": "=B53-C22",
+"v": 0
+},
+"Part B!A58": {
+"f": "Check: slope t − pooled t",
+"v": "Check: slope t − pooled t"
+},
+"Part B!B58": {
+"f": "=D54-B37",
+"v": 0
+},
+"Part B!A59": {
+"f": "Slope = difference of group means; intercept = mean of non-Napa wines. The slope t (8.71) equals the POOLED t, not Welch's (6.72): OLS assumes one common error variance for all observations, which is exactly the pooled equal-variance assumption. Safer rank-based check given the skewed histogram: Wilcoxon rank-sum / Mann–Whitney U test.",
+"v": "Slope = difference of group means; intercept = mean of non-Napa wines. The slope t (8.71) equals the POOLED t, not Welch's (6.72): OLS assumes one common error variance for all observations, which is exactly the pooled equal-variance assumption. Safer rank-based check given the skewed histogram: Wilcoxon rank-sum / Mann–Whitney U test."
+},
+"Part B!K41": {
+"f": "Raw LINEST output (Price on Napa dummy)",
+"v": "Raw LINEST output (Price on Napa dummy)"
+},
+"Part B!K42": {
+"f": "{=LINEST(Data!$B$2:$B$807,Data!$F$2:$F$807,TRUE,TRUE)}",
+"v": 20.9320658194195
+},
+"Part B!L42": {
+"f": 22.1271676300578,
+"v": 22.1271676300578
+},
+"Part B!K43": {
+"f": 2.40313210535115,
+"v": 2.40313210535115
+},
+"Part B!L43": {
+"f": 1.43400634527713,
+"v": 1.43400634527713
+},
+"Part B!K44": {
+"f": 0.0862284311816251,
+"v": 0.0862284311816251
+},
+"Part B!L44": {
+"f": 32.6689180860821,
+"v": 32.6689180860821
+},
+"Part B!K45": {
+"f": 75.8697917901694,
+"v": 75.8697917901694
+},
+"Part B!L45": {
+"f": 804,
+"v": 804
+},
+"Part B!K46": {
+"f": 80972.6580967411,
+"v": 80972.6580967411
+},
+"Part B!L46": {
+"f": 858075.599967775,
+"v": 858075.599967775
+},
+"Part A!B18": {
+"f": "=AVERAGE(Data!$B$2:$B$807)",
+"v": 29.5806451612903
+},
+"Part A!B19": {
+"f": "=MEDIAN(Data!$B$2:$B$807)",
+"v": 22
+},
+"Part A!B23": {
+"f": "=MAX(Data!$B$2:$B$807)",
+"v": 440
+},
+"Part A!B24": {
+"f": "=SKEW(Data!$B$2:$B$807)",
+"v": 7.87384594678597
+},
+"Data!U1": {
+"f": "Price if Napa",
+"v": "Price if Napa"
+},
+"Data!U2": {
+"f": "=IF(F2=1,B2,\"\")",
+"v": null
+},
+"Data!V1": {
+"f": "Price if not Napa",
+"v": "Price if not Napa"
+},
+"Data!V2": {
+"f": "=IF(F2=0,B2,\"\")",
+"v": 6
+}
+}

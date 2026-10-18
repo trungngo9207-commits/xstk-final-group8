@@ -1,0 +1,784 @@
+Lecture 10: Comparing two treatments
+
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+
+
+
+
+                                                         1
+Outline
+01
+INTRODUCTION
+From a business question to one parameter, and two ways of collecting the data
+
+
+02
+INDEPENDENT RANDOM SAMPLES
+Large samples, pooled t, the F-test for equal variances, and Welch's t
+
+
+03
+MATCHED PAIR COMPARISONS
+Analysing differences within pairs, and when pairing pays off
+
+
+04
+COMPARING TWO PROPORTIONS
+The difference of two proportions, and what randomisation adds to a conclusion
+Outline
+01
+INTRODUCTION
+From a business question to one parameter, and two ways of collecting the data
+
+
+02
+INDEPENDENT RANDOM SAMPLES
+Large samples, pooled t, the F-test for equal variances, and Welch's t
+
+
+03
+MATCHED PAIR COMPARISONS
+Analysing differences within pairs, and when pairing pays off
+
+
+04
+COMPARING TWO PROPORTIONS
+The difference of two proportions, and what randomisation adds to a conclusion
+INTRODUCTION
+
+
+From a Business Question to a Parameter
+A retail chain wants to know whether a new store layout raises weekly sales
+
+
+
+
+   "The new layout is better" becomes: mean weekly sales under the new layout exceed mean
+                                 weekly sales under the old one.
+                          The parameter is μ₁ − μ₂, and H₀ : μ₁ − μ₂ = 0.
+       A comparison of two populations always reduces to estimating one number — their difference. The sample
+     estimate is x̄₁ − x̄₂. Everything that follows in this session is about one question: how uncertain is that estimate?
+
+
+
+
+                                             Two populations, one parameter: the difference.
+INTRODUCTION
+
+
+Two Ways to Collect the Data
+The same question can be answered by two different designs
+
+
+
+  DESIGN A — INDEPENDENT SAMPLES
+                                                             DESIGN B — MATCHED PAIRS
+  Eight stores switch, eight other stores do
+                                                             The same eight stores, before and after
+  not
+                                                             Each store is measured twice, once under each layout.
+  Two separate groups of stores are observed. No store       Every observation under the new layout has a partner
+  appears in both groups, so the two samples are             under the old one.
+  unrelated to each other.                                   • Called a matched-pair design
+  • Called a two-sample design
+
+
+
+
+                      Both designs answer the same question. Will they give the same conclusion?
+INTRODUCTION
+
+
+The Vocabulary of a Comparison
+
+
+
+  01                                                      02
+  Treatment                                               Experimental unit
+  The condition being compared: the new layout, a         The object that receives a treatment and is measured: a
+  training method, a version of a web page.               store, an employee, a website visitor.
+
+
+
+  03                                                      04
+  Two-sample design                                       Matched-pair design
+  Each unit receives one treatment only; the two groups   Units come in pairs that are alike, or one unit is
+  of units are independent.                               measured under both treatments.
+INTRODUCTION
+
+
+From One Population to Two
+Remind the five steps of Lecture 9 are unchanged; only the estimate and its standard error change
+
+
+
+
+                                                                           Lecture 9: one
+                                                                                                    Lecture 10: two populations
+                                                                           population
+
+ Parameter                                                                 μ                        μ₁ − μ₂
+
+ Estimate                                                                  x̄                       x̄₁ − x̄₂
+
+ Null Hypothesis H₀                                                        μ = μ₀                   μ₁ − μ₂ = 0
+
+ Standard error                                                            s/√n                     depends on the design
+
+ Statistic = (estimate − value under H₀) ÷ standard error
+Outline
+01
+INTRODUCTION
+From a business question to one parameter, and two ways of collecting the data
+
+
+02
+INDEPENDENT RANDOM SAMPLES
+Large samples, pooled t, the F-test for equal variances, and Welch's t
+
+
+03
+MATCHED PAIR COMPARISONS
+Analysing differences within pairs, and when pairing pays off
+
+
+04
+COMPARING TWO PROPORTIONS
+The difference of two proportions, and what randomisation adds to a conclusion
+INDEPENDENT RANDOM SAMPLES
+
+
+The Standard Error of a Difference
+Independent samples of sizes n₁ and n₂
+
+
+
+                                                                  𝜎12 𝜎22
+                                                 𝑆𝐸 𝑥ҧ1 − 𝑥ҧ2 =      +
+                                                                  𝑛1 𝑛2
+                              Variances increased, even though the means are subtracted.
+
+  • Each sample mean carries its own sampling error, and the two errors are independent.
+  • When two independent random quantities are combined — added or subtracted — their variances add. The
+    difference of two estimates is therefore always less precise than either estimate on its own; the errors never
+    cancel.
+
+
+
+
+                                         Can you explain this using mathematics?
+                                              Hint: Var(X) = E(X^2) – E(X)^2
+INDEPENDENT RANDOM SAMPLES
+
+
+Example: Comparing 2 stores
+Revenue Difference of 2 stores A & B
+
+Store A: Centered at 50, narrower
+because its risk (standard deviation) is
+smaller (𝜎=3).
+Store B: Centered at 46, slightly flatter
+and wider because it has higher volatility
+(𝜎=4).
+
+
+Difference Curve (A - B) (Purple Curve):
+Centered at 4 (50−46=4). Notice that this
+curve is much flatter and wider than both
+individual curves
+INDEPENDENT RANDOM SAMPLES
+
+
+Three Cases, One Structure
+
+
+
+ Case                                                                   Statistic                              Distribution
+
+                                                                                              𝑥ҧ1 − 𝑥ҧ2
+                                                                                        𝑍=
+ n₁ and n₂ both large                                                                          𝑠12 𝑠22         standard normal
+                                                                                               𝑛1 + 𝑛2
+                                                                                              𝑥ҧ1 − 𝑥ҧ2
+                                                                                       𝑇=                      Student t-distribution
+ small n, normal populations, σ₁ = σ₂                                                            1      1
+                                                                                            𝑠𝑝 𝑛 + 𝑛           with df = n₁ + n₂ − 2
+                                                                                                  1      2
+                                                                                                   𝑥ҧ1 − 𝑥ҧ2
+                                                                                    Welch′ s 𝑡 =
+                                                                                                               Student t-distribution
+ small n, normal populations, σ₁ ≠ σ₂                                                               𝑠12 𝑠22    with approximate df
+                                                                                                    𝑛1 + 𝑛2
+
+ The numerator is always x̄₁ − x̄₂. Only the denominator and the table change.
+INDEPENDENT RANDOM SAMPLES
+
+
+Example: Order Value on the App and on the Web
+
+
+
+        An e-commerce platform compares the mean order value of app and web customers.
+                                 App: n₁ = 100, x̄₁ = 385, s₁ = 90.
+                                Web: n₂ = 100, x̄₂ = 352, s₂ = 120
+                                 (All unit is in thousand VND).
+
+    Is there a difference in mean order value between the two channels? Test at α = 0.05, then give a 95%
+                                         confidence interval for μ₁ − μ₂.
+
+                             Both samples are large, so the first case of the table applies.
+INDEPENDENT RANDOM SAMPLES
+
+
+The Order-Value Test, Step by Step
+
+
+                                                                                     STEP 4
+  STEP 1                     STEP 2                         STEP 3                                          STEP 5
+                                                                                     Compute
+  Hypotheses                 Test statistic                 Rejection region                                Conclude
+                                                                                     SE = √(8100/100 +
+  H₀ : μ₁ − μ₂ = 0 versus    Z = (x̄₁ − x̄₂) / √(s₁²/n₁ +   α = 0.05, so R : |Z| ≥                          2.20 ≥ 1.96: H₀ is
+                                                                                     14400/100) = √225 =
+  H₁ : μ₁ − μ₂ ≠ 0           s₂²/n₂), two-sided             1.96                                            rejected. p = 0.028
+                                                                                     15. Z = 33/15 = 2.20
+
+
+
+
+                                95% interval: 33 ± 1.96 × 15 = [3.6 ; 62.4] thousand VND.
+INDEPENDENT RANDOM SAMPLES
+
+
+Statistical Significance vs Practical Significance
+
+
+
+
+    The test says the channels differ. The interval says by how much: somewhere between 3.6
+                                and 62.4 thousand VND per order.
+
+   At the lower end the difference is too small to justify any change in marketing budget; at the upper end it would
+   justify a major shift towards the app. Both are consistent with the data. The interval excludes 0 exactly when the
+  two-sided test rejects at the same level — they are one computation — but only the interval reports the size of the
+                                                        difference.
+INDEPENDENT RANDOM SAMPLES
+
+
+Small Samples with Equal Variances: Pooling
+
+
+
+                     If σ₁ = σ₂ = σ, both samples estimate the same σ, so they are combined:
+                                                         2   𝑛1 −1 𝑠12 + 𝑛2 −1 𝑠22
+                                                        𝑠𝑝 =
+                                                                 𝑛1 +𝑛2 −2
+   The pooled variance is a weighted average of the two sample variances, with weights equal
+                                  to their degrees of freedom.
+
+                                            𝑥ҧ1 −𝑥ҧ 2
+                       The statistic 𝑇 =                  has a t distribution with n₁ + n₂ − 2 degrees of freedom.
+                                               1  1
+                                           𝑠𝑝 𝑛 +𝑛
+                                                1  2
+
+
+                             Pooling is valid only when the equal-variance assumption holds.
+INDEPENDENT RANDOM SAMPLES
+
+
+Example: Two Sales-Training Methods
+Problem: A company wishes to evaluate and compare the effectiveness of two different sales training methods based
+on employee productivity scores.
+Survey data from two independent groups of employees are recorded as follows:
+Group 1 (trained using Method 1): 10 employees, mean productivity score of 78, sample standard deviation of 6.
+Group 2 (trained using Method 2): 12 employees, mean productivity score of 72, sample standard deviation of 7.
+Assume that productivity scores in both groups follow a normal distribution and that the two populations have equal
+variances
+Requirements:
+a, Hypothesis testing: At a significance level of 𝛼 = 0.05, test whether there is a statistically significant difference in
+mean productivity scores between the two training methods.
+b, Interval estimation: Construct a 95% confidence interval for the difference in mean productivity scores between the
+two methods (𝜇1 − 𝜇2 ) and state the practical significance of the result.
+INDEPENDENT RANDOM SAMPLES
+
+
+Example: Two Sales-Training Methods
+Method 1: n₁ = 10, x̄₁ = 78, s₁ = 6 · Method 2: n₂ = 12, x̄₂ = 72, s₂ = 7 · productivity score, α = 0.05
+
+
+
+
+                                                                                                           STEP 4
+                                                                                                                                   STEP 5
+  STEP 1                                STEP 2                                STEP 3                       Compute
+                                                                                                                                   Conclude
+  Hypotheses                            Test statistic                        Rejection region             s_p² = (9·36 +
+                                                                                                                                   2.13 ≥ 2.086: H₀ is
+  H₀ : μ₁ − μ₂ = 0 versus               pooled T, df = 10 + 12                R : |T| ≥ t₀.₀₂₅(20) =       11·49)/20 = 43.15. SE
+                                                                                                                                   rejected, narrowly. p
+  H₁ : μ₁ − μ₂ ≠ 0                      − 2 = 20                              2.086                        = 6.57·√(1/10 + 1/12)
+                                                                                                                                   = 0.045
+                                                                                                           = 2.81. T = 2.13
+
+
+
+
+              95% interval: 6 ± 2.086 × 2.81 = [0.13 ; 11.87] — close to 0, as the narrow rejection implies.
+INDEPENDENT RANDOM SAMPLES
+
+
+Checking the Assumption: The F-Test for Two Variances
+
+                                                     H₀ : σ₁² = σ₂².
+                                                           2
+                                                          𝑠large
+                                                        𝐹= 2
+                                                          𝑠small
+      with (n − 1) degrees of freedom for each sample, numerator first. Reject when F ≥ F₀.₀₂₅.
+      The F distribution is the distribution of a ratio of two independent sample variances from normal populations.
+                                  Like χ², it takes only positive values and is not symmetric.
+
+
+             The F-test is sensitive to non-normality. It is a check on the assumption, not a guarantee.
+
+
+
+
+     For the training example: F = 49/36 = 1.36, below F₀.₀₂₅(11, 9) = 3.91, so equal variances are not rejected and
+                                                  pooling was justified.
+INDEPENDENT RANDOM SAMPLES
+
+
+Example: Daily Sales at Two Branches
+
+
+
+
+  Branch A: n = 20 days, x̄ = 52, s = 5.
+  Branch B: n = 8 days, x̄ = 45, s = 12 (million VND).
+  Is there a difference in mean daily sales? α = 0.05.
+
+      Check the assumption first: F = 12²/5² = 144/25 = 5.76, which exceeds F₀.₀₂₅(7, 19) = 3.05. Equal variances are
+                                  rejected: branch B is far more volatile than branch A.
+
+                                           Conclusion: Pooling is not justified
+INDEPENDENT RANDOM SAMPLES
+
+
+Pooled t vs Welch’s t on the Same Data
+The same two samples, the same difference of 7, two different standard errors
+
+
+
+                                       Pooled t (assumes σ₁ = σ₂)               Welch t (not assumes σ₁ equal to σ₂)
+
+
+ Standard error                        s_p * √(1/20 + 1/8) = 3.16               √(25/20 + 144/8) = √19.25 = 4.39
+
+
+ T                                     7/3.16 = 2.22                            7/4.39 = 1.60
+
+
+ df and critical value                 26, 2.056                                ≈ 8, 2.306
+
+
+ p-value                               0.036                                    0.149
+
+
+ Conclusion                            reject H₀                                do not reject H₀
+
+
+
+
+                                                A wrong assumption reversed the conclusion.
+INDEPENDENT RANDOM SAMPLES
+
+
+Why the Conclusion Flipped
+
+
+
+
+  MECHANISM                                                CONSEQUENCE
+  Pooling borrows precision from the calmer                When in doubt, use Welch
+  sample                                                   If the variances are in fact equal, Welch and pooled give
+  The pooled variance weights each sample by its degrees   nearly the same answer, so little is lost. If they are not,
+  of freedom. When the larger sample has the smaller       pooled t declares differences that the data do not
+  variance, the pooled figure understates the noise        support.
+  contributed by the small, volatile sample.
+  • Worst case: small n together with large s
+Outline
+01
+INTRODUCTION
+From a business question to one parameter, and two ways of collecting the data
+
+
+02
+INDEPENDENT RANDOM SAMPLES
+Large samples, pooled t, the F-test for equal variances, and Welch's t
+
+
+03
+MATCHED PAIR COMPARISONS
+Analysing differences within pairs, and when pairing pays off
+
+
+04
+COMPARING TWO PROPORTIONS
+The difference of two proportions, and what randomisation adds to a conclusion
+MATCHED PAIR COMPARISONS
+
+
+Matched Pairs Definition
+
+• In comparing two treatments, it is
+  desirable that the experimental units or
+  subjects be as alike as possible, so that
+  a difference in responses between the
+  groups can be attributed to differences
+  in treatments.
+• But large variability can occur in the
+  measurements.
+• The procedure (sampling by matched
+  pairs) consists of choosing units in pairs
+  or blocks so that the units in each block
+  are similar and those in different blocks
+  are dissimilar.
+                                               How can we define 2 objects “matching”?
+MATCHED PAIR COMPARISONS
+
+
+Matched Pairs: Analyze the Differences
+
+
+                                 For each pair compute 𝒅𝒊 = 𝒙𝒊 after − 𝒙𝒊 before .
+                                     ഥ
+                           Then 𝑻 = 𝒔𝒅𝒅 , with n − 1 degrees of freedom, and H₀ : 𝝁𝒅 = 𝟎.
+                                     𝒏
+
+
+
+    This is the one-sample t-test of Lecture 9, applied to the column of differences. The two original columns are no
+   longer analyzed separately; the unit of analysis is the change within each experimental unit. Whatever makes one
+           unit differ from another is present in both of its measurements, and is removed by the subtraction.
+
+
+
+
+                                No new formula — a new way of looking at the data.
+MATCHED PAIR COMPARISONS
+
+
+The Eight Stores
+Weekly sales (million VND) before and after the new layout
+
+
+
+ Store                               Before                  After                   d = After − Before
+
+
+ 1·2                                 120 · 85                126 · 88                6·3
+
+ 3·4                                 210 · 150               219 · 154               9·4
+
+ 5·6                                 95 · 175                101 · 178               6·3
+
+ 7·8                                 130 · 60                137 · 66                7·6
+
+ Mean                                128.1                   133.6                   5.5
+
+
+
+
+                 Sales range from 60 to 210 between stores. How large are the changes within stores?
+MATCHED PAIR COMPARISONS
+
+
+The Paired Test, Step by Step
+
+
+                               STEP 2                                           STEP 4
+  STEP 1                                                STEP 3                                            STEP 5
+                               Test statistic                                   Compute
+  Hypotheses                                            Rejection region                                  Conclude
+                                     𝑑ത                                         𝑑ҧ = 5.5, 𝑠𝑑 = 2.07, SE
+  H₀ : 𝜇𝑑 = 0 versus H₁ :      𝑇=        , df = n − 1   R : |T| ≥ t₀.₀₂₅(7) =                             7.51 ≥ 2.365: H₀ is
+                                  𝑠𝑑 / 𝑛                                        = 2.07/√8 = 0.732.
+  𝜇𝑑 ≠ 0                       =7                       2.365                                             rejected. p ≈ 0.0001
+                                                                                T = 5.5/0.732 = 7.51
+
+
+
+
+                       95% interval for 𝝁𝒅 : 5.5 ± 2.365 × 0.732 = [3.77 ; 7.23] million VND per week.
+MATCHED PAIR COMPARISONS
+
+
+The Same Sixteen Numbers, Analyzed Two Ways
+The answer to the question left open in Part 1
+
+
+
+
+ Analysis                                        What goes into the standard error                    T      p-value
+
+
+ Treated as two independent samples              differences between stores (s ≈ 50 in each column)   0.22   0.83
+
+
+ Treated as matched pairs                        only the changes within stores (𝑠𝑑 = 2.07)           7.51   0.0001
+
+
+ The design decides what counts as noise
+MATCHED PAIR COMPARISONS
+
+
+Seeing Why Pairing Wins
+
+
+
+
+  BEFORE AND AFTER
+  Eight lines, all rising
+  Each store is a line from its before value to its after
+  value. The lines sit at very different heights, but every
+  one of them slopes upward by a similar amount.
+  • Height of a line: differences between stores
+  • Slope of a line: the effect of the layout
+  • The paired test looks only at the slopes
+
+
+
+
+                       Var 𝑋after − 𝑋before = Var 𝑋after + Var 𝑋before − 2 ⋅ Cov 𝑋after , 𝑋before
+MATCHED PAIR COMPARISONS
+
+
+Independent or Paired: Choosing the Design
+
+
+
+
+                                                                WHAT PAIRING COSTS
+  WHAT PAIRING GAINS
+                                                                Degrees of freedom are halved
+  Variation between units leaves the error
+                                                                Eight pairs give 7 degrees of freedom instead of 14. If
+  Everything that makes one unit differ from another is
+                                                                the pairs are not truly alike, pairing removes little
+  removed by the subtraction. The standard error reflects
+                                                                variation and still pays this price in a larger critical
+  only how consistently the treatment works within units.
+                                                                value.
+  • Worth it when units differ a lot compared with the effect
+                                                                • Pairing is decided before the data are collected
+MATCHED PAIR COMPARISONS
+
+
+Matched Pairs in Business Data
+Recognising a paired design is the first step of the analysis
+
+
+
+
+  01                                                            02
+  Before and after                                              One item, two channels
+  The same customers, stores or employees measured              The same product's price or sales on two platforms, in
+  before and after a policy change.                             the same week.
+
+
+
+  03                                                            04
+  Two raters, one case                                          Matched units
+  Two appraisers valuing the same set of properties, or         Pairs of stores chosen to be alike in size and location,
+  two graders marking the same essays.                          one of each pair receiving the treatment.
+Outline
+01
+INTRODUCTION
+From a business question to one parameter, and two ways of collecting the data
+
+
+02
+INDEPENDENT RANDOM SAMPLES
+Large samples, pooled t, the F-test for equal variances, and Welch's t
+
+
+03
+MATCHED PAIR COMPARISONS
+Analysing differences within pairs, and when pairing pays off
+
+
+04
+COMPARING TWO PROPORTIONS
+The difference of two proportions, and what randomisation adds to a conclusion
+COMPARING TWO PROPORTIONS
+
+
+Comparing Two Population Proportions
+
+Comparing the jobless rates in two cities, the
+percentages of female employees in two
+categories of jobs, and infant mortality in two
+ethnic groups are just a few examples, etc. are
+often of our great interests
+Let 𝑝1 denote the proportion of members
+possessing the characteristic in population 1,
+and 𝑝2 that in population 2. Our goals are to
+construct confidence intervals for 𝑝1− 𝑝2 and
+test 𝐻: 𝑝1 = 𝑝2 , the null hypothesis that the
+rates are the same for two populations.
+COMPARING TWO PROPORTIONS
+
+
+Comparing Two Population Proportions
+
+
+
+
+             Parameter: p₁ − p₂. Estimate: p̂₁ − p̂₂, where p̂ = X/n. For large samples, p̂₁ − p̂₂ is
+                                         approximately normal.
+
+                The structure is the one used for means: an estimated difference divided by its standard error.
+
+           The variance of a sample proportion is p(1 − p)/n, and for independent samples the two variances add.
+COMPARING TWO PROPORTIONS
+
+
+Two Standard Errors for One Difference
+The test and the interval use different standard errors, for a reason
+
+
+
+
+ Purpose                                                           Standard error                       Why
+
+
+                                                                                           1   1
+                                                                        𝑆𝐸 =    𝑝ҧ 1 − 𝑝ҧ    +          the test is computed in the world
+                                                                                           𝑛1 𝑛2
+ Test of H₀ : p₁ = p₂                                                                                   of H₀, where there is one common
+                                                                                     𝑋1 + 𝑋2
+                                                                                𝑝ҧ =                    p
+                                                                                     𝑛1 + 𝑛2
+
+                                                                        𝑆𝐸𝑢𝑛𝑝𝑜𝑜𝑙𝑒𝑑
+                                                                                                        an interval assumes nothing about
+ Confidence interval for p₁ − p₂                                            𝑝ƶ1 1 − 𝑝ƶ1   𝑝ƶ2 1 − 𝑝ƶ2
+                                                                        =               +               H₀
+                                                                                 𝑛1            𝑛2
+
+ Pooling here is required by H₀ — not an extra assumption, as it was for σ
+COMPARING TWO PROPORTIONS
+
+
+Example: An A/B Test of a Checkout Page
+
+
+
+
+    An online shop tests two versions of its checkout page. Visitors are assigned at random.
+  Version A: 200 orders from 4,000 visits (5.0%). Version B: 248 orders from 4,000 visits (6.2%).
+   Does the conversion rate differ between the two versions? Test at α = 0.05, then give a 95% confidence interval for
+           p_B − p_A. Each group contains hundreds of both outcomes, so the normal approximation is safe.
+COMPARING TWO PROPORTIONS
+
+
+The A/B Test, Step by Step
+
+
+
+
+                            STEP 2                                              STEP 4
+  STEP 1
+                            Test statistic             STEP 3                                            STEP 5
+  Hypotheses                                                                    Compute
+                                        𝑝ƶ𝐵 − 𝑝ƶ𝐴
+                            𝑍=                         Rejection region         p̂ = 448/8000 = 0.056.   Conclude
+  H₀ : 𝑝𝐵 − 𝑝𝐴 = 0                 𝑝ƶ 1 − 𝑝ƶ
+                                               1
+                                                 +
+                                                   1
+                                               𝑛𝐴 𝑛𝐵   α = 0.05, so R : |Z| ≥   SE =                     2.33 ≥ 1.96: H₀ is
+  versus H₁ : 𝑝𝐵 −
+                                                       1.96                     √(0.056·0.944·2/4000)    rejected. p = 0.020
+  𝑝𝐴 ≠ 0
+                            for pooled p̂                                       = 0.00514. Z = 2.33
+COMPARING TWO PROPORTIONS
+
+
+How Large Is the Improvement?
+
+
+
+
+      95% interval for 𝒑𝑩 − 𝒑𝑨 : 1.2 ± 1.96 × 0.514 = [0.19 ; 2.21] percentage points, using the
+                                     unpooled standard error.
+
+   The improvement is real at the 5% level, but its size is poorly determined: it may be as small as one-fifth of a point
+    or as large as two points. Whether version B is worth rolling out depends on what the change costs — and a cost
+                                 that is justified by 2 points may not be justified by 0.2.
+COMPARING TWO PROPORTIONS
+
+
+The Role of Randomization
+The same computation, applied to two situations
+
+
+
+
+                                                  A/B test of the checkout page               Dividend payers: HOSE versus HNX
+
+
+ How the two groups were formed                   visitors assigned at random at A or B       firms chose their exchange, and met its listing rules
+
+
+ Is the test valid?                               yes                                         yes
+
+
+                                                                                              the exchanges differ in the proportion of dividend
+ What may be concluded                            version B causes a higher conversion rate
+                                                                                              payers
+
+
+ What may not be concluded                        —                                           "listing on HOSE makes firms pay dividends"
+
+
+ Causation is a property of how the data were collected, not of the formula
+COMPARING TWO PROPORTIONS
+
+
+The Role of Randomization
+
+
+
+
+        Random assignment makes the two groups alike, on average, in everything except the
+          treatment. So that the difference between groups can be read as the effect of the
+                                             treatment.
+
+  Where assignment cannot be randomized — the choice of exchange, a firm's industry, a customer's own decision to
+      join a loyalty programme — a two-sample test still tells whether the groups differ. But it cannot say why.
+ANALYSIS OF VARIANCE
+
+
+Three Things to Take Away
+
+
+
+
+                                      2. THE DESIGN SETS THE ERROR
+  1. SIGNAL OVER NOISE                                                  3. ONE QUESTION, THEN MANY
+                                      How the data were collected
+  Every comparison today is signal                                      With k groups, ask once with
+                                      decides the standard error. The
+  over noise: a difference over its                                     ANOVA, then compare pairs at
+                                      same sixteen numbers gave p =
+  standard error, or between-group                                      α/m. Only random assignment lets
+                                      0.83 unpaired and p = 0.0001
+  over within-group variation.                                          a difference be called an effect.
+                                      paired.
+

@@ -1,0 +1,677 @@
+Lecture 8: Estimation
+
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+
+
+
+
+                                                         1
+AGENDA
+01
+THE LOGIC OF ESTIMATION
+Which parameter is wanted, how an estimator is built, and how a good one is told from a bad one
+
+
+02
+FROM POINT TO INTERVAL
+Why a single number is never enough, and the pivotal quantity that turns one into an interval
+
+
+03
+z, t AND χ²
+Three pivots, one method: what each one estimates, what it assumes, and what it costs
+AGENDA
+01
+THE LOGIC OF ESTIMATION
+Which parameter is wanted, how an estimator is built, and how a good one is told from a bad one
+
+
+02
+FROM POINT TO INTERVAL
+Why a single number is never enough, and the pivotal quantity that turns one into an interval
+
+
+03
+z, t AND χ²
+Three pivots, one method: what each one estimates, what it assumes, and what it costs
+REVISED FROM LECTURE 6
+
+
+Parameter and Sample Statistic
+
+
+                         Parameter (tham số)      Statistic (thống kê mẫu)
+
+
+ Notation                μ, σ, p (mu, sigma, p)   x̄, s, p̂
+
+ Describes               the Population           the Sample
+
+ In practice             unknown                  computed
+
+ Today, in this room     known — we declared it   the 10 values on the board
+
+ Nature of the object    a fixed number           a random variable
+THE LOGIC OF ESTIMATION
+
+
+Why we estimate?
+THE LOGIC OF ESTIMATION
+
+
+Why we estimate?
+
+Statistical inference is the ways of drawing
+conclusions about population parameters
+from an analysis of the sample data
+• Sample is only a part of the Population, it
+   cannot be expected to give us the exact
+   value of the parameter.
+• The observed value of a statistic depends
+   on the particular sample selected.
+• There will be some variability in the value
+   of a statistic over different occasions of
+   sampling.
+
+
+
+
+               We wish to make generalizations about a population when only a sample will be available
+THE LOGIC OF ESTIMATION
+
+
+Parameter, Estimator, Estimate
+Three distinct objects that ordinary language collapses into one word
+
+
+
+
+ Object                                Notation                         What it is
+
+
+
+
+ Parameter (tham số)                   θ — here μ, σ², p, β             a fixed number belonging to the population; unknown, and it does not vary
+
+
+
+ Estimator (hàm ước lượng)             θ̂ƶ = g(X₁, …, Xₙ)               a FUNCTION of the sample — hence a random variable, with a distribution of its own
+
+
+
+ Estimate (giá trị ước lượng)          θ̂ƶ                              the single number this particular sample produced; one realisation of θ̂
+
+
+
+
+               Almost every confusion in inference is these three collapsed into the phrase "the mean".
+THE LOGIC OF ESTIMATION
+
+
+Which Parameter, and What the Number Claims
+Estimation begins by choosing WHAT is to be estimated — not by choosing a formula
+
+
+
+ Parameter                     Estimator        What the number claims                                What it does not claim
+
+
+ μ — population mean           x̄               the average taken over every firm in the population   not the typical firm, when the variable is skewed
+
+
+ σ² — population variance      s²               how widely FIRMS differ from one another              not how precisely x̄ is known
+
+ p — population
+                               p̂               the share of the population in that category          not the probability for one named firm
+ proportion
+
+ β — population slope          b₁               the ROA gap between two firms one unit apart in X     not the change in one firm over time
+
+
+
+
+     For a right-skewed variable the mean and the median answer different questions. Choosing between
+                                       them is not a technical choice.
+THE LOGIC OF ESTIMATION
+
+
+Type of Estimators
+Estimators are not given. Each is produced by a principle, and the principle is a choice
+
+
+
+
+  Point Estimate
+  A single number calculated from
+  sample data to estimate a population
+  parameter.
+
+
+
+  Interval Estimate
+  A range of values (derived from a
+  Confidence Interval) used to
+  estimate a population parameter.
+THE LOGIC OF ESTIMATION
+
+
+Three Properties of an Estimator
+The two terms of the MSE identity, plus what happens as n grows
+
+
+
+
+  NAMING THE TERMS
+  Unbiased · Efficient · Consistent
+  The first two are the two terms of the identity on the
+  preceding slide. The third is what happens to both as
+  the sample grows.
+  • Unbiased — Bias(θ̂) = 0: the shots surround the centre
+  • Efficient — smallest Var among unbiased estimators
+  • Consistent — θ̂ → θ in probability as n → ∞
+  • MLE is generally consistent and efficient, but not always unbiased
+THE LOGIC OF ESTIMATION
+
+
+Bias and Variance of an estimator
+
+  Bias (độ lệch) is how far the centre of the estimator's
+  distribution sits from the parameter.
+  Variance (phương sai) is how widely the estimator scatters
+  about its own centre.
+  The law of Complexity: model cannot be simultaneously
+  rigid (to keep variance low) and highly flexible (to keep bias
+  low), they must trade off
+THE LOGIC OF ESTIMATION
+
+
+Bias, Variance, and Mean Squared Error
+
+ Bias is the difference between this estimator's expected value and the true value of the parameter being estimated
+ Variance is the degree of dispersion (volatility) of the estimators around their own mean value
+ They both show how “accurate” the estimation is. But they are different terms.
+
+ Mean Squared Error (MSE) is the average squared difference between the estimated values and the true value
+
+
+
+
+                                              Bias 𝜃ƶ = 𝔼 𝜃ƶ − 𝜃
+                                                                      2
+                                        Variance 𝜃ƶ = 𝔼 𝜃ƶ − 𝔼 𝜃ƶ
+
+                                                 2          2
+                               MSE 𝜃ƶ = 𝔼 𝜃ƶ − 𝜃   = Bias 𝜃ƶ + Variance 𝜃ƶ
+AGENDA
+01
+THE LOGIC OF ESTIMATION
+Which parameter is wanted, how an estimator is built, and how a good one is told from a bad one
+
+
+02
+FROM POINT TO INTERVAL
+Why a single number is never enough, and the pivotal quantity that turns one into an interval
+
+
+03
+z, t AND χ²
+Three pivots, one method: what each one estimates, what it assumes, and what it costs
+FROM POINT TO INTERVAL
+
+
+The Direction of the Argument Reversed
+From the population downward, to the sample upward
+
+
+
+                               Lecture 6                                       Today
+
+
+ Known                         μ and σ                                         one sample — x̄ and s
+
+
+ Unknown                       which sample will be drawn                      μ
+
+
+ Direction                     population → sample                             sample → population
+
+
+ Object produced               a distribution of x̄                            an interval for μ
+
+
+
+
+                                 The 2 entities does not change. It is read from the other end.
+FROM POINT TO INTERVAL
+
+
+The Central Region of the Sampling Distribution
+Lecture 6, restated on a number line
+
+
+
+
+  NORMAL DISTRIBUTION
+  95% of samples land within 1.96·SE of μ
+  The region from μ − 1.96·SE to μ + 1.96·SE is a property
+  of the population.
+  It is fixed, but it is not observable, because μ is not
+  known.
+  • μ — fixed, unknown
+  • the region around μ — fixed, unknown
+  • x̄ — random: the sample is the thing varies
+FROM POINT TO INTERVAL
+
+
+An Interval Built Around a Sample Mean
+
+  THE EQUIVALENCE
+  x̄ inside the band ⟺ the interval around x̄
+  covers μ
+  Take an x̄ inside the central band and draw an interval
+  of the same half-width around it: it reaches back to μ.
+  Take an x̄ outside the band and draw the same interval:
+  it does not reach μ.
+  • Inside the band → the interval covers μ                 x1   x2
+  • Outside the band → it fails to cover
+  • 95% of samples land inside → 95% of intervals cover
+FROM POINT TO INTERVAL
+
+
+The Same Statement in Algebra
+
+
+              𝑃 𝜇 − 1.96 ⋅ 𝑆𝐸 ≤ 𝑥ҧ ≤ 𝜇 + 1.96 ⋅ 𝑆𝐸 = 𝑃 𝑥ҧ − 1.96 ⋅ 𝑆𝐸 ≤ 𝜇 ≤ 𝑥ҧ + 1.96 ⋅ 𝑆𝐸 = 0.95
+
+   The second form reads as though μ were varying. It is not. The random quantity is still x̄; rearranging the inequality
+     moved it to the other side without changing what it is. Ninety-five per cent of samples produce an interval that
+                           covers μ — the proportion is a property of the sampling procedure.
+
+
+
+
+     One statement read from two ends. Both intervals have the same length 𝑥ҧ − 𝜇 = |𝜇 − 𝑥|ҧ ≤ 1.96 ⋅ 𝑆𝐸
+FROM POINT TO INTERVAL
+
+
+How closely the sample mean is expected to estimate µ?
+
+  THE NOTATION
+   𝑧𝛼/2 = the upper 𝛼 /2 point of the
+  standard normal distribution ( 𝑧𝛼/2 là điểm
+  tới hạn trên ứng với xác suất 𝛼/2 của
+  phân phối chuẩn).
+  That is, the area to the right of 𝑧𝛼/2 is
+  𝛼 /2, and the area between - 𝑧𝛼/2 and                                      x1   x2
+  𝑧𝛼/2 is 1 – 𝛼
+
+    Some useful values of 𝑧𝛼/2                         Remember Φ(z) = P(Z ≤ z)
+                                                                              𝛼
+    1–𝛼            0.80   0.85   0.90    0.95   0.99            Φ 𝑧𝛼/2 = 1 −
+                                                                              2
+    𝑧𝛼/2           1.28   1.44   1.645   1.96   2.58
+FROM POINT TO INTERVAL
+
+
+The Anatomy of an Interval Estimate
+point estimate ± (critical value) × (standard error) — the inverted pivot, named
+
+
+
+
+  01                                                                               02
+  Point estimate                                                                   Critical value
+  Ước lượng điểm: the observed value of θ̂, at the centre                          Giá trị tới hạn: a quantile of the pivot's distribution:
+  of the interval.                                                                 1.96, or t(n−1), or a χ² quantile.
+
+
+
+  03                                                                               04
+  Margin of error                                                                  Confidence level
+  Sai số biên: critical value × standard error. Half the                           Mức tin cậy: 1 − α, the long-run proportion of intervals
+  width of the interval.                                                           that cover θ.
+
+
+
+                A margin of error reported without its confidence level does not determine an interval.
+FROM POINT TO INTERVAL
+
+
+Confidence Interval for µ
+
+
+
+We use a sample to calculate an interval that would
+definitely contain the true value of the parameter with
+a specified high probability.
+This probability is called the level of confidence is
+typically taken as 0.90, 0.95, or 0.99
+
+
+
+              CI = 𝜃ƶ ± 𝑧 × SE 𝜃ƶ
+THE LOGIC OF ESTIMATION
+
+
+The Meaning of a Confidence Level
+A sample of 40 firms gives a 95% confidence interval for mean ROA: [ 4.2% , 7.8% ]
+
+
+
+  (A)
+  95% of firms in the market have an ROA within this interval.
+
+
+  (B)
+  The probability that the true mean ROA lies within this interval is 95%.
+
+  (C)
+  If sampling were repeated many times and an interval built the same way each time, about 95% of those intervals would contain the true mean
+  ROA.
+
+
+  (D)
+  There is a 95% probability that the computation was performed correctly.
+
+
+           Recorded now, settled later by the room rather than by me — after the machinery behind the sentence has been built.
+FROM POINT TO INTERVAL
+
+
+The Intervals That Fail
+
+
+
+5% of samples produce an interval that does not contain μ, and their authors did nothing wrong.
+
+     Those are the samples whose x̄ landed in the two tails. The researcher holding such an interval drew correctly,
+ computed correctly and read correctly — and has no way of knowing, because μ is unknown and no diagnostic reports
+the failure. The 5% is not an imperfection awaiting correction: it is the quantity the method discloses, and it was chosen
+                                      by the analyst at the moment α was chosen.
+AGENDA
+01
+THE LOGIC OF ESTIMATION
+Which parameter is wanted, how an estimator is built, and how a good one is told from a bad one
+
+
+02
+FROM POINT TO INTERVAL
+Why a single number is never enough, and the pivotal quantity that turns one into an interval
+
+
+03
+z, t AND χ²
+Three pivots, one method: what each one estimates, what it assumes, and what it costs
+Z, T AND Χ²
+
+
+Three Pivots, One Method
+The whole of z, t and χ² in one table
+
+
+
+ Pivot                                  Distribution                            Interval for             When to use
+
+
+ ( x̄ − μ ) / ( σ/√n )                  N(0, 1) — the z statistic               μ                        σ known, n is large
+
+
+ ( x̄ − μ ) / ( s/√n )                  t(n − 1) — the t student statistic      μ                        σ unknown, n is small
+
+
+ ( n − 1 )s² / σ²                       χ²(n − 1) — the Chi-squared statistic   σ²                       Frequency/ categorical
+
+
+                                                                                denominator: that
+ Common structure                       numerator: the error of the estimator                            → unit-free
+                                                                                estimator's own spread
+Z, T AND Χ²
+
+
+Three Determinants of the Width
+
+
+
+ Quantity                     Increasing it                 Controlled by
+
+
+ n — sample size              narrows the interval, by √n   the researcher, at a cost
+
+
+ s — dispersion of the data   widens the interval           no one
+
+
+ confidence level             widens the interval           the researcher, by choice
+
+
+ Halving the width            requires quadrupling n        the square-root law of Session 6
+Z, T AND Χ²
+
+
+Z-statistic
+
+
+
+
+  When σ is known
+  A Z-statistic measures exactly how many standard
+  deviations a specific data point or sample mean is away
+  from the population mean
+                              𝑥ҧ − 𝜇
+                          𝑧=
+                              𝜎/ 𝑛
+
+
+
+
+              Why n large enough is also equivalent to
+                           𝝈 𝒊𝒔 𝒌𝒏𝒐𝒘𝒏 ?
+Z, T AND Χ²
+
+
+Two Intervals Frequently Confused
+
+
+
+
+  DIFFERENT BY A FACTOR OF √N
+  One describes firms, the other describes a
+  mean
+  Both are computed from the same sample of 50. The
+  range containing 95% of firms has half-width 1.96·s.
+  The 95% confidence interval for μ has half-width
+  1.96·s/√n — narrower by about 7 times.
+                  ത ± 𝟏. 𝟗𝟔 × 𝐬
+  • 95% of firms: 𝐱
+                                𝐬
+                  ത ± 𝟏. 𝟗𝟔 ×
+  • 95% CI for μ: 𝐱
+                                𝐧
+Z, T AND Χ²
+
+
+Example
+
+
+
+  The Scenario: E-Commerce Delivery Times
+  An online retailer wants to estimate the true average delivery
+  time (𝜇) for millions of packages shipped worldwide. They
+  can't check every package, so they take a random sample.
+  Sample size (𝑛) = 100 packages
+  Sample mean (𝑥̄) = 4.2 days
+  Population standard deviation (𝜎) = 0.8 days (known from
+  historical data)
+
+  Find a 95% confidence interval to estimate where the true
+  population mean (𝜇) actually falls.
+  How about 85%, 80%?
+Z, T AND Χ²
+
+
+The Unavailability of σ
+
+
+   The first pivot needs σ. Nobody has σ. Replacing it by s breaks the pivot's distribution, not its
+                                            structure.
+       A researcher in possession of σ would in almost all circumstances also possess μ, and no estimation would be
+      needed. Substituting s puts a second random quantity into the denominator: the pivot becomes a ratio of two
+    random things rather than one random thing over a constant. Its distribution is therefore no longer N(0,1), and the
+                                              question is what it has become.
+
+
+
+
+                   The substitution is unavoidable, and it is not free. The price is measurable.
+Z, T AND Χ²
+
+
+Student's t Distribution
+
+  THE PRICE, MEASURED
+  A t-statistic (or t-score) measures how many standard errors a
+  sample mean is from a hypothesized population mean when
+  you do not know the true population standard deviation (𝝈).
+  Lower in the middle, heavier in the tails, symmetric about
+  zero. Heavier tails mean a larger quantile, a larger
+  quantile means a wider interval
+                               𝑥ҧ − 𝜇
+                          𝑡=
+                               𝑠/ 𝑛
+
+
+
+
+      Use t unless σ is known. The rule is asymmetric because the two errors are: t when z would do costs
+                          almost nothing; z when t was needed understates the width.
+Z, T AND Χ²
+
+
+Degrees of Freedom
+df = n − (number of parameters the data itself had to supply)
+
+
+
+ Quantity computed                                              Parameters estimated from the same data   df
+
+
+ s² from n observations                                         1 — the mean, replaced by x̄              n−1
+
+
+ t interval for μ                                               1                                         n−1
+
+
+ χ² interval for σ²                                             1                                         n−1
+
+
+ simple regression                                              2 — intercept and slope                   n−2
+
+
+ multiple regression, k regressors                              k+1                                       n−k−1
+
+
+
+
+              The deviations satisfy Σ(xᵢ − x̄) = 0 has exactly one linear constraint, exactly one degree lost.
+Z, T AND Χ²
+
+
+Why the Divisor Is n − 1
+
+
+                                                                                                           𝒏−𝟏
+          E[ s² ] = σ² holds with the divisor n − 1. With the divisor n, the expectation is                       𝝈𝟐 .
+                                                                                                            𝒏
+   Dividing by n produces an estimator that is too small on average — biased downward, in the exact sense defined in
+   Part 1, by a factor that vanishes only as n grows. The n − 1 is the divisor that makes the estimator unbiased, and it is
+        the same n − 1 that counts the degrees of freedom. One constraint, one degree lost, one adjusted divisor.
+
+
+
+
+                                          𝑛               𝑛
+
+                                         ෍ 𝑥𝑖 − 𝜇 2 = ෍ 𝑥𝑖 − 𝑥ҧ 2 + 𝑛 𝑥ҧ − 𝜇 2
+                                         𝑖=1           𝑖=1
+                                            𝔼 σ 𝑥𝑖 − 𝜇 2 = σ𝑛𝑖=1 𝑥𝑖 − 𝜇 2 = 𝑛𝜎 2
+                                            2              2
+                                                                             𝜎2
+                                 𝔼 𝑛 𝑥ҧ − 𝜇    = 𝑛 𝑥ҧ − 𝜇 = 𝑛 ⋅ Var 𝑥ҧ = 𝑛 ⋅     = 𝜎2
+                                                                                    𝑛
+Z, T AND Χ²
+
+
+The Chi-squared distribution
+
+  The Chi-squared (𝜒 2 ) distribution is a continuous probability
+  distribution that is used primarily to analyze counts, categorical
+  data, and variances.
+  Unlike the Z and T distributions—which track sample means—the
+  Chi-squared distribution focuses on squared discrepancies
+  between what you actually observe and what you mathematically
+  expect to happen
+
+                                  2
+                            𝑂 − 𝐸
+                     𝜒2 = ෍
+                              𝐸
+
+
+
+
+              s² is non-negative and right-skewed, so no symmetric family could have described it.
+Z, T AND Χ²
+
+
+The Chi-squared distribution
+
+
+                                                  𝑛 − 1 𝑠2     2 𝑛−1
+                                                           ∼ 𝜒
+                                                    𝜎2
+
+  The chi-square family is the distribution of a sum of squared standard normal variables, and that is exactly what this
+       expression is once the deviations are standardised — with one degree lost to the constraint Σ(xᵢ − x̄) = 0.
+
+                            𝛼 = 0.05
+                                             2
+                                                       𝑛 − 1 𝑆2     2
+                                        𝑃   𝜒0.975 <            < 𝜒0.025 = 0.95
+                                                         𝜎2
+
+                                         𝑛 − 1 𝑆2   2
+                                                       𝑛 − 1 𝑆2
+                                       𝑃   2      <𝜎 <   2      = 0.95
+                                          𝜒0.025        𝜒0.975
+
+
+     σ² appears in it, and its distribution does not depend on σ². Note the difference that matters: here the
+                                        parameter sits in the DENOMINATOR.
+Z, T AND Χ²
+
+
+Inverting the χ² Pivot
+Step two, performed once more — and two consequences fall out of the algebra
+
+
+
+ Step                         Result
+
+
+ The pivot, bracketed         P( χ²(0.025) ≤ (n−1)s²/σ² ≤ χ²(0.975) ) = 0.95
+
+
+ Solved for σ²                (n−1)s² / χ²(0.975) ≤ σ² ≤ (n−1)s² / χ²(0.025)
+
+
+ Consequence 1                the LOWER bound uses the UPPER quantile — σ² was in a denominator, so the inequality reversed
+
+
+ Consequence 2                the interval is not symmetric about s², because the χ² family is not symmetric
+
+
+ In Excel                     CHISQ.INV(0.025, n−1) and CHISQ.INV.RT(0.025, n−1)
+

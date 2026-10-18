@@ -1,0 +1,656 @@
+Lecture 3: Data Visualization
+
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+Five blocks, one question running through all of them
+What does a summary statistic throw away, and how do we get it back?
+
+
+  01
+  WHY PLOT AT ALL
+  Four datasets with identical statistics that are not remotely the same data
+
+
+
+  02
+  THE GRAMMAR OF A CHART
+  A chart maps numbers onto a physical channel, and your eye reads each one differently
+
+
+
+  03
+  DIFFERENT TYPE OF CHARTS
+  You build the four figures that Sessions 5, 7 and 13 will reopen
+
+
+
+  04
+  WORKSHOP — DIAGNOSE & PRESCRIBE
+  Six published charts. Every number in them is correct. Find the encoding decision
+WHY PLOT AT ALL
+
+
+Four datasets. Are they the same dataset?
+Anscombe's quartet — eleven points each, four separate files
+WHY PLOT AT ALL
+
+
+Four datasets. Are they the same dataset?
+Anscombe's quartet — eleven points each, four separate files
+
+
+ Statistic                                                                Set I = Set II = Set III = Set IV
+
+ Mean of x                                                                9.00
+
+ Sample variance of x                                                     11.00
+
+ Mean of y                                                                7.50
+
+ Sample variance of y                                                     4.13
+
+ Correlation of x and y                                                   0.816
+
+ Fitted line                                                              y = 3.00 + 0.500x
+
+ R squared                                                                0.67
+
+
+
+                                     Hands up before we go on — same data, or different data?
+WHY PLOT AT ALL
+
+
+The same seven metrics. Four entirely different worlds
+
+  ENCODING
+  A summary is a weighted sum over every                   READING
+  row                                                      What the eye recovers in two seconds
+  Mean, variance and correlation are each a sum across     • Set I — a real linear relationship with scatter around it
+  all rows. A sum has no memory of which row               • Set II — a clean curve; the straight line is the wrong shape
+  contributed what. Move one point up and another          • Set III — a perfect line plus one outlier dragging the slope
+  down by matching amounts, and the sum does not           • Set IV — no relationship at all; one point at x = 19 creates it
+
+  move.
+
+
+
+
+          A statistic answers the question you thought to ask. A picture shows the question you did not.
+WHY PLOT AT ALL
+
+
+The Datasaurus
+Thirteen datasets sharing the same summary statistics. One of them is a dinosaur.
+
+
+
+  ENCODING
+  Shape can be chosen freely underneath
+  the statistics
+  Matejka and Fitzmaurice showed you can nudge
+  points one small step at a time into almost any
+  shape you like, while holding the means, the
+  standard deviations and the correlation fixed to
+  two decimal places.
+
+
+
+
+                        Never report a statistic for a variable whose picture you have not looked at.
+THE GRAMMAR OF A CHART
+
+
+Components of a Chart
+A chart turns a number into something your eye then has to measure back
+THE GRAMMAR OF A CHART
+
+
+Components of a Chart
+A chart turns a number into something your eye then has to measure back
+
+
+
+  01                                                                             02
+  POSITION on a shared axis                                                      LENGTH, with no shared baseline
+  Bar height, dot location, line vertex. Read almost perfectly.                  Floating bars, stacked segments. Read well, but not as well.
+
+
+
+  03                                                                             04
+                                                                                 AREA
+  ANGLE or SLOPE
+                                                                                 Bubbles, treemap tiles, 3D column faces. Large values
+  Pie wedges, line steepness. Read poorly and inconsistently.
+                                                                                 underestimated.
+
+
+
+                                           05
+                                           COLOUR and SHADING
+                                           Hue for category, saturation for quantity. The weakest channel of all.
+
+
+                                         Choosing a chart type is choosing how much error you hand your reader.
+THE GRAMMAR OF A CHART
+
+
+Cleveland and McGill’s accuracy ladder
+Ranked from most accurately decoded to least — an experimental result, not an opinion
+
+
+
+ Rank                Channel                                     Charts that use it                    Error
+
+
+ 1                   Position, common scale                      bar, dot plot, scatter, boxplot       lowest
+
+ 2                   Position, non-aligned scales                small multiples, facets               low
+
+ 3                   Length                                      stacked bar segments, floating bars   moderate
+
+ 4                   Angle or slope                              pie, donut                            high
+
+ 5                   Area                                        bubble, treemap, 3D columns           very high
+
+ 6                   Colour, shading                             heatmap, choropleth map               highest
+
+
+
+
+                         Move every quantity you want compared as high up this ladder as you can.
+THE GRAMMAR OF A CHART
+
+
+Not every chart is a “Good chart”
+THE GRAMMAR OF A CHART
+
+
+The pie chart test
+Five market shares. Answer from the pie alone, before we show you the bars.
+
+
+
+
+  ANSWER FROM THE PIE ALONE
+  • 1 · Rank the 4 segments, largest to smallest
+  • 2 · Is segment C bigger or smaller than segment B?
+  • 3 · Is A 10 percent bigger than B, or 20 percent?
+
+
+
+
+                                      Which of the three questions could you actually answer?
+THE GRAMMAR OF A CHART
+
+
+Area, volume, and the 3D column
+THE GRAMMAR OF A CHART
+
+
+Area, volume, and the 3D column
+
+  ENCODING
+                                                              READING
+  Three ways to inflate a gap without
+                                                              The reader interprets from the real value of
+  changing a number
+                                                              the area, volume
+  Map a value to a bubble's radius instead of its area, and
+                                                              A two-fold difference reads as four-fold or eight-fold.
+  doubling the value quadruples the ink. Draw a column
+                                                              And because every underlying number is correct, the
+  in 3D and its apparent volume rises with the cube of its
+                                                              chart survives every fact-check. Nothing in it is false.
+  height.
+
+
+
+
+            The fix is one line in a chart dialog: scale by area, remove 3D. This is not a budget problem.
+THE GRAMMAR OF A CHART
+
+
+Data-ink ratio: what to delete, in order
+Everything on a chart is either data or noise. There is no third category.
+THE GRAMMAR OF A CHART
+
+
+Data-ink ratio: what to delete, in order
+Everything on a chart is either data or noise. There is no third category.
+
+
+
+
+  STEP 1                              STEP 2                                                         STEP 4                  STEP 5
+                                                                             STEP 3
+  Background and                      Shadow,                                                        Legend for one          Then re-read the
+                                                                             Gridlines
+  border                              gradient, 3D                                                   series                  chart
+                                                                             Keep one direction at
+  Neither came from                   Decoration that                        most, thin and light    Label the series        Can you still answer
+  your data. Delete                   actively distorts what                 grey.                   directly on the chart   the question it was
+  both first.                         you drew.                                                      instead.                drawn for? Then stop.
+
+
+
+
+                         Six deletions, no information lost. But the chart is now much less complicated
+DIFFERENT TYPE OF CHARTS
+DIFFERENT TYPE OF CHARTS
+
+
+Build four figures on VN-LISTED
+Latest-year cross-section — the same slice you described in Session 2
+
+
+
+           Build four figures in your own file: the log pair, a boxplot by industry, a scatter, and a
+                                            correlation heatmap.
+
+
+
+
+                           TIME                                         FIGURES                                  REQUIREMENTS
+    40 minutes, alongside the demo.                         Four figures and four sentences —          Each sentence completes: 'This
+     Excel leads; Python does what                             one per figure, written the             shows ___, which the Session 2
+              Excel cannot.                                        moment you finish it.                    table did not show.'
+
+
+
+
+                                  A figure with no sentence does not count as submitted. Bring the file to Session 5.
+DIFFERENT TYPE OF CHARTS
+
+
+The Barchart – Standard for Comparison
+
+  Barchart is useful for Comparison
+    ●     Horizontal Bar: Use when labels are long                   Mandatory Rule: The Y-axis for Bar Charts must start at 0.
+    ●     Vertical Bar: Use when X-axis represents time              Truncating the axis is the most common way to accidentally
+    ●     Stacked Bar: compare totals across categories and          (or intentionally) lie with data.
+          subcomponent pieces within a category
+                                                                     Sort: If not ordered by time, sort from high to low
+    ●     Waterfall Bar: Breakdown subcomponent in the Stacked Bar
+DIFFERENT TYPE OF CHARTS
+
+
+The Line Graph – Tracking Continuity
+
+  Lines imply continuity. They suggest that values between
+  measured points exist and are changing.
+  •    Default for time-series data (Jan → Dec)
+  •    Emphasize on the changes along the timeline
+  •    Avoid "Spaghetti Charts": 15 lines in 15 colors is unreadable.
+  •    Highlight the story line; grey out the rest.
+DIFFERENT TYPE OF CHARTS
+
+
+The scatter plot, and what to check before you believe it
+DIFFERENT TYPE OF CHARTS
+
+
+The scatter plot, and what to check before you believe it
+  OVERPLOTTING
+  Dots land on top of each other. The dense centre may hold ten times more firms than it appears to. Fix with transparency or smaller
+  markers.
+
+
+  ONE CLOUD OR TWO
+  Clusters almost always mean a third variable is doing the work. Colour by industry and look again before you read the overall shape.
+
+
+
+  WHAT DRIVES THE LINE
+  Cover the far right of the plot with your hand. Does the trendline still look like that? If not, a few firms are writing your conclusion.
+
+
+
+  LOG OR RAW
+  Two right-skewed variables give you a dense corner and a few distant dots. Log both axes first, then look at it again.
+
+
+
+                                                     Today: do these move together?
+DIFFERENT TYPE OF CHARTS
+
+
+The histogram, and the choice hidden inside it
+
+  ENCODING
+                                                           READING
+  Two steps, and only the second one is
+  arithmetic                                               The first picture of a column's shape
+                                                           • Where the mass of the data actually sits
+  First, cut the range into intervals — the bins. That     • One peak or two — two peaks usually means two populations mixed
+  decision comes from a human or from a default setting,   • How long the right tail runs
+  never from your data. Second, count what falls in each   • Whether the mean sits inside the bulk, or alone out in the tail
+  bin and draw the count as a height.
+
+
+
+
+                               Step one is an editorial choice of yours. Declare it.
+DIFFERENT TYPE OF CHARTS
+
+
+How many bins are there?
+
+
+  READING
+  • Too few bins — smooth and symmetric; the right tail vanishes
+  • Too many bins — every gap in the data becomes a gap in the
+    distribution
+  • Choose by stability: nudge the width 20%. What vanishes was
+    never there
+
+
+
+
+                           Which of the these is the most suitable histogram of this variable?
+DIFFERENT TYPE OF CHARTS
+
+
+The log pair
+The single most important picture of this session
+
+
+
+  ENCODING
+                                                                    READING
+  log turns multiplicative distance into
+  additive                                                          The outliers were never outliers
+                                                                    • Raw scale — everything piled at the left wall, a few firms far right
+  On the raw axis, 10 to 100 is a gap of 90 and 100 to              • Log scale — the pile spreads into a near-symmetric shape
+  1,000 is a gap of 900. On the log axis both gaps are the          • Those right-hand firms are the top of a right-skewed distribution
+  same size, because both are 'times ten'. No observation           • Session 5 draws a curve on this.
+  was dropped. The ruler changed.
+
+
+
+
+                                A right-skewed variable on a raw axis is a chart of its own outliers.
+DIFFERENT TYPE OF CHARTS
+
+
+The boxplot: five numbers you already computed
+Every mark on this chart comes from your Session 2 table
+
+
+
+                                                                         LINE INSIDE THE BOX
+  BOX EDGES
+                                                                         The median — not the mean. The mean is not drawn
+  Q1 and Q3. The width of the box is the IQR.
+                                                                         anywhere.
+
+
+  WHISKERS                                                               DOTS BEYOND THE WHISKERS
+  The furthest observations still within 1.5 x IQR of the                The 1.5 x IQR flags from Session 2. Candidates, not
+  box.                                                                   errors.
+
+
+                                            WHAT IT CANNOT SHOW
+                                            A second peak. A bimodal and a flat column give
+                                            identical boxes.
+
+
+                                             If shape matters, put a histogram beside the box.
+DIFFERENT TYPE OF CHARTS
+
+
+The boxplot: five numbers you already computed
+Every mark on this chart comes from your Session 2 table
+DIFFERENT TYPE OF CHARTS
+
+
+The correlation heatmap: read the colour, not the number
+The formula arrives in Session 7. Today you only learn to read the picture.
+
+
+
+
+  01                                                         02                                 03
+                                                                                                BLOCKS OF DARK CELLS
+  DARK CELLS                                                 PALE CELLS
+                                                                                                Several variables measuring one
+  Pairs worth a scatter plot. This is a                      No straight-line relationship. A
+                                                                                                thing. Session 13 calls this
+  shortlist, not a finding.                                  strong curve also shows up pale.
+                                                                                                multicollinearity.
+
+
+
+
+   Colour is the worst channel on the ladder. A heatmap tells you which scatter to draw next — it is never
+                                                the evidence.
+DIFFERENT TYPE OF CHARTS
+
+
+Putting a third variable on a flat page
+
+ Channel                        Works when                     Breaks when
+
+
+ Colour by category             Up to 3 categories             The legend becomes a lookup task
+
+
+ Size by quantity               Rarely, if ever                It inherits the area problem
+
+
+ Small multiples                Many groups, shared axes       A small group goes too sparse
+
+
+
+
+                    Up to 3 categories, colour. More than that, facet — and the panels must share axes.
+WORKSHOP — DIAGNOSE & PRESCRIBE
+
+
+Workshop: diagnose and prescribe
+One published chart each group, plus the question it was drawn to answer.
+
+
+
+        Four questions per card: What does it want you to believe? Which encoding does that?
+                        Which chart is correct? Does the conclusion survive?
+
+
+
+
+                        TIME                                                FIGURES                             REQUIREMENT
+   5 min brief · 12 min group work ·                        One named channel, one named            Question 2 must name a channel
+  18 min presenting, 3 min each · 10                          chart type, one hand-drawn           from the ladder. 'Bad design' is not
+          min consolidation                                     honest version per card.                       an answer.
+
+
+
+
+                                       Sketch the honest version on paper, by hand. No laptops for this part.
+WORKSHOP — DIAGNOSE & PRESCRIBE
+
+
+Reference table: question first, chart second
+A tool for the workshop, not a list to memorise
+
+
+ The question you are asking                      Use                           Do not use
+
+ Shape of one numeric variable?                   histogram, density, boxplot   pie, single bar
+
+ Groups compared on a numeric variable?           boxplot by group, dot plot    bar of means with no n
+
+ Groups compared on a count or total?             bar chart, baseline at zero   pie beyond 3 segments
+
+ Do two numeric variables move together?          scatter plot                  two lines on a dual axis
+
+ How does something change over time?             line, x-axis chronological    bars reordered by value
+
+ Which of many pairs are worth a look?            heatmap, as screening only    the heatmap as a result
+
+ What share of a whole?                           stacked bar, or a table       pie, donut, 3D pie
+
+
+
+
+   Read the left column first. Always. A chart is the answer to a question, so you must have the question.
+WORKSHOP — DIAGNOSE & PRESCRIBE
+
+
+Topic: Choose alongside of these
+Every number in all three charts is correct. Find the encoding decision.
+
+
+
+
+  1                                                          2                                     3
+                                                             Firearm deaths after a law
+  A tax-rate change, on cable                                                                      COVID-19 cases by county
+                                                             changed
+  news                                                                                             Grouped bars. Counties re-sorted
+                                                             A filled area over time. The y-axis   inside each date, and the dates are
+  Two bars, a few points apart. The y-
+                                                             runs downward: larger values sit
+  axis starts just below the lower bar.                                                            out of order.
+                                                             lower.
+
+
+
+  4                                                          5                                     6
+  Revenue growth, investor                                   Revenue and share price
+                                                                                                   Average ROA by industry
+  deck                                                       together
+                                                                                                   Eight bars. No n on any bar, no
+  Three 3D columns, three years. The                         Two lines, two y-axes. The ranges     spread. Two industries hold very
+  y-axis starts just below the first                         were chosen so the lines nearly
+                                                                                                   few firms.
+  column.                                                    overlap.
+WORKSHOP — DIAGNOSE & PRESCRIBE
+
+
+Groups 4-6: the cases you will meet at work
+Reconstructed from patterns common in annual reports and investor decks
+
+
+
+
+  4                                                      5                                   6
+  Revenue growth, investor                               Revenue and share price
+                                                                                             Average ROA by industry
+  deck                                                   together
+                                                                                             Eight bars. No n on any bar, no
+  Three 3D columns, three years. The                     Two lines, two y-axes. The ranges   spread. Two industries hold very
+  y-axis starts just below the first                     were chosen so the lines nearly
+                                                                                             few firms.
+  column.                                                overlap.
+
+
+
+
+                  Group 6 — you drew the honest version of this chart forty minutes ago, on slide 17.
+WORKSHOP — DIAGNOSE & PRESCRIBE
+
+
+The catalogue you just built
+Every row came out of a group presentation. Now check it for gaps.
+
+
+ The trick                              The channel it exploits             The honest version
+
+ Truncated axis                         position, baseline moved            baseline at zero for bars
+
+ Inverted axis                          position, direction reversed        conventional direction
+
+ Re-sorted x-axis                       position, ordering destroyed        strict chronological order
+
+ Dual axis                              position, two incomparable scales   two charts, or index both to 100
+
+ Area for a 1D quantity                 area instead of length              length on a common baseline
+
+ Cherry-picked window                   position, domain restricted         show the full available series
+
+ Mean with no n, no spread              one number for a distribution       boxplot, or bars with n
+
+
+
+                     Is there an entire category of deception missing from what the six groups found?
+WORKSHOP — DIAGNOSE & PRESCRIBE
+
+
+Four questions before you draw anything
+The routine to run every time, for the rest of this course
+
+
+
+
+                                               STEP 2                          STEP 3                        STEP 4
+  STEP 1
+                                               Which variables                 Which channel can I           How could this
+  What is the question?
+                                               answer it?                      use?                          mislead?
+  Write it with a subject and a
+  verb. 'Revenue by industry'                  How many, and numeric or        Go as high up the accuracy    Run your own chart against
+  is not a question.                           categorical? This alone rules   ladder as your data allows.   the catalogue before anyone
+                                               out most charts.                Position first.               else does.
+
+
+
+
+                                   Steps 1 to 3 make the claim. Step 4 is whether you can defend it.
+PUBLICATION STANDARD
+
+
+A figure that meets publication standard
+Every figure you submit from today onward is marked against these rows
+
+
+ Element                Requirement                                              The usual failure
+
+
+ Title                  States the conclusion, not the contents                  'Figure 1: Revenue distribution'
+
+
+ Axis labels            Variable name and unit                                   'Revenue', no unit anywhere
+
+
+ Scale note             If transformed, say so on the axis                       log applied silently
+
+
+ Sample size            n = ___, visible on the figure                           omitted
+
+
+ Source                 Dataset, coverage, extraction date                       omitted
+
+
+ Treatment              Rows dropped? Say which, and why                         silent deletion
+
+
+ Colour                 Legible in greyscale and to a colour-blind reader        red versus green
+
+
+
+
+                         Everything else — 3D, gradients, shadows, redundant legends — delete it.
+SUMMARY
+
+
+What today changed, and what it hands forward
+
+
+                                                                               3. YOUR DECISIONS
+ 1. THE MECHANISM                        2. THE LADDER
+                                                                               Every misleading chart today was
+ A statistic is a sum over rows, so it   The eye decodes each channel
+                                                                               factually correct. Baseline,
+ cannot remember rows. Structural,       with a fixed accuracy. Chart choice
+                                                                               ordering and sample size are
+ and no amount of care removes it.       is error management, not taste.
+                                                                               yours.
+
+
+
+
+    Session 4 — we stop describing what the data is, and start reasoning about what it could have been.
+

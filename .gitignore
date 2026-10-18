@@ -1,0 +1,16 @@
+# Python / Node
+venv/
+__pycache__/
+*.pyc
+node_modules/
+package-lock.json
+# Generated / large or local-only
+tools/video/voices/
+tools/video/tts_cache/
+tools/video/out/
+tools/video/preview/
+tools/report/*.docx
+tools/report/*.pdf
+# Office lock files
+.~lock.*#
+~$*

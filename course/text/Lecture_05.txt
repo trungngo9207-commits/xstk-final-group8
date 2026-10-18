@@ -1,0 +1,440 @@
+Lecture 5: Random Variable and
+Probability Distribution
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+
+
+
+
+                                                         1
+Agenda
+01
+RANDOM VARIABLES
+A function assigning a number to each outcome, and the distinction between discrete and continuous.
+
+
+
+
+02
+EXPECTATION AND VARIANCE
+The centre and the width of a distribution, applied to a choice between two investments.
+
+
+
+
+03
+DISCRETE DISTRIBUTION
+Bernoulli and binomial, stated as data-generating mechanisms rather than as formulas.
+
+
+
+
+04
+CONTINUOUS DISTRIBUTION: FROM BARS TO AREA
+Continuous variables, density, the cumulative function, and the normal distribution.
+
+
+
+
+05
+SUMMARY
+Key Takeaways, assessed output
+RANDOM VARIABLES
+
+
+The proportion of firms above mean revenue
+VN-LISTED, most recent year
+
+
+
+
+                              ___                                                      ___%
+                                                                             FIRMS ABOVE THAT MEAN
+                   MEAN REVENUE, BILLION VND
+                                                               The proportion is governed by the shape of the distribution,
+       Computed from the current extract before the session.
+                                                                                    not by the mean.
+
+
+
+
+    What proportion of firms report revenue above the mean? (a) 50% · (b) 40% · (c) 30% · (d) 20%. Vote
+                                            before the reveal.
+RANDOM VARIABLES
+
+
+Random variables: definition and classification
+
+
+
+  DEFINITION
+  A rule that assigns a number to each
+  outcome
+  A random variable (biến ngẫu nhiên) is a function
+  mapping every outcome of an experiment to a number.
+  It is the assignment rule, not the number itself.
+  • Discrete: the values can be listed one by one
+  • Continuous: between any two values a further value exists
+
+
+
+
+                   The key to decide a variable is random or not is the “UNCERTAINTY” of the results
+RANDOM VARIABLES
+
+
+Which of these are Random variables?
+EXPECTATION AND VARIANCE
+
+
+From empirical frequency to probability distribution
+
+
+
+
+  CONSTRUCTION
+  Count, then divide
+  The probability mass function (hàm khối xác suất),
+  written p(x), lists every value the variable can take
+  together with the probability attached to each.
+  • Step 1 — count the occurrences of each value
+  • Step 2 — divide each count by the total
+  • Two conditions: p(x) ≥ 0, and the values sum to 1
+EXPECTATION AND VARIANCE
+
+
+Two investment alternatives
+Return over the coming year
+
+
+
+ Alternative                                                             Outcomes      Probabilities
+
+
+ Share A — established issuer                                            +5% · +15%    0.5 · 0.5
+
+ Share B — growth issuer                                                 −20% · +30%   0.4 · 0.6
+
+ Both alternatives have an expected return of 10%
+
+
+
+
+                              Which alternative carries the higher expected return?
+EXPECTATION AND VARIANCE
+
+
+Expected value of a discrete random variable
+E(X) = Σ x · p(x), computed for Share B
+
+
+
+
+ x                                                              p(x)   x · p(x)
+
+
+ −20%                                                           0.4    −8
+
+ +30%                                                           0.6    +18
+
+ Share A, by the same computation                                      E(X) = 10%
+
+ E(X) = 10%. Neither alternative lists 10% among its possible
+ outcomes.
+EXPECTATION AND VARIANCE
+
+
+Variance and standard deviation of a random variable
+Var(X) = Σ (x − E(X))² · p(x), computed for Share B
+
+
+
+
+ x                                                                             x − E(X)        (x − E(X))²   weighted by p(x)
+
+
+ −20%                                                                          −30             900           360
+
+ +30%                                                                          +20             400           240
+
+ Var(X) = 600                                                                  SD(X) ≈ 24.5%
+
+ Variance carries squared units and is not interpretable. Standard deviation carries the units of the variable.
+
+
+
+
+                                                      Calculate the SD(X) for Share A
+EXPECTATION AND VARIANCE
+
+
+The two alternatives compared
+
+
+                       10%                              5%                                    24.5%
+         EXPECTED RETURN, BOTH
+                                         STANDARD DEVIATION, SHARE A              STANDARD DEVIATION, SHARE B
+       A figure that appears among the
+                                         Worst listed outcome +5%; probability   Worst listed outcome −20%; probability
+        possible outcomes of neither
+                                                      of a loss zero.                         of a loss 0.40.
+                  alternative.
+
+
+
+
+       Two alternatives with an identical expected value can differ in every other respect that a decision
+                                                 depends on.
+EXPECTATION AND VARIANCE
+
+
+Expectation and variance in financial decision-making
+
+
+
+
+                                                           CONSEQUENCES
+                                                           What follows for a reported figure
+  MECHANISM                                                Expected return is never reported without a measure of
+  Two summaries of different kinds                         volatility. The pair Return – Risk is the object of an
+  A distribution is summarised by two quantities that do   investment decision.
+  not substitute for one another. The expected value       • An expected value may be a number that cannot occur
+  locates its centre; the variance measures its spread.    • A probability of loss of 0.40 is consistent with a positive expected
+                                                             return
+                                                           • Session 2 weighted each observation by 1/n. Session 5 weights each
+                                                             outcome by p(x). The same computation under different weights
+EXPECTATION AND VARIANCE
+
+
+Linear transformation of a random variable
+
+
+                           𝑬 𝒂𝑿 + 𝒃𝒀 + 𝒄 = 𝒂 ⋅ 𝑬 𝑿 + 𝒃 ⋅ 𝑬 𝒀 + 𝒄
+                                              WHAT IS NOT ADDITIVE?
+                                              Non-linear function and transformation is not Additive
+    RULES
+                                              anymore
+    Homogeneity:
+                        𝐸 𝑎𝑋 = 𝑎 ⋅ 𝐸 𝑋        𝐸 𝑋 2 ≠ 𝐸 𝑋 2 Unless SD = 0
+                       𝐸 𝑋+𝑐 =𝐸 𝑋 +𝑐          𝐸 𝑋 ⋅ 𝑌 ≠ 𝐸 𝑋 ⋅ 𝐸 𝑌 Unless X and Y are
+                                              totally independent
+    Additivity:
+                                                1    1
+                   𝐸 𝑋+𝑌 =𝐸 𝑋 +𝐸 𝑌            𝐸   ≠
+                                                𝑋   𝐸 𝑋
+DISCRETE DISTRIBUTION
+
+
+The Bernoulli Distribution
+
+
+
+
+  ONE TRIAL, TWO OUTCOMES
+  A single parameter p
+  A Bernoulli random variable takes the value 1 with
+  probability p and 0 with probability 1 − p
+  • E(X) = p
+  • Var(X) = p(1 − p)
+  • An outcome that is neither rare nor near-certain carries the greatest
+    uncertainty
+DISCRETE DISTRIBUTION
+
+
+The Binomial Distribution (Phân bố Nhị thức)
+The number of successes in n independent Bernoulli trials
+
+
+
+
+  DEFINITION
+  A binomial random variable (biến nhị thức) counts the successes in n independent trials with constant probability
+  p. E(X) = np and Var(X) = np(1 − p)
+
+
+  FORMULA
+  P(X = k) = C(n, k) · pᵏ · (1 − p)ⁿ⁻ᵏ
+  In practice the probability is obtained from software: BINOM.DIST(k, n, p, FALSE) for an exact count.
+
+
+  APPLICATION
+  Number of defected products
+  Conversion rate in E-commerce platform
+  Medicine effectiveness
+  Guessing answers on a multiple-choice test
+DISCRETE DISTRIBUTION
+
+
+Assumptions of the Binomial model
+
+
+
+
+                                                  WHERE THEY FAIL
+  ASSUMPTIONS                                     Independence is an assumption requiring examination
+  Three conditions simultaneously                 in each application, not a default.
+                                                  • Firms in one industry face a common economic cycle, and in
+  • The number of trials n is fixed in advance
+                                                    a difficult year the whole industry withholds together
+  • The probability p is constant across trials   • People are generally affected by ideas of the surrounding
+  • The trials are independent                    • In real life, the probability may not be fixed due to
+                                                    environment changes
+DISCRETE DISTRIBUTION
+
+
+Binomial distributions for increasing n
+p held constant; the shape of the distribution changes with n alone
+
+
+
+
+  n=5                                                       n = 20                              n = 100
+  A small number of separated bars, with                    The bars form a symmetric outline   The outline approximates a smooth
+  no discernible outline                                    around the expected value           bell-shaped curve
+
+
+
+
+    The convergence of a discrete distribution towards this shape is not explained in this session. It is the
+                                           subject of the next class
+CONTINUOUS DISTRIBUTION: FROM BARS TO AREA
+
+
+The probability of an exact value for a continuous variable
+
+          What is the probability that a student drawn at random has the weight of exactly 50.0000 kg?
+
+
+
+
+                               P(X = x) = 0 for every value x of a continuous random variable.
+                                         A probability of zero does not signify impossibility.
+                    Every value a continuous variable actually takes had probability zero before it was observed.
+
+
+
+
+                Try to apply the chain of thought when working with discrete distribution into this case
+CONTINUOUS DISTRIBUTION: FROM BARS TO AREA
+
+
+Narrowing the histogram bin
+The same data, drawn with successively narrower bins
+
+
+
+
+                                                                                        Height of one bar, as a
+ Bin width / Number of Bins                                                                                       Total area
+                                                                                        proportion of firms
+
+ 5 percentage points / 10 Bins                                                          ___                       1
+
+ 2 percentage points / 25 Bins                                                          ___                       1
+
+ 0.5 percentage points / 100 Bins                                                       ___                       1
+
+ 0.1 percentage points / 500 Bins                                                       ___                       1
+
+ Probability is not lost in this limit. It is relocated: from the height of a bar to the area under a curve.
+CONTINUOUS DISTRIBUTION: FROM BARS TO AREA
+
+
+Probability Density Function (PDF)
+
+THE VERTICAL AXIS CHANGES MEANING
+Density is proportion per unit of the variable
+For a continuous variable the vertical axis records a
+probability density (mật độ xác suất), written f(x),
+whose unit is proportion per unit of the variable.
+• A density is therefore not a probability, and f(x) may exceed 1
+• Formula for density:
+                    𝑃 𝑥 ≤ 𝑋 ≤ 𝑥 + 𝑑𝑥 ≈ 𝑓 𝑥 ⋅ 𝑑𝑥
+
+
+
+
+                                                            DENSITY ≠ PROBABILITY
+CONTINUOUS DISTRIBUTION: FROM BARS TO AREA
+
+
+Admissible probability statements for a continuous variable
+Three forms of statement are meaningful, and each denotes an area under f(x)
+
+
+
+
+  1                                                       2                                      3
+  P(X > c)                                                P(X < c)                               P(a < X < b)
+  The area to the right of a threshold.                   The area to the left of a threshold.   The area between two thresholds.
+
+
+
+
+                             P(X ≥ c) = P(X > c), since the boundary point contributes zero probability.
+CONTINUOUS DISTRIBUTION: FROM BARS TO AREA
+
+
+The Cumulative Distribution Function (CDF)
+
+
+
+
+  ACCUMULATED AREA
+  F(x) = P(X ≤ x)
+  The cumulative distribution function (hàm phân phối
+  tích lũy) records the area under the density to the left
+  of x. It is non-decreasing, approaching 0 at the lower
+  extreme and 1 at the upper.
+  • P(X > c) = 1 − F(c)
+  • P(a < X < b) = F(b) − F(a)
+  • F is the function statistical software returns
+CONTINUOUS DISTRIBUTION: FROM BARS TO AREA
+
+
+Density and cumulative probability in Excel
+
+
+ Syntax                                                  Returns                              Appropriate use
+
+
+ `NORM.DIST(x, μ, σ, FALSE)`                             the density `f(x)`                   plotting the curve only
+
+
+ `NORM.DIST(x, μ, σ, TRUE)`                              the cumulative probability `F(x)`    every probability statement
+
+
+ `NORM.S.DIST(z, TRUE)`                                  `F(z)` for the standard normal       after standardization
+
+                                                                                              the inverse; used in Q-Q
+ `NORM.S.INV(p)`                                         the value `z` such that `F(z) = p`
+                                                                                              construction
+
+ An incorrect final argument produces no error message and returns a well-formed meaningless number.
+SUMMARY
+
+
+KEY TAKEAWAYS
+
+
+ 1. RANDOM VARIABLE                     2. EXPECTED VALUE                       3. CONTINUOUS DISTRIBUTION
+ An object representing the result      An expected value may be a              Every probability statement about
+ of a Random event. The                 number that cannot occur. It is the     a continuous variable is a
+ uncertainty is the key to define       centre of the probability mass, not     statement about an area and
+ randomness                             a forecast.                             density
+
+
+
+
+                  4. ZERO
+                                                         5. DISCRETE DISTRIBUTION
+                  A probability of zero does not
+                                                         Each value of the variable in the
+                  signify impossibility. For a
+                                                         Discrete Distribution has its own
+                  continuous variable every exact
+                                                         probability
+                  value has probability zero.
+

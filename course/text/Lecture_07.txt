@@ -1,0 +1,1076 @@
+Lecture 7: Two Variables: Correlation
+and Causation
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+
+
+
+
+                                                         1
+AGENDA
+01
+TWO CATEGORICAL VARIABLES
+The contingency table of Session 4, read as a relationship rather than as a probability
+
+
+02
+THE CORRELATION COEFFICIENT
+From the scatter diagram to r — and the four things r cannot see
+
+
+03
+PREDICTING ONE VARIABLE FROM ANOTHER
+The fitted line, the slope in its correct units, and what the slope is not
+
+
+04
+INTERPRETING CAUSALITY
+Three causal worlds that produce identical coefficients
+
+
+05
+SIMPSON'S PARADOX
+An aggregate comparison that reverses inside every single group
+
+
+06
+FROM NUMBER TO CLAIM
+The three conditions, and the difference between predicting and intervening
+AGENDA
+01
+TWO CATEGORICAL VARIABLES
+The contingency table of Session 4, read as a relationship rather than as a probability
+
+
+02
+THE CORRELATION COEFFICIENT
+From the scatter diagram to r — and the four things r cannot see
+
+
+03
+PREDICTING ONE VARIABLE FROM ANOTHER
+The fitted line, the slope in its correct units, and what the slope is not
+
+
+04
+INTERPRETING CAUSALITY
+Three causal worlds that produce identical coefficients
+
+
+05
+SIMPSON'S PARADOX
+An aggregate comparison that reverses inside every single group
+
+
+06
+FROM NUMBER TO CLAIM
+The three conditions, and the difference between predicting and intervening
+TWO CATEGORICAL VARIABLES
+
+
+Profitability by Industry, in Counts
+Record an answer before proceeding
+
+
+
+ Industry                              Profitable                 Not profitable            Total
+
+
+ Manufacturing                         ___                        ___                       ___
+
+
+ Service                               ___                        ___                       ___
+
+
+ Finance                               ___                        ___                       ___
+
+
+ ___                                   ___                        ___                       ___
+
+
+ Total                                 ___                        ___                       ___
+
+
+
+
+                                     Which industry has the highest share of profitable firms?
+TWO CATEGORICAL VARIABLES
+
+
+The Same Table as Row Percentages
+
+                                                                  Industry          Profit     Non-profit Total
+  The order changes
+  The industry holding the largest count of profitable            Real-estate
+  firms is not the industry holding the largest share.
+  Neither table is incorrect: the first reports how many,         Services
+  the second how often.
+  • Largest count: industry ___                                   Construction
+  • Largest share: industry ___, at ___%
+  • The two are different rows of the same table                  Power
+
+
+
+
+                            A count measures the size of the group before it measures anything else.
+TWO CATEGORICAL VARIABLES
+
+
+Counts and Conditional Percentages
+
+THE MEASURE
+Two directions of division                                          THE CLAIM
+
+Dividing by the row total gives the distribution of                 The direction is a decision
+profitability within each industry. Dividing by the                 Groups of unequal size cannot be compared on counts.
+column total gives the distribution of industry within              Which way to normalize is chosen by the analyst, not by
+each profitability class.                                           the data, and it fixes which question the table answers.
+• By row: of firms in this industry, what share are profitable      • Session 4 stated this as P(A|B) ≠ P(B|A)
+• By column: of profitable firms, what share are in this industry
+TWO CATEGORICAL VARIABLES
+
+
+Two Variables: Three Combinations of Type
+The shape of this session
+
+
+
+
+ Pair                        Summarised by       Relationship measured by
+
+
+ categorical × categorical   contingency table   comparison of the rows
+
+
+ measurement × measurement   scatter diagram     r, then a fitted line
+
+
+ categorical × measurement   group means         difference between means
+TWO CATEGORICAL VARIABLES
+
+
+The Conditional Distribution
+Reading a whole row rather than a single cell
+
+
+
+                        Probability Concept                         Today
+
+
+ Object read            one conditional probability                 one whole row
+
+
+ Operation              divide a cell by a row total                compare the rows with one another
+
+
+ Question               How likely is profit in Retail              Does industry tell us anything about profitability
+
+
+
+
+                 Today stays descriptive. Whether a difference is large enough to be real is Session 11.
+TWO CATEGORICAL VARIABLES
+
+
+Association and Independence
+
+
+
+  THE VISUAL TEST
+  If every row is the same, there is no
+  association
+  Two tables of row percentages, same variables,
+  different data. The first adds nothing when the industry
+  is known; the second changes the estimate
+  substantially.
+  • Table A — 61%, 60%, 62%: knowing the industry adds nothing
+  • Table B — 84%, 47%, 31%: knowing it changes a great deal
+  • Session 4 called the first case independence
+TWO CATEGORICAL VARIABLES
+
+
+Practice 1 — One Table, Read Three Ways
+Excel · PivotTable · industry × profitable
+
+
+
+   Build the PivotTable of industry × profitable. Show it as counts, then % of Row Total, then %
+                                          of Column Total.
+
+
+
+
+                                                                                                                 CONSTRAINT
+                                                                     QUANTITY
+                            TIME                                                                    Write down one question that the
+                                                       Three views of one table, plus two
+                    10 minutes                                                                      row table answers and the column
+                                                               cells of arithmetic
+                                                                                                             table does not.
+
+
+
+
+                                Then check P(A ∩ B) against P(A) × P(B). The three views are item 1 of the submission.
+TWO CATEGORICAL VARIABLES
+
+
+The Strength of an Association, Read Coarsely
+
+ Spread across rows                                                                     Reading
+
+
+ 2 to 3 percentage points                                                               negligible
+
+
+ 10 to 15 points                                                                        moderate
+
+
+ 40 points or more                                                                      strong
+
+
+
+
+                            A single number for this strength is Cramér's V — Discussed in later lecture
+TWO CATEGORICAL VARIABLES
+
+
+A Question Left Open
+
+
+
+                            Does entering this industry make a firm more likely to be profitable?
+
+     Firms in industry ___ are profitable ___% of the time; firms in industry ___ are profitable ___% of the time. The
+                  difference is ___ percentage points. The question is recorded and not answered today.
+AGENDA
+01
+TWO CATEGORICAL VARIABLES
+The contingency table of Session 4, read as a relationship rather than as a probability
+
+
+02
+THE CORRELATION COEFFICIENT
+From the scatter diagram to r — and the four things r cannot see
+
+
+03
+PREDICTING ONE VARIABLE FROM ANOTHER
+The fitted line, the slope in its correct units, and what the slope is not
+
+
+04
+INTERPRETING CAUSALITY
+Three causal worlds that produce identical coefficients
+
+
+05
+SIMPSON'S PARADOX
+An aggregate comparison that reverses inside every single group
+
+
+06
+FROM NUMBER TO CLAIM
+The three conditions, and the difference between predicting and intervening
+THE CORRELATION COEFFICIENT
+
+
+Why the Contingency Table Fails
+
+                                  Categorical pair                 Measurement pair
+
+
+ Distinct values                  8 industries × 2 outcomes        ___ ROA values × ___ debt values
+
+
+ Table size                       16 cells                         approximately ___ cells
+
+
+ Firms per cell                   tens                             zero or one
+
+
+
+
+                        What if the question is not Profitability (Yes or No) but ROA (an exact number)
+THE CORRELATION COEFFICIENT
+
+
+Reading a Scatter Diagram
+Four questions, asked in this order
+
+
+
+
+                                      Form
+                                                                     Strength                        Outliers
+  Direction                           Is it straight or curved?
+                                                                     Do the points cluster tightly   Does any point stand apart
+  Does the cloud rise or fall?        Asked before any coefficient
+                                                                     or scatter widely?              from the rest?
+                                      is computed.
+
+
+
+
+          Convention: the variable to be explained goes on the vertical axis. That is already a direction of
+                                                     thought.
+THE CORRELATION COEFFICIENT
+
+
+Covariance (Hiệp phương sai)
+
+
+
+
+ A cloud on one diagonal sums to
+one sign. A cloud spread across all
+      four sums to near zero.
+THE CORRELATION COEFFICIENT
+
+
+Covariance: the Four Quadrants
+cov(X,Y) = Σ (xᵢ − x̄)(yᵢ − ȳ) / (n − 1)
+
+
+
+
+  +                                                 +
+  Upper right                                       Lower left
+  Above average on both. Positive times positive.   Below average on both. Negative times negative.
+
+
+
+  −                                                 −
+  Upper left                                        Lower right
+  Below on X, above on Y. Negative product.         Above on X, below on Y. Negative product.
+THE CORRELATION COEFFICIENT
+
+
+Covariance Depends on the Units
+
+
+
+                                     ___                                                       ×10⁹
+                              cov in billions of VND                                   the same cov, in VND
+                The relationship between the two variables                 The same relationship, unchanged in every respect
+
+
+
+
+                                     The sign of a covariance is informative. Its magnitude is not.
+THE CORRELATION COEFFICIENT
+
+
+The Pearson Correlation Coefficient
+Covariance computed on standardized variables
+
+
+
+
+  NOT A NEW CONSTRUCTION
+  r = cov(X,Y) / (s_x · s_y) = cov(z_X , z_Y)
+  A statistical measure that expresses the strength and
+  direction of a linear relationship between two
+  variables
+  • Bounded: −1 ≤ r ≤ 1
+  • Unit-free: changing units or origin leaves r unchanged
+  • r(X,Y) = r(Y,X)
+THE CORRELATION COEFFICIENT
+
+
+The Pearson Correlation Coefficient
+Covariance computed on standardized variables
+THE CORRELATION COEFFICIENT
+
+
+The Third Property of r
+
+
+
+                                                       r(X,Y) = r(Y,X)
+    The correlation of X with Y is identical to the correlation of Y with X. No information about which variable acts on
+   which is present in the number. This is not a limitation awaiting a better formula — it is a property of the definition.
+
+
+
+
+                          The number is symmetric. However, the question almost never is symmetric
+THE CORRELATION COEFFICIENT
+
+
+Four Things r Does Not See
+
+  01                                                           02
+  Non-linear form                                              A single outlier
+  A parabola: r ≈ 0 while the relationship is exact. Session   Nineteen unrelated points and one distant point give r =
+  3, Anscombe.                                                 0.8.
+
+
+
+  03                                                           04
+  The slope
+                                                               Two groups combined
+  Two clouds with the same r = 0.9 whose slopes differ
+                                                               Two clouds, each falling, whose union rises.
+  fivefold.
+
+
+
+
+                              The fourth is the contingency table, drawn as a picture.
+THE CORRELATION COEFFICIENT
+
+
+The Spearman Correlation Coefficient
+The Pearson Correlation applied to ranking
+
+
+
+
+  BUILT FROM THE FORMULA OF PEARSON
+  A statistical test that measures the strength and
+  direction of a monotonic relationship between two
+  variables
+  • Monotonic relationship means that as one variable increases, the
+    other variable also tends to increase
+  • Spearman's correlation uses the rank order of the data instead of
+    the actual raw values, sorts each variable from lowest to highest
+    and assigns numbers (1, 2, 3, etc.) based on their positions.
+  • It then runs a standard Pearson correlation calculation on those
+    ranked values.
+THE CORRELATION COEFFICIENT
+
+
+Pearson and Spearman
+Spearman is Pearson computed on the ranks
+
+
+
+ Pair                                               Pearson                                  Spearman
+
+
+ revenue × total assets                             ___                                      ___
+
+
+ log(revenue) × log(total assets)                   ___                                      ___
+
+
+ Use Pearson                                        straight form, no dominant observation
+
+
+ Use Spearman                                       outliers, strong skew, or ordinal data
+
+
+
+
+                     Ranking repairs two of the four blindnesses: the outlier, and the monotone curve.
+THE CORRELATION COEFFICIENT
+
+
+Practice 2 — The Correlation Matrix
+Excel · Data Analysis > Correlation · conditional formatting
+
+
+
+  Build the correlation matrix of the seven principal measurement variables and apply a colour
+                                               scale.
+
+
+
+
+                                                                                                               CONSTRAINT
+                                                                        QUANTITY
+                          TIME                                                                     Do not yet interpret any of them.
+                                                               Seven variables — 21 distinct
+                      5 minutes                                                                     Write down only which pair is
+                                                                       coefficients
+                                                                                                                highest.
+
+
+
+
+                       The matrix is item 2 of the submission, with one sentence on whether the highest pair is surprising.
+THE CORRELATION COEFFICIENT
+
+
+Spurious Correlation (Tương quan giả)
+
+
+
+  CIRCUMSTANCE 1
+  Pure Coincidence. Among 21 coefficients a high value arises by chance alone; among 200 it is a certainty.
+
+
+
+  CIRCUMSTANCE 2
+  A shared time trend. Any two series that both grow over time correlate strongly, related or not — Session 14 calls
+  this a spurious regression.
+
+
+
+  CIRCUMSTANCE 3
+  A confounded relationship: a hidden third factor influence both variables. This has a real structure behind it. A
+  spurious one has none — and its only remedy is not to have gone looking.
+THE CORRELATION COEFFICIENT
+
+
+Spurious Correlation (Tương quan giả)   Source: https://www.tylervigen.com/spurious-correlations
+AGENDA
+01
+TWO CATEGORICAL VARIABLES
+The contingency table of Session 4, read as a relationship rather than as a probability
+
+
+02
+THE CORRELATION COEFFICIENT
+From the scatter diagram to r — and the four things r cannot see
+
+
+03
+PREDICTING ONE VARIABLE FROM ANOTHER
+The fitted line, the slope in its correct units, and what the slope is not
+
+
+04
+INTERPRETING CAUSALITY
+Three causal worlds that produce identical coefficients
+
+
+05
+SIMPSON'S PARADOX
+An aggregate comparison that reverses inside every single group
+
+
+06
+FROM NUMBER TO CLAIM
+The three conditions, and the difference between predicting and intervening
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+Linear Regression
+
+   Independent Variable (X): The input or predictor
+   variable used to make the prediction.
+   Dependent Variable (Y): The target or response variable
+   you want to predict.
+   •    Plot and examine the scatter diagram
+   •    If a linear relation emerges, try to fit a line through the
+        data points
+   •    The calculation of r will confirm the strength of this
+        relation
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+Practice 3 — Three Lines Drawn by Hand
+Three participants at the board · marker on the projected scatter
+
+
+
+         Three participants each draw the line that fits the cloud best. The three lines are then
+                                              compared.
+
+
+
+                                                                          QUANTITY                                CONSTRAINT
+                         TIME
+                                                                Three lines, three people, one           No measuring, no calculation —
+                     5 minutes
+                                                                             cloud                       draw the line the eye proposes.
+
+
+
+
+                                           The three lines stay on the board until the fitted line is computed.
+
+
+
+
+                                                              Which of the three is correct?
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+Residuals and the Least-Squares Criterion
+
+   Residuals (e)
+                                                                     Why Sum of Squares (SS)
+   The residual is the vertical distance from a point to the
+   line. Residuals Plot is a graph showing independent or            The line is chosen to minimize the sum of the squared
+   predicted values on the horizontal axis and residuals on          residuals — for three reasons:
+   the vertical axis.                                                • Without squaring, positives and negatives cancel
+   •    Random Pattern: Points form an even, random cloud            • Squaring penalizes large errors disproportionately
+        scattered around the horizontal zero line. This shows that   • The minimization has a closed-form solution
+        the linear model fits well and errors are unbiased.
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+Fitting the Line in Excel
+Three routes to the same two numbers, and three cells of twenty
+
+
+
+
+ Route                                                            Returns
+
+
+ =SLOPE(Y,X) and =INTERCEPT(Y,X)                                  the two coefficients
+
+ Trendline > Display Equation, R-squared                          the equation printed on the figure
+
+ Data Analysis > Regression                                       a table of about twenty numbers
+
+ Read today: slope ___, intercept ___, R² ___                     the other seventeen are Sessions 9 and 12
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+Practice 4 — One Sentence, Written Individually
+On paper · collected and read aloud
+
+
+
+
+   Write one sentence in Vietnamese stating what the slope of ROA on log(total assets) means.
+
+
+
+
+                                                                                                                CONSTRAINT
+                         TIME                                       QUANTITY
+                                                                                                   The sentence must carry the units
+                     2 minutes                              One sentence, no more
+                                                                                                           of both variables.
+
+
+
+
+                            Four or five sentences are read aloud. One of them is copied onto the board and left there.
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+Three Kinds of Statement
+
+ Sentence                                                                Status
+
+
+                                                                         a causal verb, and one firm changing
+ Total assets rise by 1%, so ROA rises by ___ points
+                                                                         — not supported
+
+ A firm 1% larger has ROA higher by ___ points                           supported
+
+ …higher by ___% rather than ___ percentage points                       a unit error
+
+
+
+
+          The causal claim enters through the grammar, and most of the room wrote it without noticing.
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+The Standard Sentence
+
+
+
+
+                                   "An observation with __ [Unit of X] higher [Variable X]
+                                      has [Variable Y] higher/lower by __ [Unit of Y]“
+
+     The sentence compares two different variables at one point in time. It does not describe one variable changing.
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+The Intercept, and the Range of the Line
+
+
+
+
+  WHERE THE LINE HAS STANDING
+  The intercept is the fitted value at X = 0 or Y = 0. No firm
+  in this dataset lies near zero, so it is a number required
+  by the algebra of the line rather than an economic
+  quantity.
+  • Outside the observed range the line is continued on paper
+  • No observation lies beneath it there
+  • This limitation has a name
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+The Coefficient of Determination
+In a regression with one explanatory variable, R² = r²
+
+
+
+
+Statement                                      Status
+
+
+
+R² = ___ on this model                         the line accounts for ___% of the variation in ROA
+
+
+A low R² means the model is                    false — behavioural models report 0.1 to 0.3 and are
+useless                                        published
+
+
+A high R² means the model is                   false — two trending series give a high R² and no
+correct                                        relationship
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+Three Residual Patterns
+
+  Scattered about zero
+  A straight line is an adequate form
+  here.
+
+
+
+  A U shape
+  The relationship is curved; the
+  straight line has the wrong form.
+
+
+
+  A widening funnel
+  The spread of Y increases with X.
+PREDICTING ONE VARIABLE FROM ANOTHER
+
+
+Practice 5 — The Slope Is One Draw
+Excel · the Session 6 simulation workbook, new sheet
+
+
+
+  Draw two columns instead of one and replace AVERAGE by SLOPE. Press F9. Then copy down
+                    to 400 rows and plot the histogram of the 400 slopes.
+
+
+
+
+                                                                                                                CONSTRAINT
+                                                                      QUANTITY
+                         TIME                                                                        Mark the slope read at minute 60
+                                                         400 samples of n = 40, one slope
+                     4 minutes                                                                       on the histogram. It will not sit at
+                                                                      each
+                                                                                                                the centre.
+
+
+
+
+                                               The mean of the 400 slopes, and their standard deviation.
+AGENDA
+01
+TWO CATEGORICAL VARIABLES
+The contingency table of Session 4, read as a relationship rather than as a probability
+
+
+02
+THE CORRELATION COEFFICIENT
+From the scatter diagram to r — and the four things r cannot see
+
+
+03
+PREDICTING ONE VARIABLE FROM ANOTHER
+The fitted line, the slope in its correct units, and what the slope is not
+
+
+04
+INTERPRETING CAUSALITY
+Three causal worlds that produce identical coefficients
+
+
+05
+SIMPSON'S PARADOX
+An aggregate comparison that reverses inside every single group
+
+
+06
+FROM NUMBER TO CLAIM
+The three conditions, and the difference between predicting and intervening
+INTERPRETING CAUSALITY
+
+
+Without a Causal Verb
+
+
+                                 No causal verb was used since the beginning of this lecture
+
+                         Firms in this industry are profitable more often — not this industry makes firms profitable.
+                                       Firms with higher debt have lower ROA — not debt reduces ROA.
+
+
+
+
+              The gap between what was measured and what was heard is the subject of the remaining
+INTERPRETING CAUSALITY
+
+
+INTERPRETING CAUSALITY
+
+  THE SAME FOUR NUMBERS
+  Three causal worlds, one set of coefficients
+  Three structures are consistent with the same observed
+  association between X and Y, and they produce identical
+  r, identical slope, identical R² and identical residual
+  plots.
+  • Direct effect — X → Y
+  • Confounding — X ← Z → Y, with no arrow between X and Y
+  • Reverse causation — X ← Y
+
+
+
+
+                                 No computation performed on a cross-section distinguishes them.
+INTERPRETING CAUSALITY
+
+
+Confounding, Shown on a Contingency Table
+
+ Size class                                    Industry ___        All others         Difference
+
+
+ whole market                                  ___%                ___%               ___ points
+
+
+ small firms                                   ___%                ___%               ___ points
+
+
+ medium firms                                  ___%                ___%               ___ points
+
+
+ large firms                                   ___%                ___%               ___ points
+
+
+
+
+                         A third column was doing the work, and nothing in the first table disclosed it.
+INTERPRETING CAUSALITY
+
+
+Reverse Causation: Two Accounts of One Dataset
+
+                             ROA on size                                             Size on ROA
+
+
+
+ Slope                       ___                                                     ___
+
+ r                           ___                                                     the same
+
+ R²                          ___                                                     the same
+
+ Size → performance          scale economies, fixed costs spread, bargaining power
+
+ Performance → size          profitable firms accumulate, reinvest, borrow, and grow
+
+
+
+
+               The two accounts imply opposite policies, and a cross-section stands still between them.
+INTERPRETING CAUSALITY
+
+
+Self-Selection
+A special case of confounding, and the one most often met in a thesis
+
+
+
+
+  OBSERVED
+  Members of the loyalty scheme spend 40% more — or customers who already spent heavily are the ones who
+  enrolled.
+
+
+
+  OBSERVED
+  Firms listed on HOSE report higher ROA than firms on HNX — or only firms already performing well meet the listing
+  requirements.
+
+
+
+  THE COMMON FEATURE
+  The unit chooses its own group. Whatever determined that choice is liable to be the same thing that determines
+  the outcome.
+INTERPRETING CAUSALITY
+
+
+What the Arithmetic Cannot Separate
+
+
+
+
+                                                                A FOURTH CASE
+  THREE STRUCTURES                                              Spurious correlation has no mechanism at
+  Direct effect, confounding and reverse causation each         all
+  correspond to something true about the world: a third         Two columns happen to move together. This is what a
+  variable exists, or the arrow points the other way.           search through a correlation matrix finds, and it is the
+  • And all three produce the same results, but way different   only one of the four where the error lies in how the
+    interpretation                                              relationship was found.
+                                                                • Not in the world — in the searching
+AGENDA
+01
+TWO CATEGORICAL VARIABLES
+The contingency table of Session 4, read as a relationship rather than as a probability
+
+
+02
+THE CORRELATION COEFFICIENT
+From the scatter diagram to r — and the four things r cannot see
+
+
+03
+PREDICTING ONE VARIABLE FROM ANOTHER
+The fitted line, the slope in its correct units, and what the slope is not
+
+
+04
+INTERPRETING CAUSALITY
+Three causal worlds that produce identical coefficients
+
+
+05
+SIMPSON'S PARADOX
+An aggregate comparison that reverses inside every single group
+
+
+06
+FROM NUMBER TO CLAIM
+The three conditions, and the difference between predicting and intervening
+SIMPSON'S PARADOX
+
+
+Why the Reversal Is Possible
+  THE PARADOX
+  Within each industry the direction falls;
+  combined it rises
+  A statistical phenomenon where a trend or relationship
+  appearing within separate groups of data disappears or
+  reverses completely when those groups are combined
+  • Confounding Variables: A hidden third factor (or lurking variable)
+    influences both the grouping and the outcome.
+  • Unequal Group Sizes: Aggregated data gets skewed when larger
+    groups or groups with extreme baseline rates dominate the
+    combined total.
+  • Causal Misinterpretation: Looking only at the surface-level grand
+    total can lead to false conclusions about cause and effect
+
+
+
+
+                             Neither number is incorrect. They answer two different questions.
+SIMPSON'S PARADOX
+
+
+Leverage and Profitability, Market-Wide
+Firms split at the median debt ratio · row percentages
+
+
+
+                                                                  Profitable
+
+
+ High leverage                                                    ___%
+
+
+ Low leverage                                                     ___%
+
+
+ Market-wide, the more leveraged group is profitable more often
+SIMPSON'S PARADOX
+
+
+So which answer is correct?
+
+                                                           THE WITHIN-GROUP ANSWERS
+  THE AGGREGATE ANSWERS
+  Among all listed firms                                   For a firm in a given industry
+                                                           How does profitability compare across leverage levels?
+  How does profitability compare across leverage levels?
+                                                           The eight tables answer this, and they say the opposite.
+  The combined table answers this, and it says the more
+                                                           This is the question almost always intended.
+  leveraged group is profitable more often.
+                                                           • Session 12 admits industry as dummy variables
+  • True, and rarely the question intended
+                                                           • The model does not decide whether industry belongs there
+
+
+
+
+       Whether to aggregate or disaggregate is not a statistical choice. It comes from understanding the
+                                                  industry.
+AGENDA
+01
+TWO CATEGORICAL VARIABLES
+The contingency table of Session 4, read as a relationship rather than as a probability
+
+
+02
+THE CORRELATION COEFFICIENT
+From the scatter diagram to r — and the four things r cannot see
+
+
+03
+PREDICTING ONE VARIABLE FROM ANOTHER
+The fitted line, the slope in its correct units, and what the slope is not
+
+
+04
+INTERPRETING CAUSALITY
+Three causal worlds that produce identical coefficients
+
+
+05
+SIMPSON'S PARADOX
+An aggregate comparison that reverses inside every single group
+
+
+06
+FROM NUMBER TO CLAIM
+The three conditions, and the difference between predicting and intervening
+FROM NUMBER TO CLAIM
+
+
+Three Minimum Conditions for a Causal Claim
+
+ #            Condition                   Countered by         Established by
+
+
+ 1            X and Y are associated      —                    a table, r, a slope — the data answers this
+
+
+ 2            X precedes Y                reverse causation    design; data with a time dimension
+
+                                          confounding, self-
+ 3            Alternatives are excluded                        subject knowledge; controlling for variables
+                                          selection, Simpson
+
+
+
+
+        Condition 1 is the only one a computation settles. Today: 72 minutes on it, 58 on the other two.
+FROM NUMBER TO CLAIM
+
+
+Prediction and Intervention
+
+
+  PREDICTION
+                                                                 INTERVENTION
+  Which firms are likely to default next year?
+                                                                 If the debt ratio is reduced, will ROA rise?
+  Causation is not required. Any variable that predicts
+                                                                 Causation is required. This is the question for which the
+  well may be used, whether or not it acts on anything.
+                                                                 preceding content were necessary.
+  •   The name given to that step — prediction of one variable
+                                                                 • Settle which one you are doing before the analysis, not after
+      from another is limited to “Prediction” only
+
+
+
+
+                          What we done today only answer the question about Prediction!
+

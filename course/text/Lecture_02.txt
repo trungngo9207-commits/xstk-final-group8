@@ -1,0 +1,582 @@
+Lecture 2: Data and Describing Data
+
+
+Lecturer          CLASS CODE   COURSE
+
+Tran Nguyen Lan   TOAE203      Statistics and Probability in Economics and Business
+AGENDA
+You have 4,000 rows of data. Your director gives you 30 seconds. What do you say?
+
+
+  WHY COMPRESS AT ALL
+  Why no single cell in the file answers the director's question.
+
+
+
+  WHAT THIS DATA IS
+  Observation unit, three structures, measurement scales.
+
+
+
+  THE CENTRE
+  Mean, median, mode — and why economic variables lean right.
+
+
+
+  SPREAD AND POSITION
+  SD, CV, IQR, percentiles, z-scores.
+
+
+
+  HANDS-ON
+  The professional table, the tools, and the file Session 3 needs.
+WHY COMPRESS AT ALL
+
+
+Same file, two questions
+
+
+
+  Q1 — What was Vinamilk's revenue in                 Q2 — How did Vietnam's listed firms
+  2023?                                               perform in 2023?
+  A lookup: one row, one column, one cell.            A summary: no single cell answers it.
+
+
+
+
+  Raw data answers lookups. Statistics exist to answer summaries.
+WHY COMPRESS AT ALL
+
+
+A statistic is a compression
+The shape every topic in this session follows
+
+
+
+
+                                                                     So why we have to compress information?
+  A rule that keeps some, discards the rest
+                                                                     Because 20,000 lines of data is heavy to carry and
+  The mean of 20,000 revenues uses the magnitude of
+                                                                     interpret. No one can fully understand all numbers. We
+  every single value — and discards which firm had which
+                                                                     need something easier to interpret, but still keep a lot
+  value, and all ordering. This is a huge loss of information
+                                                                     of information from the original object.
+
+
+
+
+                                  Misinformation is not a defect. It is the price of the compression.
+                                            The skill is knowing which price you paid.
+WHAT THIS DATA IS
+
+
+Different Classification of Data
+
+
+                    Think off how we perceive new information in daily activities
+WHAT THIS DATA IS
+
+
+Data Classification by Structure
+
+
+
+Type                Structure      Unit              Machine-Representation
+
+
+Tabular             Structured     Row, Record       2D Grid
+
+Text                Unstructured   Token, words      Vector embedding
+
+Image               Unstructured   Pixel             RGB Matrix
+
+Video               Unstructured   Frame and Pixel   Sequence of frames
+
+Waveform            Unstructured   Hz                Voice, Spectrogram
+WHAT THIS DATA IS
+
+
+Tabular Data
+
+  Key Characteristics                                   Common Formats
+  • Rows: Represent unique samples, entities, or        • Spreadsheets: XLSX, ODS (used in Microsoft
+    chronological events                                  Excel or Google Sheets)
+  • Columns: Represent specific features,               • Flat Files: CSV (Comma-Separated Values) and
+    categories, or measured properties                    TSV (Tab-Separated Values)
+  • Homogeneity: Data types within a single             • Databases: Relational database tables (like
+    column are typically uniform (e.g., all numbers,      SQL)
+    text, or dates)                                     • Web Formats: JSON, XML
+
+
+
+
+                                  The main modality of data for Statistics
+WHAT THIS DATA IS
+
+
+Panel Data
+The most common type of Data in Economics and Econometrics
+
+ Slice                              What you keep                    Name
+
+
+ All firms, one year                many units, one time point       cross-section
+
+ One firm, all years                one unit, many time points       time series
+
+ All firms, all years               many units, many time points     panel
+
+
+
+
+                                     3 Dimensions: Who, When, What
+WHAT THIS DATA IS
+
+
+What happens when you pool the panel
+
+
+  One mean over two kinds of variation                   Rows are not independent
+  Take the whole FirmSize column and compute one         The same firm appears multiple times, so the rows are
+  mean. It averages between firms and within firms at    not independent
+  once. The formula sees 4,000 numbers, not 400 firms.
+WHAT THIS DATA IS
+
+
+Take some time to complete this survey!
+WHAT THIS DATA IS
+
+
+Data Classification by Nature
+This is classification from the perspective of Mathematics and Research: Numbers or Non-numbers
+WHAT THIS DATA IS
+
+
+Data Classification by Measurement
+They range from simple category labels to precise numbers with a true zero point, dictating what math and tests you can use.
+
+
+
+
+ Scale                What the numbers carry                                          Operators                                Examples
+
+
+ Nominal              labels only, no order                                           =, ≠                                     Color, City, Item Type, State
+
+ Ordinal              order, unequal gaps                                             =, ≠, >, <                               Satisfaction (L/M/H), Rank
+
+ Interval             equal gaps, no true zero                                        +, -                                     Orders count, Time
+
+ Ratio                equal gaps and a true zero                                      ×, ÷                                     Income, Temp, Duration
+WHAT THIS DATA IS
+
+
+Discrete vs Continuous
+
+
+
+  The set of possible values                               What a probability can mean for discrete
+  Discrete — countable, with gaps. Number of Students      and continuous data
+  could be 71 or 72, not 70.2                              P(exactly 70 students) can be non-zero.
+  Continuous — any value in a range. The weight equal to   P(weight is exactly 70.1 kg) is zero — only intervals carry
+  70.1 kg as precisely as you can measure.                 probability for a continuous variable.
+WHAT THIS DATA IS
+
+
+How many statistics are there in the data?
+How many numbers can you see?
+WHAT THIS DATA IS
+
+
+Throwback some Physics lesson
+What are the difference between these 3 scales?
+WHAT THIS DATA IS
+
+
+Not all statistics are meaningful
+Vote on each one before the verdict appears.
+
+
+
+
+  Mean of the Shirt number =                   Mean of a 1–5 GoogleMaps             40°C is twice as hot as 20°C
+  13.5                                         Review = 3.8                         False. Interval, no true zero. Switch
+  Meaningless. Nominal — the Shirt             Contested. Ordinal — the gaps are    to Kelvin and the ratio changes.
+  number are names wearing digits.             not equal, so the sum has no fixed   Correct statement: 20 degrees
+  Renumber them and the mean                   unit.                                warmer.
+  changes while the data does not.
+
+
+
+
+                Change the labels, keep the data. If the statistic moves, it was never measuring the data.
+THE CENTRE
+
+
+Three ways for naming the centre
+None of the three is the AVERAGE. They answer three different questions.
+
+
+ Statistic   How to calculate                     Note
+
+             Total sum divided by how many
+ mean                                             Can be misleading by outliers or skewed data
+             numbers there are
+             Ranking each value, and then
+ median                                           Ignores the actual values of data points and changes at the 2 ends
+             take the exact middle
+
+ mode        Most frequent number appears         Can represent a “tiny minority”, ignore the rest of the data
+
+ all three   answer three different questions the mode is the only centre that works on nominal data
+
+
+
+
+   Write these three words down: magnitude, rank, repetition. The rest of the session follows from them.
+THE CENTRE
+
+
+Bill Gates enters a bar
+There are 9 men sitting in a bar, each earns $1000 a month. Suddenly, Bill Gates moves in, earning $100,000,000 a month. What is the average income in that room now —
+and are the 9 men any richer?
+
+
+
+
+  HOW IT WAS MADE                                                                     WHAT IT CANNOT SAY
+  Sum the 10 incomes, divide by 10                                                    Nothing about how the 9 men live
+  Roughly 10 millions USD per person per month. The                                   One extreme value dragged the average away from
+  arithmetic is completely correct                                                    every single person in the room.
+
+
+
+
+                              In this example, calculate again using the mean, median and mode.
+                                            Which method is best used in this case?
+SPREAD AND POSITION
+
+
+Four steps to a standard deviation
+Squaring is a choice, not a necessity — and it is exactly where fragility enters.
+
+
+
+
+  STEP 1                                        STEP 2                              STEP 3                           STEP 4
+  Deviation                                     Square each one                     Average the squares              Take the square root
+  Distance of each value from                   Otherwise they cancel to            That is the variance. Its unit   That is the standard
+  the mean.                                     exactly zero, by definition of      is the original unit squared.    deviation, back in the
+                                                the mean.                                                            original unit.
+
+
+
+
+                                         A deviation twice as large contributes four times as much.
+                                            SD is more sensitive to extremes than the mean is.
+SPREAD AND POSITION
+
+
+Which offer do you choose?
+Both average 20 million VND a month. Offer A is fixed salary. Offer B is commission, SD about 12 million.
+
+
+ Option A: [20, 20, 20, 20, 20, 20, 20, 20,
+                                                                                      There is no correct answer
+ 20, 20, 20, 20]
+ Mean: 20                                                                             • The mean was identical, so the mean could not participate
+                                                                                        in the decision.
+ SD: 0
+                                                                                      • The SD is the entire content of the choice.
+ Option B: [5, 8, 10, 38, 7, 35, 12, 15, 42, 8,
+ 15, 45]
+ Mean: 20
+ SD: 12
+
+
+
+
+           In economics, spread is not noise around the answer. Spread is risk, and risk is the difference
+SPREAD AND POSITION
+
+
+Skewness
+
+
+  Asymmetry of a data distribution around
+  its mean
+SPREAD AND POSITION
+
+
+Kurtosis
+
+  Measure that describes the "tailedness"
+  of a probability distribution.
+SPREAD AND POSITION
+
+
+Why economic variables lean right
+
+
+  A floor, no ceiling                                                       Skew leaves a signature in the table
+  Revenue, assets and headcount cannot go negative, so                      mean > median → right skew. mean < median → left
+  the left tail is walled. Nothing caps them above. And                     skew. mean ≈ median → roughly symmetric.
+  firms grow by percentages, not by additions.                              • The reported skewness puts a sign on the same fact: positive = right
+  • Repeated multiplication spreads the upper end further at every step.      tail. Read the sign; do not memorize thresholds for the magnitude.
+  • Most units bunch low, a thin tail stretches high. This is the default   • So one line of a summary table tells you the shape of a column you
+    shape for size variables, not an anomaly.                                 have not plotted. Session 3 draws it, Session 5 names it.
+
+
+
+
+                                          mode < median < mean is a signal of a right tail.
+SPREAD AND POSITION
+
+
+Log rescales the axis, and the shape follows
+
+  It turns ratios into equal distances
+  On the raw axis, 1 → 10 billion and 100 → 110 billion
+  are the same gap — but one is a tenfold jump and one                     The mean of the logs is a different mean
+  is 10%. On a log axis every tenfold jump is the same                     It is the geometric mean of the original values, not the
+  width.                                                                   arithmetic mean.
+  • The right tail was built by repeated multiplication, so an axis that
+    measures multiplication straightens it.
+
+
+
+
+                                         Log is not a repair. It is a change of measuring stick.
+                      500
+                     1000
+                     1500
+                     2000
+                     2500
+                     3000
+                     3500
+                     4000
+                     4500
+                     5000
+
+
+
+
+                        0
+       [0,…
+ (1.52483E+11…
+                                                                                                                                                                            SPREAD AND POSITION
+
+
+
+
+ (3.04966E+11…
+ (4.57449E+11…
+ (6.09933E+11…
+ (7.62416E+11…
+ (9.14899E+11…
+ (1.06738E+12…
+ (1.21987E+12…
+ (1.37235E+12…
+ (1.52483E+12…
+                                                              Firm Size
+
+ (1.67731E+12…
+ (1.8298E+12,…
+ (1.98228E+12…
+ (2.13476E+12…
+ (2.28725E+12…
+ (2.43973E+12…
+ (2.59221E+12…
+ (2.7447E+12,…
+ > 2.89718E+12
+                     500
+                           1000
+                                  1500
+                                         2000
+                                                2500
+
+
+
+
+                 0
+
+
+
+
+          ≤7
+  (7.19, 7.38]
+  (7.57, 7.76]
+  (7.95, 8.14]
+                                                                                                                       Logarithm rescales the axis, and the shape follows
+
+
+
+
+  (8.33, 8.52]
+   (8.71, 8.9]
+  (9.09, 9.28]
+  (9.47, 9.66]
+ (9.85, 10.04]
+                                                                          Transforming the FirmSize to log(FirmSize)
+
+
+
+
+(10.23, 10.42]
+ (10.61, 10.8]
+(10.99, 11.18]
+(11.37, 11.56]
+(11.75, 11.94]
+                                                       Log Firm Size
+
+
+
+
+(12.13, 12.32]
+ (12.51, 12.7]
+(12.89, 13.08]
+(13.27, 13.46]
+(13.65, 13.84]
+(14.03, 14.22]
+ (14.41, 14.6]
+(14.79, 14.98]
+(15.17, 15.36]
+SPREAD AND POSITION
+
+
+Coefficient of Variation: spread without a unit
+
+  SD ÷ mean — the units cancel
+  It answers what SD cannot: relative to its own typical      The mean's problems become the CV's problems, and
+  size, which variable moves more?                            they arrive without any warning in the output.
+  Firm Size has an SD in billions of VND, roa in percentage   • Mean near zero → the CV explodes.
+  points.                                                     • Mean negative → uninterpretable.
+  • Same logic for exam scores on a 10-point scale versus a
+    1600-point scale.
+
+
+
+
+                Rule for this course: CV only on ratio-scale variables with a comfortably positive mean.
+SPREAD AND POSITION
+
+
+Percentiles and IQR: spread built from rank
+Sort the values. Q1 is the 25th percentile, Q3 the 75th. IQR = Q3 − Q1: the width of the middle half.
+
+
+
+                                         Mean & SD                                                      Median & IQR
+
+
+ Input used                              every magnitude                                                ranks only
+
+ One extreme value                       pulls both                                                     moves neither
+
+ Feeds later sessions                    almost all inference, Sessions 6–13                            boxplots and outlier flagging, Session 3
+
+ Fails when                              the tail is long                                               you need to do algebra with it
+
+
+
+
+        Neither pair is safer. They fail in different directions — which is exactly why a table reports both.
+SPREAD AND POSITION
+
+
+The z-score: turning a value into a position
+You scored 7 in Mathematics and 8 in Literature. Which subject are you stronger in?
+
+
+
+
+  Mathematics — you scored
+                                                                                                   What z cannot do yet
+  7                                                        Literature — you scored 8
+                                                                                                   z = +2.0 does not yet mean *top
+  Class mean 5, SD 1. z = (7 − 5) ÷ 1 =                    Class mean 8, SD 1. z = (8 − 8) ÷ 1 =
+                                                                                                   2.3%*. That needs a distribution,
+  +2.0. Two standard deviations                            0.0. Exactly average.
+                                                                                                   and it arrives in Session 5.
+  above your class.
+
+
+
+
+     The higher raw score is the weaker performance. The position was the information, not the number.
+HANDS-ON
+
+
+The full summary of one column
+Every line answers a different question about the same 400 numbers.
+
+
+ Statistic               The question it answers                                             Value
+
+ N                       how many units am I describing?
+
+ mean                    where is the balance point?
+
+ median                  what happens to the middle unit?
+
+ SD                      how far do units sit from the centre?
+
+ min / max               what are the extremes?
+
+ Q1 / Q3                 where does the middle half begin and end?
+
+ skewness                which tail is long?
+
+
+             Read down this column and you can state the shape of a variable you have never plotted.
+HANDS-ON
+
+
+Excel and Python Functions
+Type each Excel function by hand once. Every function you type is one concept from today.
+
+
+ Concept                                   Excel                                            Python
+
+ present values / missing                  `=COUNT()` / `=COUNTBLANK()`                     `.count()` / `.isna().sum()`
+
+ mean / median                             `=AVERAGE()` / `=MEDIAN()`                       `.mean()` / `.median()`
+
+ standard deviation                        `=STDEV.S()`                                     `.std()`
+
+ Q1 / Q3                                   `=QUARTILE.INC(r,1)`                             `.quantile([.25,.75])`
+
+ min / max                                 `=MIN()` / `=MAX()`                              `.min()` / `.max()`
+
+ skewness / CV                             `=SKEW()` / `=STDEV.S(r)/AVERAGE(r)`             `.skew()` / `.std()/.mean()`
+
+ all of it, by group                       PivotTable                                       `.groupby('industry').describe()`
+
+
+
+
+  `COUNT` ignores blanks — which is exactly why comparing COUNT across columns exposes missingness.
+Main Takeaways
+
+
+
+                                                                        3. WAYS TO MEASURE SPREAD
+1. COMPRESSION                           2. WAYS TO MEASURE CENTRE
+                                                                        Standard Deviation, Coefficient of
+Every statistic discards information     Mean, Median, Mode
+                                                                        Variation, Skewness, Kurtosis
+by rule.
+
+
+
+
+4. LOG TRANSFORMATION
+                                       5. OVERALL DESCRIPTION OF DATA    6. PRACTICING WITH EXCEL
+Why economics data often skew                                            Excel Functions to perform
+                                       Which metrics do we use to
+right, and why use log                                                   descriptive analysis
+                                       capture the basic of a dataset
+transformation
+
